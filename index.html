@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>DKV - Komputer Grafis | Media Pembelajaran</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="gradient-bg"></div>
+    <div class="pattern-bg"></div>
+    <div class="moving-dots" id="movingDots"></div>
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+    <div class="floating-orb orb-4"></div>
+    <div class="bubbles" id="bubbles"></div>
+
+    <!-- HALAMAN LOGIN -->
+    <div id="login-page" class="page-container active">
+        <div class="glass-card glass-card-sm">
+            <div class="login-header">
+                <div class="logo-container">
+                    <div class="logo-item">
+                        <img class="logo-img" id="logo-unimed" src="logo.png" alt="Logo Unimed" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2780%27 height=%2780%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EUNIMED%3C/text%3E%3C/svg%3E'">
+
+                    </div>
+                    <div class="logo-item">
+                        <img class="logo-img" id="logo-sekolah" src="tutwuri.png" alt="Logo Sekolah" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2780%27 height=%2780%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%238b5cf6%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ESMK%3C/text%3E%3C/svg%3E'">
+
+                    </div>
+                </div>
+                <h2>📚 Komputer Grafis</h2>
+                <p>Silakan isi data diri untuk memulai pembelajaran</p>
+            </div>
+            <label class="form-label"><i class="fas fa-user"></i> Nama Lengkap :</label>
+            <input type="text" id="login-name" placeholder="Masukkan nama lengkap">
+            <label class="form-label"><i class="fas fa-graduation-cap"></i> Kelas :</label>
+            <input type="text" id="login-class" placeholder="Contoh: X-DKV1">
+            <label class="form-label"><i class="fas fa-book"></i> Jurusan :</label>
+            <select id="login-major">
+                <option value="DKV">DKV (Desain Komunikasi Visual)</option>
+
+            </select>
+            <button class="btn-primary" onclick="doLogin()"><i class="fas fa-arrow-right"></i> Mulai Belajar</button>
+        </div>
+    </div>
+
+    <!-- HALAMAN HOME -->
+    <div id="home-page" class="page-container">
+        <div class="glass-card">
+            <div class="header-buttons">
+                <div class="nav-pill nav-pill-left" onclick="showPage('profil')"><i class="fas fa-user"></i> Profil Pengembang</div>
+                <div class="nav-pill nav-pill-right" onclick="showPage('petunjuk')"><i class="fas fa-lightbulb"></i> Petunjuk</div>
+                <div class="nav-pill nav-pill-icon" onclick="doLogout()"><i class="fas fa-sign-out-alt"></i></div>
+            </div>
+            <div class="user-badge"><i class="fas fa-user-circle"></i> <span id="user-name-display">-</span></div>
+            <div class="hero-title">KOMPUTER GRAFIS</div>
+            <div class="hero-sub">Bitmap • Vektor • Perangkat Lunak Desain</div>
+            <div class="menu-grid">
+                <div class="menu-card" onclick="showPage('cp-atp')"><i class="fas fa-scroll"></i><span> CP & ATP</span></div>
+                <div class="menu-card" onclick="showPage('materi-list')"><i class="fas fa-layer-group"></i><span> Materi</span></div>
+                <div class="menu-card" onclick="showPage('video')"><i class="fas fa-play-circle"></i><span> Video</span></div>
+                <div class="menu-card" onclick="startQuiz()"><i class="fas fa-edit"></i><span> Kuis</span></div>
+                <div class="menu-card menu-wide" onclick="showPage('chatbox')"><i class="fas fa-comments"></i><span> ChatBox</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFIL PENGEMBANG -->
+    <div id="profil-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <h2 style="text-align:center;"><i class="fas fa-user-circle"></i> Profil Pengembang</h2>
+            <hr>
+            <div style="text-align:center;">
+                <img class="profile-avatar" id="profile-photo" src="sarah.jpeg" alt="Foto Profil" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27100%27 height=%27100%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2750%27/%3E%3Ctext x=%2750%27 y=%2767%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2740%27%3E👩%3C/text%3E%3C/svg%3E'">
+                <p class="profile-name">Sarah Annisa Siregar</p>
+                <p class="profile-role"><i class="fas fa-chalkboard-user"></i> Mahasiswa | Universitas Negeri Medan</p>
+                <hr style="margin:15px auto; width:50%;">
+                <div class="profile-bio">
+                    <p><i class="fas fa-users"></i> <strong>NIM:</strong> 5193351011</p>
+                    <p><i class="fas fa-graduation-cap"></i> <strong>Fakultas:</strong> Fakultas Teknik</p>
+                    <p><i class="fas fa-book-open"></i> <strong>Jurusan:</strong> Pendidikan Teknik Elektro</p>
+                    <p><i class="fas fa-palette"></i> <strong>Program Studi:</strong> Pendidikan Teknologi Informatika dan Komputer</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> sarahannisasiregar01@gmail.com</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PETUNJUK PENGGUNAAN -->
+    <div id="petunjuk-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <h2>📘 Petunjuk Penggunaan</h2>
+            <hr>
+            <ul class="petunjuk-list">
+                <li>✅ <strong>Profil Pengembang</strong> : Informasi profil pengembang aplikasi</li>
+                <li>✅ <strong>Petunjuk</strong> : Panduan penggunaan aplikasi</li>
+                <li>✅ <strong>CP & ATP</strong> : Capaian Pembelajaran dan Alur Tujuan Pembelajaran Komputer Grafis</li>
+                <li>✅ <strong>Materi</strong> : 4 topik materi Komputer Grafis lengkap dengan gambar ilustrasi</li>
+                <li>✅ <strong>Video</strong> : Video pembelajaran tentang Komputer Grafis</li>
+                <li>✅ <strong>Kuis</strong> : 20 soal pilihan ganda untuk menguji pemahaman</li>
+                <li>✅ <strong>ChatBox</strong> : Tanya jawab apapun dengan kecerdasan AI</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CP DAN ATP -->
+    <div id="cp-atp-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <h2>🎯 Capaian Pembelajaran (CP)</h2>
+            <hr>
+            <div class="cp-content">
+                <div class="cp-section">
+                    <h3><i class="fas fa-laptop-code"></i> Komputer Grafis</h3>
+                    <p>Memahami pengertian bitmap dan vektor, jenis-jenis perangkat lunak desain grafis (CorelDRAW, Illustrator, Photoshop), fitur-fitur penting, serta produk rancangan komputer grafis seperti mug, logo, packaging, dan kartu nama.</p>
+                </div>
+            </div>
+            <hr>
+            <h2>📌 Alur Tujuan Pembelajaran (ATP)</h2>
+            <div class="atp-list">
+                <div class="atp-item">1. Menjelaskan pengertian gambar bitmap dan karakteristiknya</div>
+                <div class="atp-item">2. Menjelaskan pengertian gambar vektor dan karakteristiknya</div>
+                <div class="atp-item">3. Menganalisis perbedaan gambar bitmap dan vektor</div>
+                <div class="atp-item">4. Mengidentifikasi kelebihan dan kekurangan bitmap</div>
+                <div class="atp-item">5. Mengidentifikasi kelebihan dan kekurangan vektor</div>
+                <div class="atp-item">6. Menjelaskan format file bitmap (JPEG, PNG, GIF, BMP, TIFF)</div>
+                <div class="atp-item">7. Menjelaskan format file vektor (AI, CDR, EPS, SVG, WMF)</div>
+                <div class="atp-item">8. Mengenal software desain grafis berbasis vektor (CorelDRAW, Illustrator, Inkscape)</div>
+                <div class="atp-item">9. Mengenal software desain grafis berbasis bitmap (Photoshop, GIMP, Krita)</div>
+                <div class="atp-item">10. Memahami fitur-fitur CorelDRAW (Toolbox, Shaping, PowerClip)</div>
+                <div class="atp-item">11. Memahami fitur-fitur Photoshop (Layer, Selection Tools, Color Range)</div>
+                <div class="atp-item">12. Membuat produk rancangan komputer grafis (mug, logo, packaging, kartu nama)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DAFTAR MATERI KOMPUTER GRAFIS -->
+    <div id="materi-list-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <h2>📚 Materi Komputer Grafis</h2>
+            <hr>
+            <div class="materi-card menu-card" onclick="openMateri(1)">
+                <i class="fas fa-image"></i>
+                <div>1. Bitmap (Gambar Raster)</div>
+            </div>
+            <div class="materi-card menu-card" onclick="openMateri(2)">
+                <i class="fas fa-draw-polygon"></i>
+                <div>2. Vektor (Gambar Garis & Kurva)</div>
+            </div>
+            <div class="materi-card menu-card" onclick="openMateri(3)">
+                <i class="fas fa-laptop-code"></i>
+                <div>3. Perangkat Lunak Desain Grafis</div>
+            </div>
+            <div class="materi-card menu-card" onclick="openMateri(4)">
+                <i class="fas fa-palette"></i>
+                <div>4. Produk Rancangan Komputer Grafis</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE MATERI -->
+    <div id="slide-materi-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="backToMateriList()"><i class="fas fa-arrow-left"></i> Daftar Materi</div>
+            <h2 id="slide-title" style="color:white;"></h2>
+            <div id="slide-content" class="slide-wrapper"></div>
+            <div class="nav-slide-buttons">
+                <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Sebelumnya</button>
+                <button onclick="nextSlide()">Selanjutnya <i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="slide-counter" id="slide-counter"></div>
+        </div>
+    </div>
+
+    <!-- VIDEO PEMBELAJARAN -->
+    <!-- VIDEO -->
+    <!-- VIDEO PEMBELAJARAN - DAFTAR VIDEO -->
+<div id="video-page" class="page-container">
+    <div class="glass-card">
+        <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+        <h2>🎥 Video Pembelajaran</h2>
+        <p style="color: #cdc4ff; margin-bottom: 20px;">Pilih video yang ingin Anda tonton:</p>
+        <hr>
+        
+        <!-- DAFTAR VIDEO - Setiap video terpisah -->
+        <div class="video-list">
+            <div class="video-item" onclick="playVideo(1)">
+                <div class="video-thumbnail">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="video-info">
+                    <h3>Video 1: Pengertian Bitmap & Vektor</h3>
+                </div>
+            </div>
+            
+            <div class="video-item" onclick="playVideo(2)">
+                <div class="video-thumbnail">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="video-info">
+                    <h3>Video 2: Pengertian CorelDrawr</h3>
+                </div>
+            </div>
+            
+            <div class="video-item" onclick="playVideo(3)">
+                <div class="video-thumbnail">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="video-info">
+                    <h3>Video 3: Pengertian Photoshop</h3>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- KONTEN VIDEO YANG AKAN MUNCUL SAAT DIKLIK -->
+        <div id="videoContainer" style="display:none; margin-top:20px;">
+            <div class="video-header">
+                <span id="videoTitle" style="color: #c084fc; font-weight: bold;"></span>
+                <button class="close-video-btn" onclick="closeVideo()">
+                    <i class="fas fa-times"></i> Tutup
+                </button>
+            </div>
+            <div style="position:relative; padding-bottom:56.25%; height:0; margin-top: 10px;">
+                <iframe id="videoFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;" 
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- KUIS KOMPUTER GRAFIS (20 Soal) -->
+    <div id="kuis-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <h2>📝 Kuis Komputer Grafis</h2>
+            <p class="quiz-desc">Pilih jawaban yang paling tepat dari soal-soal di bawah ini!</p>
+            <div id="quiz-container"></div>
+            <button class="btn-primary" onclick="submitQuiz()"><i class="fas fa-check-circle"></i> Kirim Jawaban</button>
+        </div>
+    </div>
+
+    <!-- HASIL KUIS -->
+    <div id="hasil-page" class="page-container">
+        <div class="glass-card">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-home"></i> Kembali ke Beranda</div>
+            <div id="hasil-score" class="result-card"></div>
+            <button class="btn-primary" onclick="startQuiz()"><i class="fas fa-redo"></i> Ulang Kuis</button>
+        </div>
+    </div>
+
+    <!-- CHATBOX  -->
+    <div id="chatbox-page" class="page-container">
+        <div class="glass-card full-chat">
+            <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <i class="fab fa-google" style="color:#d4aeff; font-size:1.8rem;"></i>
+                <h3 style="color:white;">ChatBox Gemini AI</h3>
+                <span class="ai-badge"><i class="fas fa-brain"></i> Bisa Tanya Apapun!</span>
+                <span id="apiStatus" class="api-status status-checking">🔑 Cek API Key...</span>
+            </div>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="bubble-ai">
+                    <i class="fab fa-google"></i> <strong>Halo! Saya Asisten AI </strong><br><br>
+                    Saya bisa menjawab pertanyaan dengan cerdas. Silakan tanyakan apapun!<br>
+                </div>
+            </div>
+            
+            <div class="question-templates" id="templateContainer"></div>
+            
+            <div class="chat-input-group">
+                <input type="text" id="chatInput" placeholder="Tanyakan apapun tentang Komputer Grafis atau topik lainnya..." onkeypress="if(event.key==='Enter') sendChat()">
+                <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            
+            <div id="errorMsg" class="error-message" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
