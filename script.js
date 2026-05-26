@@ -2,6 +2,8 @@
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
+let isMusicPlaying = false;
+let audioElement = null;
 
 // ==================== FUNGSI LOGIN & USER ====================
 function loadUserData() {
@@ -917,8 +919,6 @@ function preloadBacksound() {
     }
 }
 
-// ==================== INITIALIZATION ====================
-// Jalankan semua fungsi saat halaman siap
 document.addEventListener('DOMContentLoaded', function() {
     createMovingDots();
     createBubbles();
@@ -926,4 +926,38 @@ document.addEventListener('DOMContentLoaded', function() {
     loadUserData();
     updateApiStatus();
     initBacksound();
+    
+    // ========== EVENT LISTENER UNTUK LOGIN ==========
+    // Event listener untuk tombol login
+    const loginBtn = document.getElementById('login-btn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            doLogin();
+        });
+    }
+    
+    // Event listener untuk tombol Enter pada form login
+    const loginName = document.getElementById('login-name');
+    const loginClass = document.getElementById('login-class');
+    
+    if (loginName) {
+        loginName.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                doLogin();
+            }
+        });
+    }
+    
+    if (loginClass) {
+        loginClass.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                doLogin();
+            }
+        });
+    }
+    
+    console.log('Aplikasi siap!');
 });
