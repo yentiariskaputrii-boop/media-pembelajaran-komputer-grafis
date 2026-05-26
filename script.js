@@ -298,7 +298,7 @@ const materiData = {
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+                        <img src='photoshop.png' alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Photoshop</small>
                 </div>
@@ -328,30 +328,6 @@ const materiData = {
                 <li><strong style="color: #ffffff;">Corel Photo-Paint</strong> - software bitmap dari Corel</li>
             </ol>
         </div>
-        
-        <div style="margin-top: 30px; text-align: center;">
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center;">
-                <img src="software-vektor.jpg" alt="Software Vektor" 
-                     style="max-width: 45%; min-width: 200px; border-radius: 16px; border: 2px solid #c084fc; box-shadow: 0 5px 20px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s;"
-                     onmouseover="this.style.transform='scale(1.02)'"
-                     onmouseout="this.style.transform='scale(1)'"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; max-width:45%; min-width:200px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:16px; padding:40px 20px; text-align:center; color:white;">
-                    🖼️ Ilustrasi Software Vektor (Tidak tersedia)
-                </div>
-                
-                <img src="software-bitmap.jpg" alt="Software Bitmap" 
-                     style="max-width: 45%; min-width: 200px; border-radius: 16px; border: 2px solid #c084fc; box-shadow: 0 5px 20px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s;"
-                     onmouseover="this.style.transform='scale(1.02)'"
-                     onmouseout="this.style.transform='scale(1)'"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; max-width:45%; min-width:200px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:16px; padding:40px 20px; text-align:center; color:white;">
-                    🖼️ Ilustrasi Software Bitmap (Tidak tersedia)
-                </div>
-            </div>
-            <p style="color: #a78bfa; margin-top: 15px; font-size: 0.85rem;">✨ Contoh tampilan software desain grafis ✨</p>
-        </div>
-    </div>`,
     
     // SLIDE 2: Fitur Shaping di CorelDRAW
     `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
