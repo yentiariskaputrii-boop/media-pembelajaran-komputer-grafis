@@ -168,24 +168,243 @@ function closeVideo() {
     }
 }
 
-// ==================== MATERI SLIDE ====================
+    // ==================== MATERI SLIDE ====================
 const materiData = {
     1: { title: "🖼️ BITMAP (Gambar Raster)", slides: [
-        "📌 <strong>Pengertian Bitmap</strong><br><br>Bitmap adalah gambar yang tersusun dari titik-titik warna yang disebut <strong style='color:#c084fc'>PIKSEL</strong>. Setiap piksel memiliki lokasi dan warna tersendiri sehingga secara keseluruhan membentuk sebuah tampilan gambar.<br><br><div style='text-align:center; margin:20px 0;'><div style='width:280px; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>Contoh Gambar Bitmap</div><br><small style='color:#ffffff;'> Contoh gambar Bitmap - tersusun dari titik-titik piksel</small></div><br><strong>✨ Karakteristik Bitmap:</strong><br>• Tersusun dari kumpulan piksel<br>• Jika diperbesar akan terlihat kotak-kotak (pecah/pixelated)<br>• Ukuran file tergantung resolusi (semakin tinggi resolusi, semakin besar ukuran)<br>• Bersifat <strong>resolution dependent</strong> (kualitas tergantung DPI)<br>• Cocok untuk foto, gambar realistis, dan hasil scan",
-        "📌 <strong>Kelebihan Bitmap</strong><br><br>✅ Gradasi warna sangat halus dan kompleks<br>✅ Detail gambar tinggi pada resolusi yang cukup<br>✅ Mampu menampilkan gambar secara nyata dan realistis<br>✅ Didukung hampir semua software editing gambar<br><br>📌 <strong>Kekurangan Bitmap</strong><br><br>❌ Pecah jika diperbesar melebihi ukuran aslinya<br>❌ Ukuran file relatif besar<br>❌ Sulit diedit bentuk objeknya<br>❌ Resolution dependent (tergantung resolusi/DPI)",
-        "📌 <strong>Format File Bitmap yang umum digunakan:</strong><br><br>• <strong>JPEG/JPG</strong> - untuk foto digital, web, kompresi lossy<br>• <strong>PNG</strong> - mendukung transparansi, kualitas bagus<br>• <strong>GIF</strong> - mendukung animasi sederhana, 256 warna<br>• <strong>BMP</strong> - tanpa kompresi, ukuran sangat besar<br>• <strong>TIFF</strong> - kualitas tinggi untuk percetakan<br><br>📌 <strong>Software Bitmap:</strong><br>Adobe Photoshop, GIMP, Corel Photo-Paint, Krita, Microsoft Paint"
+        `📌 <strong>Pengertian Bitmap</strong><br><br>
+        Bitmap adalah gambar yang tersusun dari titik-titik warna yang disebut <strong style='color:#ffffff'>PIKSEL</strong>. 
+        Setiap piksel memiliki lokasi dan warna tersendiri sehingga secara keseluruhan membentuk sebuah tampilan gambar.<br><br>
+        
+        <div style='text-align:center; margin:20px 0;'>
+            <img src='bitmap.jpg' alt='Contoh Gambar Bitmap' 
+                 style='width:280px; height:180px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
+                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style='display:none; width:280px; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>
+                🖼️ Contoh Gambar Bitmap (Gambar tidak tersedia)
+            </div>
+            <br><small style='color:#a78bfa;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
+        </div><br>
+        
+        <strong>✨ Karakteristik Bitmap:</strong><br>
+        • Tersusun dari kumpulan piksel<br>
+        • Jika diperbesar akan terlihat kotak-kotak (pecah/pixelated)<br>
+        • Ukuran file tergantung resolusi (semakin tinggi resolusi, semakin besar ukuran)<br>
+        • Bersifat <strong>resolution dependent</strong> (kualitas tergantung DPI)<br>
+        • Cocok untuk foto, gambar realistis, dan hasil scan`,
+        
+        `📌 <strong>Kelebihan Bitmap</strong><br><br>
+        ✅ Gradasi warna sangat halus dan kompleks<br>
+        ✅ Detail gambar tinggi pada resolusi yang cukup<br>
+        ✅ Mampu menampilkan gambar secara nyata dan realistis<br>
+        ✅ Didukung hampir semua software editing gambar<br><br>
+        
+        📌 <strong>Kekurangan Bitmap</strong><br><br>
+        ❌ Pecah jika diperbesar melebihi ukuran aslinya<br>
+        ❌ Ukuran file relatif besar<br>
+        ❌ Sulit diedit bentuk objeknya<br>
+        ❌ Resolution dependent (tergantung resolusi/DPI)`,
+        
+        `📌 <strong>Format File Bitmap yang umum digunakan:</strong><br><br>
+        • <strong>JPEG/JPG</strong> - untuk foto digital, web, kompresi lossy<br>
+        • <strong>PNG</strong> - mendukung transparansi, kualitas bagus<br>
+        • <strong>GIF</strong> - mendukung animasi sederhana, 256 warna<br>
+        • <strong>BMP</strong> - tanpa kompresi, ukuran sangat besar<br>
+        • <strong>TIFF</strong> - kualitas tinggi untuk percetakan<br><br>
+        
+        📌 <strong>Software Bitmap:</strong><br>
+        Adobe Photoshop, GIMP, Corel Photo-Paint, Krita, Microsoft Paint`
     ]},
+    
     2: { title: "✏️ VEKTOR (Gambar Garis & Kurva)", slides: [
-        "📌 <strong>Pengertian Vektor</strong><br><br>Vektor adalah gambar yang tersusun dari <strong style='color:#c084fc'>garis, kurva, dan titik (anchor point)</strong> berdasarkan rumus matematika. Bukan dari piksel seperti bitmap.<br><br><div style='text-align:center; margin:20px 0;'><div style='width:280px; height:180px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>Contoh Gambar Vektor</div><br><small style='color:#ffffff;'> Contoh gambar Vektor - tersusun dari garis dan kurva</small></div><br><strong>✨ Karakteristik Vektor:</strong><br>• Tersusun dari garis dan kurva matematis<br>• <strong>Tidak pernah pecah</strong> meskipun diperbesar berkali-kali (scalable)<br>• Ukuran file kecil karena hanya menyimpan data matematika<br>• Bersifat <strong>resolution independent</strong> (tidak tergantung DPI)<br>• Mudah diedit (bentuk, warna, ukuran bisa diubah)",
-        "📌 <strong>Kelebihan Vektor</strong><br><br>✅ Scalable tanpa batas - tidak pernah pecah<br>✅ Ukuran file sangat kecil<br>✅ Mudah dimodifikasi dan diedit<br>✅ Hasil cetak profesional dan tajam<br>✅ Resolution independent<br><br>📌 <strong>Kekurangan Vektor</strong><br><br>❌ Kurang cocok untuk foto realistis (gradasi kompleks)<br>❌ Membutuhkan keterampilan khusus (menguasai Pen Tool)<br>❌ Tidak semua software editing mendukung file vektor",
-        "📌 <strong>Format File Vektor yang umum digunakan:</strong><br><br>• <strong>AI</strong> - Adobe Illustrator (standar industri)<br>• <strong>CDR</strong> - CorelDRAW (populer di percetakan Indonesia)<br>• <strong>EPS</strong> - format universal untuk percetakan<br>• <strong>SVG</strong> - untuk web, scalable, ringan<br>• <strong>WMF</strong> - Windows Metafile<br><br>📌 <strong>Software Vektor:</strong><br>CorelDRAW, Adobe Illustrator, Inkscape (gratis), Figma, FreeHand"
+        `📌 <strong>Pengertian Vektor</strong><br><br>
+        Vektor adalah gambar yang tersusun dari <strong style='color:#c084fc'>garis, kurva, dan titik (anchor point)</strong> 
+        berdasarkan rumus matematika. Bukan dari piksel seperti bitmap.<br><br>
+        
+        <div style='text-align:center; margin:20px 0;'>
+            <img src='vektorr.png' alt='Contoh Gambar Vektor' 
+                 style='width:280px; height:180px; object-fit:contain; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
+                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style='display:none; width:280px; height:180px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>
+                ✨ Contoh Gambar Vektor (Gambar tidak tersedia)
+            </div>
+            <br><small style='color:#a78bfa;'>Contoh gambar Vektor - tersusun dari garis dan kurva</small>
+        </div><br>
+        
+        <strong>✨ Karakteristik Vektor:</strong><br>
+        • Tersusun dari garis dan kurva matematis<br>
+        • <strong>Tidak pernah pecah</strong> meskipun diperbesar berkali-kali (scalable)<br>
+        • Ukuran file kecil karena hanya menyimpan data matematika<br>
+        • Bersifat <strong>resolution independent</strong> (tidak tergantung DPI)<br>
+        • Mudah diedit (bentuk, warna, ukuran bisa diubah)`,
+        
+        `📌 <strong>Kelebihan Vektor</strong><br><br>
+        ✅ Scalable tanpa batas - tidak pernah pecah<br>
+        ✅ Ukuran file sangat kecil<br>
+        ✅ Mudah dimodifikasi dan diedit<br>
+        ✅ Hasil cetak profesional dan tajam<br>
+        ✅ Resolution independent<br><br>
+        
+        📌 <strong>Kekurangan Vektor</strong><br><br>
+        ❌ Kurang cocok untuk foto realistis (gradasi kompleks)<br>
+        ❌ Membutuhkan keterampilan khusus (menguasai Pen Tool)<br>
+        ❌ Tidak semua software editing mendukung file vektor`,
+        
+        `📌 <strong>Format File Vektor yang umum digunakan:</strong><br><br>
+        • <strong>AI</strong> - Adobe Illustrator (standar industri)<br>
+        • <strong>CDR</strong> - CorelDRAW (populer di percetakan Indonesia)<br>
+        • <strong>EPS</strong> - format universal untuk percetakan<br>
+        • <strong>SVG</strong> - untuk web, scalable, ringan<br>
+        • <strong>WMF</strong> - Windows Metafile<br><br>
+        
+        📌 <strong>Software Vektor:</strong><br>
+        CorelDRAW, Adobe Illustrator, Inkscape (gratis), Figma, FreeHand`
     ]},
+    
     3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-        "📌 <strong>Software Berbasis VEKTOR</strong><br><br><div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:#c084fc;'>Corel</strong></div><br><small>CorelDRAW</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:#c084fc;'>AI</strong></div><br><small>Illustrator</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center; background:#22aa22;'><strong style='color:white;'>INK</strong></div><br><small>Inkscape</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:#f24e1e; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:white;'>Figma</strong></div><br><small>Figma</small></div></div>1. <strong style='color:#c084fc'>CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip<br>2. <strong style='color:#c084fc'>Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool<br>3. <strong style='color:#c084fc'>Inkscape</strong> - gratis dan open source<br>4. <strong style='color:#c084fc'>Figma</strong> - untuk desain UI/UX, kolaborasi real-time<br><br>📌 <strong>Software Berbasis BITMAP</strong><br><br><div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:#31A8FF; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:white;'>Ps</strong></div><br><small>Photoshop</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:#5C2D91; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:white;'>GIMP</strong></div><br><small>GIMP</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:#3b9eff; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:white;'>Krita</strong></div><br><small>Krita</small></div><div style='text-align:center;'><div style='width:60px; height:60px; border-radius:12px; background:#ff6b6b; padding:8px; display:flex; align-items:center; justify-content:center;'><strong style='color:white;'>CPP</strong></div><br><small>Photo-Paint</small></div></div>1. <strong style='color:#c084fc'>Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools<br>2. <strong style='color:#c084fc'>GIMP</strong> - gratis dan open source<br>3. <strong style='color:#c084fc'>Krita</strong> - fokus digital painting<br>4. <strong style='color:#c084fc'>Corel Photo-Paint</strong> - software bitmap dari Corel",
-        "📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br><div style='text-align:center; margin:15px 0;'><svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'><rect width='300' height='120' fill='#1a1a2e'/><rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/><rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/><text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text><rect x='180' y='30' width='50' height='50' fill='#c084fc'/><rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/><text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text></svg><br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong) ✨</small></div>• <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>• <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>• <strong>Trim</strong> - memotong objek dengan objek lain<br>• <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>• <strong>Simplify</strong> - objek depan memotong objek belakang<br>• <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>• <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>• <strong>Create Boundary</strong> - outline hasil gabungan objek",
-        "📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br><div style='text-align:center; margin:15px 0;'><svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'><rect width='300' height='120' fill='#1a1a2e'/><circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/><rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/><text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text><circle cx='200' cy='50' r='30' fill='#c084fc'/><rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/><text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text></svg><br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi) ✨</small></div>Mirip dengan Shaping di CorelDRAW:<br>• <strong>Unite</strong> (gabung)<br>• <strong>Minus Front</strong> (kurangi depan)<br>• <strong>Intersect</strong> (irisan)<br>• <strong>Exclude</strong> (gabung tanpa irisan)<br>• <strong>Divide</strong> (bagi berdasarkan garis potong)<br>• <strong>Trim</strong> (potong)<br>• <strong>Merge</strong> (gabung)<br>• <strong>Crop</strong> (iris)<br>• <strong>Outline</strong> (outline)<br>• <strong>Minus Back</strong> (kurangi belakang)",
-        "📌 <strong>Layer pada Photoshop</strong><br><br><div style='text-align:center; margin:15px 0;'><svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'><rect width='300' height='140' fill='#1a1a2e'/><rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/><text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text><rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/><text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text><rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/><text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text><text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text><text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text><text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text></svg><br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah) ✨</small></div>Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br><strong>✨ Fungsi Layer:</strong><br>• Memisahkan elemen desain (background terpisah dari objek)<br>• Mengatur urutan (z-order)<br>• Menerapkan efek non-destruktif<br>• Mengatur opacity (transparansi)<br>• Blending mode (cara layer berinteraksi)<br><br>📌 <strong>Shortcut Layer:</strong><br>Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge"
+        `📌 <strong>Software Berbasis VEKTOR</strong><br><br>
+        <div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:#c084fc;'>Corel</strong>
+                </div>
+                <br><small>CorelDRAW</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:#c084fc;'>AI</strong>
+                </div>
+                <br><small>Illustrator</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center; background:#22aa22;'>
+                    <strong style='color:white;'>INK</strong>
+                </div>
+                <br><small>Inkscape</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:#f24e1e; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:white;'>Figma</strong>
+                </div>
+                <br><small>Figma</small>
+            </div>
+        </div>
+        
+        1. <strong style='color:#c084fc'>CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip<br>
+        2. <strong style='color:#c084fc'>Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool<br>
+        3. <strong style='color:#c084fc'>Inkscape</strong> - gratis dan open source<br>
+        4. <strong style='color:#c084fc'>Figma</strong> - untuk desain UI/UX, kolaborasi real-time<br><br>
+        
+        📌 <strong>Software Berbasis BITMAP</strong><br><br>
+        <div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:#31A8FF; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:white;'>Ps</strong>
+                </div>
+                <br><small>Photoshop</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:#5C2D91; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:white;'>GIMP</strong>
+                </div>
+                <br><small>GIMP</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:#3b9eff; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:white;'>Krita</strong>
+                </div>
+                <br><small>Krita</small>
+            </div>
+            <div style='text-align:center;'>
+                <div style='width:60px; height:60px; border-radius:12px; background:#ff6b6b; padding:8px; display:flex; align-items:center; justify-content:center;'>
+                    <strong style='color:white;'>CPP</strong>
+                </div>
+                <br><small>Photo-Paint</small>
+            </div>
+        </div>
+        
+        1. <strong style='color:#c084fc'>Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools<br>
+        2. <strong style='color:#c084fc'>GIMP</strong> - gratis dan open source<br>
+        3. <strong style='color:#c084fc'>Krita</strong> - fokus digital painting<br>
+        4. <strong style='color:#c084fc'>Corel Photo-Paint</strong> - software bitmap dari Corel`,
+        
+        `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='120' fill='#1a1a2e'/>
+                <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
+                <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+                <text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text>
+                <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
+                <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
+                <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong) ✨</small>
+        </div>
+        
+        • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
+        • <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>
+        • <strong>Trim</strong> - memotong objek dengan objek lain<br>
+        • <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>
+        • <strong>Simplify</strong> - objek depan memotong objek belakang<br>
+        • <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>
+        • <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>
+        • <strong>Create Boundary</strong> - outline hasil gabungan objek`,
+        
+        `📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='120' fill='#1a1a2e'/>
+                <circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/>
+                <rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+                <text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text>
+                <circle cx='200' cy='50' r='30' fill='#c084fc'/>
+                <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
+                <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi) ✨</small>
+        </div>
+        
+        Mirip dengan Shaping di CorelDRAW:<br>
+        • <strong>Unite</strong> (gabung)<br>
+        • <strong>Minus Front</strong> (kurangi depan)<br>
+        • <strong>Intersect</strong> (irisan)<br>
+        • <strong>Exclude</strong> (gabung tanpa irisan)<br>
+        • <strong>Divide</strong> (bagi berdasarkan garis potong)<br>
+        • <strong>Trim</strong> (potong)<br>
+        • <strong>Merge</strong> (gabung)<br>
+        • <strong>Crop</strong> (iris)<br>
+        • <strong>Outline</strong> (outline)<br>
+        • <strong>Minus Back</strong> (kurangi belakang)`,
+        
+        `📌 <strong>Layer pada Photoshop</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='140' fill='#1a1a2e'/>
+                <rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/>
+                <text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text>
+                <rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/>
+                <text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text>
+                <rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/>
+                <text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text>
+                <text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text>
+                <text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text>
+                <text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah) ✨</small>
+        </div>
+        
+        Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br>
+        <strong>✨ Fungsi Layer:</strong><br>
+        • Memisahkan elemen desain (background terpisah dari objek)<br>
+        • Mengatur urutan (z-order)<br>
+        • Menerapkan efek non-destruktif<br>
+        • Mengatur opacity (transparansi)<br>
+        • Blending mode (cara layer berinteraksi)<br><br>
+        
+        📌 <strong>Shortcut Layer:</strong><br>
+        Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge`
     ]},
+    
     4: { title: "📦 Contoh Rancangan Komputer Grafis", slides: [
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
@@ -197,11 +416,17 @@ const materiData = {
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
-                    <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white;">🖼️ Desain Mug</div>
+                    <img src="mug.png" alt="Desain Mug" 
+                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        🖼️ Desain Mug (Gambar tidak tersedia)
+                    </div>
                     <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Mug ✨</p>
                 </div>
             </div>
         </div>`,
+        
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
                 <h3 style="color: #c084fc; margin-bottom: 15px;">🏷️ 2. LOGO</h3>
@@ -211,11 +436,17 @@ const materiData = {
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
-                    <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white;">🏷️ Desain Logo</div>
+                    <img src="logoo.png" alt="Desain Logo" 
+                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        🏷️ Desain Logo (Gambar tidak tersedia)
+                    </div>
                     <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Logo ✨</p>
                 </div>
             </div>
         </div>`,
+        
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
                 <h3 style="color: #c084fc; margin-bottom: 15px;">📦 3. PACKAGING (KEMASAN)</h3>
@@ -225,11 +456,17 @@ const materiData = {
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
-                    <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white;">📦 Desain Kemasan</div>
+                    <img src="kemasan.png" alt="Desain Packaging" 
+                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        📦 Desain Kemasan (Gambar tidak tersedia)
+                    </div>
                     <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kemasan ✨</p>
                 </div>
             </div>
         </div>`,
+        
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
                 <h3 style="color: #c084fc; margin-bottom: 15px;">💳 4. KARTU NAMA</h3>
@@ -240,7 +477,12 @@ const materiData = {
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
-                    <div style="width: 100%; height: 150px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white;">💳 Kartu Nama</div>
+                    <img src="kartunama.png" alt="Desain Kartu Nama" 
+                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#fa709a,#fee140); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        💳 Kartu Nama (Gambar tidak tersedia)
+                    </div>
                     <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kartu Nama ✨</p>
                 </div>
             </div>
