@@ -179,10 +179,7 @@ const materiData = {
             <img src='bitmap.jpg' alt='Contoh Gambar Bitmap' 
                  style='width:280px; height:180px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style='display:none; width:280px; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>
-                🖼️ Contoh Gambar Bitmap (Gambar tidak tersedia)
-            </div>
-            <br><small style='color:#a78bfa;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
+            <br><small style='color:#ffffff;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
         </div><br>
         
         <strong>✨ Karakteristik Bitmap:</strong><br>
@@ -224,10 +221,7 @@ const materiData = {
             <img src='vektorr.png' alt='Contoh Gambar Vektor' 
                  style='width:280px; height:180px; object-fit:contain; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style='display:none; width:280px; height:180px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;'>
-                ✨ Contoh Gambar Vektor (Gambar tidak tersedia)
-            </div>
-            <br><small style='color:#a78bfa;'>Contoh gambar Vektor - tersusun dari garis dan kurva</small>
+            <br><small style='color:#ffffff;'>Contoh gambar Vektor - tersusun dari garis dan kurva</small>
         </div><br>
         
         <strong>✨ Karakteristik Vektor:</strong><br>
