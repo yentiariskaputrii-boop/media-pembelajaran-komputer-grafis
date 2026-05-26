@@ -264,7 +264,7 @@ const materiData = {
             
             <!-- CorelDRAW -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
                     <img src="corelnew.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">CorelDRAW</p>
@@ -272,7 +272,7 @@ const materiData = {
             
             <!-- Illustrator -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
                     <img src="ilustration.png" alt="Illustrator" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Illustrator</p>
@@ -280,7 +280,7 @@ const materiData = {
             
             <!-- Inkscape -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
                     <img src="inkscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Inkscape</p>
@@ -288,7 +288,7 @@ const materiData = {
             
             <!-- Figma -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
                     <img src="figma.png" alt="Figma" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Figma</p>
@@ -310,7 +310,7 @@ const materiData = {
             
             <!-- Photoshop -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
                     <img src="photoshop.png" alt="Photoshop" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photoshop</p>
@@ -318,7 +318,7 @@ const materiData = {
             
             <!-- GIMP -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
                     <img src="gimp.png" alt="GIMP" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">GIMP</p>
@@ -326,7 +326,7 @@ const materiData = {
             
             <!-- Krita -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
                     <img src="krita.png" alt="Krita" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Krita</p>
@@ -334,7 +334,7 @@ const materiData = {
             
             <!-- Corel Photo-Paint -->
             <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
                     <img src="pp.png" alt="Corel Photo-Paint" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photo-Paint</p>
