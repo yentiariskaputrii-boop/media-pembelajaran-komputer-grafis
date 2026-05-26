@@ -177,7 +177,7 @@ const materiData = {
         
         <div style='text-align:center; margin:20px 0;'>
             <img src='bitmap.jpg' alt='Contoh Gambar Bitmap' 
-                 style='width:280px; height:180px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
+                 style='width:280px; height:2000px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
             <br><small style='color:#ffffff;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
         </div><br>
@@ -261,26 +261,26 @@ const materiData = {
             <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis VEKTOR</h3>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
                 <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="corel-icon.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="corell.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">CorelDRAW</small>
                 </div>
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="illustrator-icon.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                        <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Illustrator</small>
                 </div>
                 <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="inkscape-icon.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="inscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Inkscape</small>
                 </div>
                 <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="figma-icon.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Figma</small>
                 </div>
@@ -298,25 +298,25 @@ const materiData = {
             <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="photoshop-icon.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+                        <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Photoshop</small>
                 </div>
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="gimp-icon.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+                        <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">GIMP</small>
                 </div>
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="krita-icon.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+                        <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Krita</small>
                 </div>
                 <div style="text-align: center;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="photopaint-icon.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+                        <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
                     </div>
                     <small style="color: #ffffff;">Photo-Paint</small>
                 </div>
@@ -329,7 +329,6 @@ const materiData = {
             </ol>
         </div>
         
-        <!-- GAMBAR ILUSTRASI DI BAWAH TEKS PENJELASAN -->
         <div style="margin-top: 30px; text-align: center;">
             <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center;">
                 <img src="software-vektor.jpg" alt="Software Vektor" 
@@ -361,12 +360,12 @@ const materiData = {
             <rect width='300' height='120' fill='#1a1a2e'/>
             <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
             <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
-            <text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text>
+            <text x='130' y='60' fill='#c084fc' font-size='12'>Weld </text>
             <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
             <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
             <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
         </svg>
-        <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong) ✨</small>
+        <br><small style='color:#ffffff;'> Ilustrasi fitur Weld (gabung) dan Trim (potong) </small>
     </div>
     
     • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
@@ -385,7 +384,7 @@ const materiData = {
         <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
             🎨 Contoh hasil fitur Shaping di CorelDRAW
         </div>
-        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi fitur Shaping ✨</p>
+        <p style="color: #ffffff; margin-top: 10px;"> Contoh implementasi fitur Shaping </p>
     </div>`,
     
     // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
@@ -400,7 +399,7 @@ const materiData = {
             <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
             <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
         </svg>
-        <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi) ✨</small>
+        <br><small style='color:#ffffff;'>Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
     </div>
     
     Mirip dengan Shaping di CorelDRAW:<br>
@@ -468,82 +467,70 @@ const materiData = {
     4: { title: "📦 Contoh Rancangan Komputer Grafis", slides: [
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #c084fc; margin-bottom: 15px;">☕ 1. MUG</h3>
+                <h3 style="color: #ffffff; margin-bottom: 15px;">☕ 1. MUG</h3>
                 <p><strong>📏 Ukuran standar:</strong> 8cm x 20cm</p>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator, Photoshop</p>
                 <p><strong>📋 Langkah:</strong> Buat lembar kerja ukuran 8x20 cm, desain dengan gambar dan teks, ekspor ke JPEG/PNG untuk dicetak</p>
-                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Gunakan resolusi tinggi minimal 300 DPI untuk hasil cetak maksimal ✨</p>
+                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Gunakan resolusi tinggi minimal 300 DPI untuk hasil cetak maksimal ✨</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="mug.png" alt="Desain Mug" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
-                        🖼️ Desain Mug (Gambar tidak tersedia)
-                    </div>
-                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Mug ✨</p>
+                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Mug ✨</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #c084fc; margin-bottom: 15px;">🏷️ 2. LOGO</h3>
+                <h3 style="color: #ffffff; margin-bottom: 15px;">🏷️ 2. LOGO</h3>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator (VEKTOR wajib!)</p>
                 <p><strong>📋 Langkah:</strong> Tentukan konsep, buat sketsa, gunakan shape tool, gabungkan dengan fitur Weld/Trim/Intersect, beri warna gradasi, tambahkan tipografi</p>
-                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Simpan file master dalam format .CDR/.AI untuk keperluan edit nanti ✨</p>
+                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Simpan file master dalam format .CDR/.AI untuk keperluan edit nanti ✨</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="logoo.png" alt="Desain Logo" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
-                        🏷️ Desain Logo (Gambar tidak tersedia)
-                    </div>
-                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Logo ✨</p>
+                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Logo ✨</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #c084fc; margin-bottom: 15px;">📦 3. PACKAGING (KEMASAN)</h3>
+                <h3 style="color: #ffffff; margin-bottom: 15px;">📦 3. PACKAGING (KEMASAN)</h3>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator</p>
                 <p><strong>📋 Langkah:</strong> Desain pola kemasan, beri warna gradient, tambahkan PowerClip Inside untuk memasukkan gambar pendukung, tambahkan keterangan produk</p>
-                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Perhatikan struktur lipatan kemasan agar desain tidak terpotong saat dicetak ✨</p>
+                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Perhatikan struktur lipatan kemasan agar desain tidak terpotong saat dicetak ✨</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kemasan.png" alt="Desain Packaging" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
-                        📦 Desain Kemasan (Gambar tidak tersedia)
-                    </div>
-                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kemasan ✨</p>
+                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kemasan ✨</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #c084fc; margin-bottom: 15px;">💳 4. KARTU NAMA</h3>
+                <h3 style="color: #ffffff; margin-bottom: 15px;">💳 4. KARTU NAMA</h3>
                 <p><strong>📏 Ukuran standar:</strong> 9cm x 6cm</p>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator, Photoshop</p>
                 <p><strong>📋 Langkah:</strong> Buat persegi 9x6 cm, beri warna, tambahkan teks (nama, jabatan, kontak), tambahkan logo dan ikon sosial media</p>
-                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Gunakan warna yang kontras agar teks mudah dibaca ✨</p>
+                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Gunakan warna yang kontras agar teks mudah dibaca ✨</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kartunama.png" alt="Desain Kartu Nama" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#fa709a,#fee140); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
-                        💳 Kartu Nama (Gambar tidak tersedia)
-                    </div>
-                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kartu Nama ✨</p>
+                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kartu Nama ✨</p>
                 </div>
             </div>
         </div>`
