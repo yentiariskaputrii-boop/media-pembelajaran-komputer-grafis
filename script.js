@@ -214,7 +214,7 @@ const materiData = {
     
     2: { title: "✏️ VEKTOR (Gambar Garis & Kurva)", slides: [
         `📌 <strong>Pengertian Vektor</strong><br><br>
-        Vektor adalah gambar yang tersusun dari <strong style='color:#c084fc'>garis, kurva, dan titik (anchor point)</strong> 
+        Vektor adalah gambar yang tersusun dari <strong style='color:#ffffff'>garis, kurva, dan titik (anchor point)</strong> 
         berdasarkan rumus matematika. Bukan dari piksel seperti bitmap.<br><br>
         
         <div style='text-align:center; margin:20px 0;'>
@@ -255,149 +255,215 @@ const materiData = {
     ]},
     
     3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-        `📌 <strong>Software Berbasis VEKTOR</strong><br><br>
-        <div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:#c084fc;'>Corel</strong>
+    // SLIDE 1: Software VEKTOR dan BITMAP
+    `<div style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+            <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis VEKTOR</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="corel-icon.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">CorelDRAW</small>
                 </div>
-                <br><small>CorelDRAW</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:#c084fc;'>AI</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="illustrator-icon.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Illustrator</small>
                 </div>
-                <br><small>Illustrator</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:white; padding:8px; display:flex; align-items:center; justify-content:center; background:#22aa22;'>
-                    <strong style='color:white;'>INK</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="inkscape-icon.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Inkscape</small>
                 </div>
-                <br><small>Inkscape</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:#f24e1e; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:white;'>Figma</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="figma-icon.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Figma</small>
                 </div>
-                <br><small>Figma</small>
             </div>
+            <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
+                <li><strong style="color: #ffffff;">CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip</li>
+                <li><strong style="color: #ffffff;">Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool</li>
+                <li><strong style="color: #ffffff;">Inkscape</strong> - gratis dan open source</li>
+                <li><strong style="color: #ffffff;">Figma</strong> - untuk desain UI/UX, kolaborasi real-time</li>
+            </ol>
         </div>
         
-        1. <strong style='color:#c084fc'>CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip<br>
-        2. <strong style='color:#c084fc'>Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool<br>
-        3. <strong style='color:#c084fc'>Inkscape</strong> - gratis dan open source<br>
-        4. <strong style='color:#c084fc'>Figma</strong> - untuk desain UI/UX, kolaborasi real-time<br><br>
-        
-        📌 <strong>Software Berbasis BITMAP</strong><br><br>
-        <div style='display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin:20px 0;'>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:#31A8FF; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:white;'>Ps</strong>
+        <div style="margin-top: 10px;">
+            <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis BITMAP</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="photoshop-icon.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Photoshop</small>
                 </div>
-                <br><small>Photoshop</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:#5C2D91; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:white;'>GIMP</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="gimp-icon.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">GIMP</small>
                 </div>
-                <br><small>GIMP</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:#3b9eff; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:white;'>Krita</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="krita-icon.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Krita</small>
                 </div>
-                <br><small>Krita</small>
-            </div>
-            <div style='text-align:center;'>
-                <div style='width:60px; height:60px; border-radius:12px; background:#ff6b6b; padding:8px; display:flex; align-items:center; justify-content:center;'>
-                    <strong style='color:white;'>CPP</strong>
+                <div style="text-align: center;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <img src="photopaint-icon.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <small style="color: #ffffff;">Photo-Paint</small>
                 </div>
-                <br><small>Photo-Paint</small>
             </div>
+            <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
+                <li><strong style="color: #ffffff;">Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools</li>
+                <li><strong style="color: #ffffff;">GIMP</strong> - gratis dan open source</li>
+                <li><strong style="color: #ffffff;">Krita</strong> - fokus digital painting</li>
+                <li><strong style="color: #ffffff;">Corel Photo-Paint</strong> - software bitmap dari Corel</li>
+            </ol>
         </div>
         
-        1. <strong style='color:#c084fc'>Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools<br>
-        2. <strong style='color:#c084fc'>GIMP</strong> - gratis dan open source<br>
-        3. <strong style='color:#c084fc'>Krita</strong> - fokus digital painting<br>
-        4. <strong style='color:#c084fc'>Corel Photo-Paint</strong> - software bitmap dari Corel`,
-        
-        `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
-        <div style='text-align:center; margin:15px 0;'>
-            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
-                <rect width='300' height='120' fill='#1a1a2e'/>
-                <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
-                <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
-                <text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text>
-                <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
-                <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
-                <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
-            </svg>
-            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong) ✨</small>
+        <!-- GAMBAR ILUSTRASI DI BAWAH TEKS PENJELASAN -->
+        <div style="margin-top: 30px; text-align: center;">
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center;">
+                <img src="software-vektor.jpg" alt="Software Vektor" 
+                     style="max-width: 45%; min-width: 200px; border-radius: 16px; border: 2px solid #c084fc; box-shadow: 0 5px 20px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s;"
+                     onmouseover="this.style.transform='scale(1.02)'"
+                     onmouseout="this.style.transform='scale(1)'"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display:none; max-width:45%; min-width:200px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:16px; padding:40px 20px; text-align:center; color:white;">
+                    🖼️ Ilustrasi Software Vektor (Tidak tersedia)
+                </div>
+                
+                <img src="software-bitmap.jpg" alt="Software Bitmap" 
+                     style="max-width: 45%; min-width: 200px; border-radius: 16px; border: 2px solid #c084fc; box-shadow: 0 5px 20px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s;"
+                     onmouseover="this.style.transform='scale(1.02)'"
+                     onmouseout="this.style.transform='scale(1)'"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display:none; max-width:45%; min-width:200px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:16px; padding:40px 20px; text-align:center; color:white;">
+                    🖼️ Ilustrasi Software Bitmap (Tidak tersedia)
+                </div>
+            </div>
+            <p style="color: #a78bfa; margin-top: 15px; font-size: 0.85rem;">✨ Contoh tampilan software desain grafis ✨</p>
         </div>
-        
-        • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
-        • <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>
-        • <strong>Trim</strong> - memotong objek dengan objek lain<br>
-        • <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>
-        • <strong>Simplify</strong> - objek depan memotong objek belakang<br>
-        • <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>
-        • <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>
-        • <strong>Create Boundary</strong> - outline hasil gabungan objek`,
-        
-        `📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br>
-        <div style='text-align:center; margin:15px 0;'>
-            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
-                <rect width='300' height='120' fill='#1a1a2e'/>
-                <circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/>
-                <rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
-                <text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text>
-                <circle cx='200' cy='50' r='30' fill='#c084fc'/>
-                <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
-                <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
-            </svg>
-            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi) ✨</small>
+    </div>`,
+    
+    // SLIDE 2: Fitur Shaping di CorelDRAW
+    `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
+    <div style='text-align:center; margin:15px 0;'>
+        <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+            <rect width='300' height='120' fill='#1a1a2e'/>
+            <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
+            <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+            <text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text>
+            <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
+            <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
+            <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
+        </svg>
+        <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong) ✨</small>
+    </div>
+    
+    • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
+    • <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>
+    • <strong>Trim</strong> - memotong objek dengan objek lain<br>
+    • <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>
+    • <strong>Simplify</strong> - objek depan memotong objek belakang<br>
+    • <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>
+    • <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>
+    • <strong>Create Boundary</strong> - outline hasil gabungan objek
+    
+    <div style="margin-top: 30px; text-align: center;">
+        <img src="corel-shaping.jpg" alt="Contoh Shaping CorelDRAW" 
+             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+            🎨 Contoh hasil fitur Shaping di CorelDRAW
         </div>
-        
-        Mirip dengan Shaping di CorelDRAW:<br>
-        • <strong>Unite</strong> (gabung)<br>
-        • <strong>Minus Front</strong> (kurangi depan)<br>
-        • <strong>Intersect</strong> (irisan)<br>
-        • <strong>Exclude</strong> (gabung tanpa irisan)<br>
-        • <strong>Divide</strong> (bagi berdasarkan garis potong)<br>
-        • <strong>Trim</strong> (potong)<br>
-        • <strong>Merge</strong> (gabung)<br>
-        • <strong>Crop</strong> (iris)<br>
-        • <strong>Outline</strong> (outline)<br>
-        • <strong>Minus Back</strong> (kurangi belakang)`,
-        
-        `📌 <strong>Layer pada Photoshop</strong><br><br>
-        <div style='text-align:center; margin:15px 0;'>
-            <svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'>
-                <rect width='300' height='140' fill='#1a1a2e'/>
-                <rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/>
-                <text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text>
-                <rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/>
-                <text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text>
-                <rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/>
-                <text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text>
-                <text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text>
-                <text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text>
-                <text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text>
-            </svg>
-            <br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah) ✨</small>
+        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi fitur Shaping ✨</p>
+    </div>`,
+    
+    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
+    `📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br>
+    <div style='text-align:center; margin:15px 0;'>
+        <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+            <rect width='300' height='120' fill='#1a1a2e'/>
+            <circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/>
+            <rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+            <text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text>
+            <circle cx='200' cy='50' r='30' fill='#c084fc'/>
+            <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
+            <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
+        </svg>
+        <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi) ✨</small>
+    </div>
+    
+    Mirip dengan Shaping di CorelDRAW:<br>
+    • <strong>Unite</strong> (gabung)<br>
+    • <strong>Minus Front</strong> (kurangi depan)<br>
+    • <strong>Intersect</strong> (irisan)<br>
+    • <strong>Exclude</strong> (gabung tanpa irisan)<br>
+    • <strong>Divide</strong> (bagi berdasarkan garis potong)<br>
+    • <strong>Trim</strong> (potong)<br>
+    • <strong>Merge</strong> (gabung)<br>
+    • <strong>Crop</strong> (iris)<br>
+    • <strong>Outline</strong> (outline)<br>
+    • <strong>Minus Back</strong> (kurangi belakang)
+    
+    <div style="margin-top: 30px; text-align: center;">
+        <img src="illustrator-pathfinder.jpg" alt="Contoh Pathfinder Illustrator" 
+             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+            🎨 Contoh hasil fitur Pathfinder di Illustrator
         </div>
-        
-        Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br>
-        <strong>✨ Fungsi Layer:</strong><br>
-        • Memisahkan elemen desain (background terpisah dari objek)<br>
-        • Mengatur urutan (z-order)<br>
-        • Menerapkan efek non-destruktif<br>
-        • Mengatur opacity (transparansi)<br>
-        • Blending mode (cara layer berinteraksi)<br><br>
-        
-        📌 <strong>Shortcut Layer:</strong><br>
-        Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge`
-    ]},
+        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi fitur Pathfinder ✨</p>
+    </div>`,
+    
+    // SLIDE 4: Layer pada Photoshop
+    `📌 <strong>Layer pada Photoshop</strong><br><br>
+    <div style='text-align:center; margin:15px 0;'>
+        <svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'>
+            <rect width='300' height='140' fill='#1a1a2e'/>
+            <rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/>
+            <text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text>
+            <rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/>
+            <text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text>
+            <rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/>
+            <text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text>
+            <text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text>
+            <text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text>
+            <text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text>
+        </svg>
+        <br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah) ✨</small>
+    </div>
+    
+    Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br>
+    <strong>✨ Fungsi Layer:</strong><br>
+    • Memisahkan elemen desain (background terpisah dari objek)<br>
+    • Mengatur urutan (z-order)<br>
+    • Menerapkan efek non-destruktif<br>
+    • Mengatur opacity (transparansi)<br>
+    • Blending mode (cara layer berinteraksi)<br><br>
+    
+    📌 <strong>Shortcut Layer:</strong><br>
+    Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge
+    
+    <div style="margin-top: 30px; text-align: center;">
+        <img src="photoshop-layer.jpg" alt="Contoh Layer Photoshop" 
+             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+            🎨 Contoh penggunaan Layer di Photoshop
+        </div>
+        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi Layer dalam desain ✨</p>
+    </div>`
+]},
     
     4: { title: "📦 Contoh Rancangan Komputer Grafis", slides: [
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
