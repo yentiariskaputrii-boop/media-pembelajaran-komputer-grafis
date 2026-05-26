@@ -326,7 +326,7 @@ const materiData = {
                 <li><strong style="color: #ffffff;">Krita</strong> - fokus digital painting</li>
                 <li><strong style="color: #ffffff;">Corel Photo-Paint</strong> - software bitmap dari Corel</li>
             </ol>
-        </div>
+        </div>`,
     
     // SLIDE 2: Fitur Shaping di CorelDRAW
     `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
