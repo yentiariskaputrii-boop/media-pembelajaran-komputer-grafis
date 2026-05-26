@@ -1,9 +1,8 @@
-// ==================== FILE: script.js (FRONTEND) - FULLY FIXED ====================
+
+// API Key sekarang disimpan di environment variables Vercel
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
-let isMusicPlaying = false;
-let audioElement = null;
 
 // ==================== FUNGSI LOGIN & USER ====================
 function loadUserData() {
@@ -12,12 +11,8 @@ function loadUserData() {
         try {
             currentUser = JSON.parse(savedUser);
             updateUserDisplay();
-            if (currentUser && document.getElementById('home-page')) {
-                showPage('home');
-            }
         } catch(e) {
             console.error("Gagal load user:", e);
-            localStorage.removeItem('currentUser');
         }
     }
 }
@@ -39,24 +34,20 @@ function doLogin() {
     
     if (!name || !cls) {
         alert("Mohon isi nama lengkap dan kelas!");
-        return false;
+        return;
     }
     
     currentUser = { name: name, class: cls, major: major };
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
     updateUserDisplay();
     showPage('home');
-    
-    document.getElementById('login-name').value = '';
-    document.getElementById('login-class').value = '';
-    
-    return true;
 }
 
 function doLogout() {
     currentUser = null;
     localStorage.removeItem('currentUser');
     
+    // Reset form login
     const loginName = document.getElementById('login-name');
     const loginClass = document.getElementById('login-class');
     if (loginName) loginName.value = '';
@@ -65,14 +56,6 @@ function doLogout() {
     showPage('login');
 }
 
-function checkLogin() {
-    if (!currentUser) {
-        alert("Silakan login terlebih dahulu!");
-        showPage('login');
-        return false;
-    }
-    return true;
-}
 
 // ==================== FUNGSI NAVIGASI HALAMAN ====================
 function showPage(page) {
