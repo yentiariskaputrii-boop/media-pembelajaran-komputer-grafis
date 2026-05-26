@@ -18,6 +18,19 @@
     <div class="floating-orb orb-4"></div>
     <div class="bubbles" id="bubbles"></div>
 
+    <!-- Audio Backsound -->
+<audio id="backsound" loop preload="auto">
+    <source src="backsound.mp3" type="audio/mpeg">
+    <!-- Fallback jika file MP3 tidak tersedia -->
+    <source src="backsound.ogg" type="audio/ogg">
+</audio>
+
+<!-- Tombol Kontrol Backsound -->
+<button id="musicToggleBtn" class="music-control-btn" onclick="toggleMusic()">
+    <i class="fas fa-music"></i>
+    <span class="music-text">Putar Musik</span>
+</button>
+    
     <!-- HALAMAN LOGIN -->
     <div id="login-page" class="page-container active">
         <div class="glass-card glass-card-sm">
