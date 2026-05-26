@@ -361,12 +361,11 @@ function submitQuiz() {
     }
     showPage('hasil');
 }
-
-// ==================== CHATBOX ====================
+// ==================== CHATBOX GEMINI API ====================
 function updateApiStatus() {
     const statusDiv = document.getElementById('apiStatus');
     if (statusDiv) {
-        statusDiv.innerHTML = '🤖 Chat Demo (Mode Offline)';
+        statusDiv.innerHTML = '🤖 Chat siap digunakan!';
         statusDiv.className = 'api-status status-ok';
     }
 }
@@ -401,30 +400,6 @@ function loadTemplates() {
     }
 }
 
-// Fungsi jawaban offline untuk demo (karena tidak ada backend API)
-function getOfflineReply(question) {
-    const q = question.toLowerCase();
-    if (q.includes('bitmap')) {
-        return "Bitmap adalah gambar yang tersusun dari titik-titik warna yang disebut piksel. Karakteristiknya: jika diperbesar akan pecah (pixelated), resolution dependent, dan cocok untuk foto realistis.";
-    } else if (q.includes('vektor')) {
-        return "Vektor adalah gambar yang tersusun dari garis, kurva, dan titik berdasarkan rumus matematika. Keunggulannya: scalable tanpa batas (tidak pernah pecah), ukuran file kecil, dan resolution independent.";
-    } else if (q.includes('perbedaan')) {
-        return "Perbedaan utama: Bitmap tersusun dari piksel (pecah jika diperbesar), Vektor tersusun dari garis/kurva (tidak pecah). Bitmap cocok untuk foto, Vektor untuk logo/ilustrasi.";
-    } else if (q.includes('coreldraw')) {
-        return "CorelDRAW adalah software desain grafis berbasis vektor yang populer di Indonesia. Fitur unggulannya: Shaping (Weld, Trim, Intersect), PowerClip, dan berbagai tool desain profesional.";
-    } else if (q.includes('photoshop') || q.includes('layer')) {
-        return "Layer di Photoshop adalah lapisan terpisah untuk setiap elemen desain. Fungsinya: memisahkan elemen, mengatur urutan (z-order), menerapkan efek non-destruktif, dan mengatur transparansi.";
-    } else if (q.includes('rgb') || q.includes('cmyk')) {
-        return "RGB (Red, Green, Blue) untuk tampilan digital (monitor/web), CMYK (Cyan, Magenta, Yellow, Black) untuk percetakan. RGB memiliki warna lebih cerah, CMYK untuk hasil cetak.";
-    } else if (q.includes('svg')) {
-        return "SVG (Scalable Vector Graphics) adalah format file vektor berbasis XML untuk web. Keunggulan: scalable, ringan, bisa diedit dengan CSS/JS, dan support interaktivitas.";
-    } else if (q.includes('logo')) {
-        return "Cara membuat logo di CorelDRAW: 1) Tentukan konsep, 2) Buat sketsa, 3) Gunakan shape tool, 4) Gabungkan dengan fitur Weld/Trim/Intersect, 5) Beri warna gradasi, 6) Tambahkan tipografi.";
-    } else {
-        return "Maaf, saya adalah asisten AI untuk materi Komputer Grafis. Silakan tanyakan tentang Bitmap, Vektor, CorelDRAW, Photoshop, atau topik terkait desain grafis lainnya!";
-    }
-}
-
 async function sendChat() {
     let input = document.getElementById('chatInput');
     let msg = input.value.trim();
@@ -450,52 +425,55 @@ async function sendChat() {
     container.appendChild(typingDiv);
     container.scrollTop = container.scrollHeight;
     
-    // Simulasi delay untuk efek mengetik
-    setTimeout(() => {
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: msg })
+        });
+        
         container.removeChild(typingDiv);
         
-        // Dapatkan reply (offline mode)
-        let reply = getOfflineReply(msg);
+        if(!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'Server error');
+        }
+        
+        const data = await response.json();
         
         let aiDiv = document.createElement('div');
         aiDiv.className = 'bubble-ai';
-        aiDiv.innerHTML = `<i class="fab fa-google"></i> ${reply.replace(/\n/g, '<br>')}`;
+        aiDiv.innerHTML = `<i class="fab fa-google"></i> ${data.reply.replace(/\n/g, '<br>')}`;
         container.appendChild(aiDiv);
-        container.scrollTop = container.scrollHeight;
-    }, 500);
+        
+    } catch(error) {
+        console.error('Error:', error);
+        if(container.contains(typingDiv)) {
+            container.removeChild(typingDiv);
+        }
+        
+        if(errorDiv) {
+            errorDiv.style.display = 'block';
+            errorDiv.innerHTML = `⚠️ Error: ${error.message}`;
+        }
+        
+        let errorBubble = document.createElement('div');
+        errorBubble.className = 'bubble-ai';
+        errorBubble.innerHTML = `<i class="fab fa-google"></i> ⚠️ Maaf, terjadi kesalahan: ${error.message}`;
+        container.appendChild(errorBubble);
+    }
+    
+    container.scrollTop = container.scrollHeight;
 }
 
 // ==================== INITIALIZATION ====================
+// Jalankan semua fungsi saat halaman siap
 document.addEventListener('DOMContentLoaded', function() {
     createMovingDots();
     createBubbles();
     loadTemplates();
     loadUserData();
     updateApiStatus();
-    
-    // Tambahkan event listener untuk form login
-    const loginBtn = document.getElementById('login-btn');
-    if (loginBtn) {
-        loginBtn.addEventListener('click', doLogin);
-    }
-    
-    // Handle enter key pada form login
-    const loginName = document.getElementById('login-name');
-    const loginClass = document.getElementById('login-class');
-    if (loginName) {
-        loginName.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
-    if (loginClass) {
-        loginClass.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
 });
