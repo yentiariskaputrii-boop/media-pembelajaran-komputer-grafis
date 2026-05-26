@@ -1,4 +1,4 @@
-// API Key sekarang disimpan di environment variables Vercel
+// ==================== FILE: script.js (FRONTEND) - FULLY FIXED ====================
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
@@ -10,8 +10,13 @@ function loadUserData() {
         try {
             currentUser = JSON.parse(savedUser);
             updateUserDisplay();
+            // Jika user sudah login dan halaman home ada, langsung ke home
+            if (currentUser && document.getElementById('home-page')) {
+                showPage('home');
+            }
         } catch(e) {
             console.error("Gagal load user:", e);
+            localStorage.removeItem('currentUser');
         }
     }
 }
@@ -33,13 +38,19 @@ function doLogin() {
     
     if (!name || !cls) {
         alert("Mohon isi nama lengkap dan kelas!");
-        return;
+        return false;
     }
     
     currentUser = { name: name, class: cls, major: major };
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
     updateUserDisplay();
     showPage('home');
+    
+    // Reset form
+    document.getElementById('login-name').value = '';
+    document.getElementById('login-class').value = '';
+    
+    return true;
 }
 
 function doLogout() {
@@ -55,6 +66,15 @@ function doLogout() {
     showPage('login');
 }
 
+// Cek status login
+function checkLogin() {
+    if (!currentUser) {
+        alert("Silakan login terlebih dahulu!");
+        showPage('login');
+        return false;
+    }
+    return true;
+}
 
 // ==================== FUNGSI NAVIGASI HALAMAN ====================
 function showPage(page) {
@@ -713,19 +733,30 @@ async function sendChat() {
     container.scrollTop = container.scrollHeight;
 }
 
-// ==================== BACKSOUND (DIPERBAIKI) ====================
+// ==================== BACKSOUND ====================
+let isMusicPlaying = false;
+let audioElement = null;
+let volumeSliderVisible = false;
+
 function initBacksound() {
     audioElement = document.getElementById('backsound');
     if (audioElement) {
+        // Set volume default (30%)
         audioElement.volume = 0.3;
-        audioElement.loop = true;
         
         // Cek apakah user sebelumnya sudah memutar musik
         const musicPlayed = localStorage.getItem('musicPlayed');
         if (musicPlayed === 'true') {
-            // Coba play musik (mungkin diblokir browser)
+            // Coba play musik (mungkin masih diblokir browser)
             toggleMusic();
         }
+        
+        // Event listener untuk ketika audio selesai (akan loop otomatis)
+        audioElement.addEventListener('ended', function() {
+            if (isMusicPlaying) {
+                audioElement.play();
+            }
+        });
         
         // Event listener untuk error
         audioElement.addEventListener('error', function(e) {
@@ -733,8 +764,6 @@ function initBacksound() {
             updateMusicButtonUI(false);
             localStorage.setItem('musicPlayed', 'false');
         });
-    } else {
-        console.log('Audio element with id "backsound" not found');
     }
 }
 
@@ -742,32 +771,30 @@ function toggleMusic() {
     if (!audioElement) {
         audioElement = document.getElementById('backsound');
         if (!audioElement) {
-            console.error('Audio element not found! Pastikan ada tag <audio id="backsound"> di HTML');
-            alert('Elemen audio tidak ditemukan. Pastikan file backsound.mp3 ada.');
+            console.error('Audio element not found');
             return;
         }
     }
     
     if (isMusicPlaying) {
-        // PAUSE musik
+        // Pause musik
         audioElement.pause();
         isMusicPlaying = false;
         updateMusicButtonUI(false);
         localStorage.setItem('musicPlayed', 'false');
-        console.log('Music paused');
     } else {
-        // PLAY musik
+        // Play musik
         const playPromise = audioElement.play();
+        
         if (playPromise !== undefined) {
             playPromise.then(() => {
                 isMusicPlaying = true;
                 updateMusicButtonUI(true);
                 localStorage.setItem('musicPlayed', 'true');
-                console.log('Music playing');
             }).catch(error => {
-                console.error('Playback failed:', error);
-                alert('Tidak dapat memutar musik. Pastikan file backsound.mp3 tersedia.');
-                updateMusicButtonUI(false);
+                console.log("Autoplay diblokir browser. User perlu klik tombol terlebih dahulu.");
+                // Tampilkan notifikasi singkat
+                showNotification('Klik tombol musik lagi untuk memutar', 'info');
             });
         }
     }
@@ -786,45 +813,117 @@ function updateMusicButtonUI(isPlaying) {
     }
 }
 
-// ==================== INITIALIZATION (DIPERBAIKI) ====================
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded - initializing...');
+// Fungsi untuk mengatur volume
+function setVolume(value) {
+    if (audioElement) {
+        audioElement.volume = parseFloat(value);
+        // Simpan volume ke localStorage
+        localStorage.setItem('musicVolume', value);
+        
+        // Update icon volume
+        const volumeIcon = document.querySelector('.volume-container i');
+        if (volumeIcon) {
+            if (value == 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (value < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+    }
+}
+
+// Toggle volume slider
+function toggleVolumeSlider() {
+    const volumeContainer = document.getElementById('volumeContainer');
+    if (volumeContainer) {
+        if (volumeSliderVisible) {
+            volumeContainer.classList.remove('show');
+            volumeSliderVisible = false;
+        } else {
+            volumeContainer.classList.add('show');
+            volumeSliderVisible = true;
+            
+            // Auto hide setelah 3 detik
+            setTimeout(() => {
+                if (volumeSliderVisible) {
+                    volumeContainer.classList.remove('show');
+                    volumeSliderVisible = false;
+                }
+            }, 3000);
+        }
+    }
+}
+
+// Inisialisasi volume slider
+function initVolumeSlider() {
+    const savedVolume = localStorage.getItem('musicVolume');
+    const volume = savedVolume !== null ? parseFloat(savedVolume) : 0.3;
     
+    if (audioElement) {
+        audioElement.volume = volume;
+    }
+    
+    const slider = document.getElementById('volumeSlider');
+    if (slider) {
+        slider.value = volume;
+        slider.addEventListener('input', function(e) {
+            setVolume(e.target.value);
+        });
+    }
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    // Cek apakah elemen notifikasi sudah ada
+    let notif = document.getElementById('musicNotification');
+    if (!notif) {
+        notif = document.createElement('div');
+        notif.id = 'musicNotification';
+        notif.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.8rem;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            border-left: 3px solid #c084fc;
+        `;
+        document.body.appendChild(notif);
+    }
+    
+    notif.innerHTML = message;
+    notif.style.opacity = '1';
+    notif.style.visibility = 'visible';
+    
+    setTimeout(() => {
+        notif.style.opacity = '0';
+        notif.style.visibility = 'hidden';
+    }, 3000);
+}
+
+// Fungsi untuk preload backsound (opsional)
+function preloadBacksound() {
+    if (audioElement) {
+        audioElement.load();
+    }
+}
+
+// ==================== INITIALIZATION ====================
+// Jalankan semua fungsi saat halaman siap
+document.addEventListener('DOMContentLoaded', function() {
     createMovingDots();
     createBubbles();
     loadTemplates();
     loadUserData();
     updateApiStatus();
     initBacksound();
-    
-    // Event listener untuk tombol login (onclick sudah ada di HTML, tapi ini backup)
-    const loginBtn = document.getElementById('login-btn');
-    if (loginBtn) {
-        loginBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            doLogin();
-        });
-    }
-    
-    // Event listener untuk tombol Enter pada form login
-    const loginName = document.getElementById('login-name');
-    const loginClass = document.getElementById('login-class');
-    if (loginName) {
-        loginName.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
-    if (loginClass) {
-        loginClass.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
-    
-    console.log('Initialization complete. Current user:', currentUser);
 });
