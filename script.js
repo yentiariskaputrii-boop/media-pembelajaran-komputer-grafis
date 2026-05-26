@@ -2,6 +2,8 @@
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
+let isMusicPlaying = false;
+let audioElement = null;
 
 // ==================== FUNGSI LOGIN & USER ====================
 function loadUserData() {
@@ -729,25 +731,28 @@ async function sendChat() {
     container.scrollTop = container.scrollHeight;
 }
 
-// ==================== BACKSOUND ====================
+// ==================== BACKSOUND (DIPERBAIKI) ====================
 function initBacksound() {
     audioElement = document.getElementById('backsound');
     if (audioElement) {
         audioElement.volume = 0.3;
+        audioElement.loop = true;
+        
+        // Cek apakah user sebelumnya sudah memutar musik
         const musicPlayed = localStorage.getItem('musicPlayed');
         if (musicPlayed === 'true') {
+            // Coba play musik (mungkin diblokir browser)
             toggleMusic();
         }
-        audioElement.addEventListener('ended', function() {
-            if (isMusicPlaying) {
-                audioElement.play();
-            }
-        });
+        
+        // Event listener untuk error
         audioElement.addEventListener('error', function(e) {
             console.error('Error playing audio:', e);
             updateMusicButtonUI(false);
             localStorage.setItem('musicPlayed', 'false');
         });
+    } else {
+        console.log('Audio element with id "backsound" not found');
     }
 }
 
@@ -755,26 +760,32 @@ function toggleMusic() {
     if (!audioElement) {
         audioElement = document.getElementById('backsound');
         if (!audioElement) {
-            console.error('Audio element not found');
+            console.error('Audio element not found! Pastikan ada tag <audio id="backsound"> di HTML');
+            alert('Elemen audio tidak ditemukan. Pastikan file backsound.mp3 ada.');
             return;
         }
     }
     
     if (isMusicPlaying) {
+        // PAUSE musik
         audioElement.pause();
         isMusicPlaying = false;
         updateMusicButtonUI(false);
         localStorage.setItem('musicPlayed', 'false');
+        console.log('Music paused');
     } else {
+        // PLAY musik
         const playPromise = audioElement.play();
         if (playPromise !== undefined) {
             playPromise.then(() => {
                 isMusicPlaying = true;
                 updateMusicButtonUI(true);
                 localStorage.setItem('musicPlayed', 'true');
+                console.log('Music playing');
             }).catch(error => {
-                console.log("Autoplay diblokir browser:", error);
-                alert("Klik tombol musik untuk memutar backsound");
+                console.error('Playback failed:', error);
+                alert('Tidak dapat memutar musik. Pastikan file backsound.mp3 tersedia.');
+                updateMusicButtonUI(false);
             });
         }
     }
@@ -793,8 +804,10 @@ function updateMusicButtonUI(isPlaying) {
     }
 }
 
-// ==================== INITIALIZATION ====================
+// ==================== INITIALIZATION (DIPERBAIKI) ====================
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded - initializing...');
+    
     createMovingDots();
     createBubbles();
     loadTemplates();
@@ -802,10 +815,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateApiStatus();
     initBacksound();
     
-    // Event listener untuk tombol login
+    // Event listener untuk tombol login (onclick sudah ada di HTML, tapi ini backup)
     const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
-        loginBtn.addEventListener('click', doLogin);
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            doLogin();
+        });
     }
     
     // Event listener untuk tombol Enter pada form login
@@ -827,4 +843,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    console.log('Initialization complete. Current user:', currentUser);
 });
