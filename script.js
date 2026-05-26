@@ -258,10 +258,10 @@ const materiData = {
     `<div style="padding: 10px;">
         <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center;">📌 Software Berbasis VEKTOR</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0;">
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="corell.png">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">CorelDRAW</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Fitur Shaping & PowerClip</p>
@@ -269,7 +269,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="ilustration.png">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>✨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Illustrator</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Fitur Pathfinder & Pen Tool</p>
@@ -277,7 +277,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="inscape.png">
+                    <img src="inscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🖌️</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Inkscape</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Gratis & Open Source</p>
@@ -285,7 +285,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="figma.png">
+                    <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎯</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Figma</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">UI/UX & Kolaborasi</p>
@@ -301,10 +301,10 @@ const materiData = {
         
         <h3 style="color: #c084fc; margin: 30px 0 20px 0; text-align: center;">📌 Software Berbasis BITMAP</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0;">
             <div style="background: linear-gradient(135deg, rgba(49, 168, 255, 0.2), rgba(0, 136, 255, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="photoshop.png">
+                    <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>📷</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Photoshop</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Layer & Selection Tools</p>
@@ -312,7 +312,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(92, 45, 145, 0.2), rgba(124, 58, 237, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="gimp.png">
+                    <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">GIMP</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Gratis & Open Source</p>
@@ -320,7 +320,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(107, 181, 255, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="krita.png">
+                    <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🖌️</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Krita</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Digital Painting</p>
@@ -328,7 +328,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 136, 136, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="pp.png">
+                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 10px 0;">Photo-Paint</h4>
                 <p style="font-size: 12px; color: #cdc4ff;">Software Bitmap Corel</p>
