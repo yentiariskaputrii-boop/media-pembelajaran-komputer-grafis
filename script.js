@@ -297,10 +297,10 @@ const materiData = {
         
         <!-- Daftar penjelasan VEKTOR -->
         <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #c084fc;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #c084fc;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #c084fc;">Inkscape</strong> - Gratis dan open source</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #c084fc;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Inkscape</strong> - Gratis dan open source</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</p>
         </div>
         
         <h3 style="color: #ffffff; margin: 30px 0 25px 0; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis BITMAP</h3>
@@ -343,10 +343,10 @@ const materiData = {
         
         <!-- Daftar penjelasan BITMAP -->
         <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #c084fc;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #c084fc;">GIMP</strong> - Gratis dan open source</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #c084fc;">Krita</strong> - Fokus digital painting</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #c084fc;">Corel Photo-Paint</strong> - Software bitmap dari Corel</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">GIMP</strong> - Gratis dan open source</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Krita</strong> - Fokus digital painting</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Corel Photo-Paint</strong> - Software bitmap dari Corel</p>
         </div>
     </div>`,
     
@@ -359,29 +359,29 @@ const materiData = {
                 <rect width="300" height="120" fill="#1a1a2e"/>
                 <rect x="30" y="30" width="50" height="50" fill="#c084fc" opacity="0.7"/>
                 <rect x="70" y="40" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
-                <text x="130" y="60" fill="#c084fc" font-size="12">Weld (Gabung)</text>
+                <text x="130" y="60" fill="#c084fc" font-size="12">Weld </text>
                 <rect x="180" y="30" width="50" height="50" fill="#c084fc"/>
                 <rect x="220" y="55" width="50" height="30" fill="#ff6b6b"/>
-                <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim (Potong)</text>
+                <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim </text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
+            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
         </div>
         
         <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
             <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Combine</strong> - Menggabungkan objek, menghilangkan irisan</span>
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Combine</strong> - Menggabungkan objek, menghilangkan irisan</span>
             </div>
             <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Weld</strong> - Menggabungkan objek tanpa irisan</span>
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Weld</strong> - Menggabungkan objek tanpa irisan</span>
             </div>
             <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Trim</strong> - Memotong objek dengan objek lain</span>
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek dengan objek lain</span>
             </div>
             <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Intersect</strong> - Membuat objek dari irisan dua objek</span>
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Membuat objek dari irisan dua objek</span>
             </div>
             <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">PowerClip</strong> - Memasukkan gambar ke dalam bentuk objek</span>
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">PowerClip</strong> - Memasukkan gambar ke dalam bentuk objek</span>
             </div>
         </div>
     </div>`,
@@ -400,7 +400,7 @@ const materiData = {
                 <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
                 <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
+            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
         </div>
         
         <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
@@ -428,7 +428,7 @@ const materiData = {
                 <text x="120" y="70" fill="#a78bfa" font-size="11">Setiap elemen punya</text>
                 <text x="120" y="90" fill="#a78bfa" font-size="11">layer sendiri</text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi Layer di Photoshop</small>
+            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi Layer di Photoshop</small>
         </div>
         
         <p style="color: #ffffff; text-align: center; font-size: 15px; margin: 15px 0; font-weight: 500;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
