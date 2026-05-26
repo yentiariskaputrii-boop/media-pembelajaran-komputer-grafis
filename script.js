@@ -794,7 +794,6 @@ function updateMusicButtonUI(isPlaying) {
 }
 
 // ==================== INITIALIZATION ====================
-// Jalankan semua fungsi saat halaman siap
 document.addEventListener('DOMContentLoaded', function() {
     createMovingDots();
     createBubbles();
@@ -802,13 +801,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadUserData();
     updateApiStatus();
     initBacksound();
-});
-
-const loginBtn = document.getElementById('login-btn');
+    
+    // Event listener untuk tombol login
+    const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
         loginBtn.addEventListener('click', doLogin);
     }
     
+    // Event listener untuk tombol Enter pada form login
     const loginName = document.getElementById('login-name');
     const loginClass = document.getElementById('login-class');
     if (loginName) {
