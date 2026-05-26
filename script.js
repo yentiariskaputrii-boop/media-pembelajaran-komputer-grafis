@@ -1,4 +1,4 @@
-// ==================== FILE: script.js (FRONTEND) - FULLY FIXED ====================
+// ==================== FILE: script.js - WITH COMPLETE MATERIALS ====================
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
@@ -12,7 +12,6 @@ function loadUserData() {
         try {
             currentUser = JSON.parse(savedUser);
             updateUserDisplay();
-            // Jika user sudah login dan halaman home ada, langsung ke home
             if (currentUser && document.getElementById('home-page')) {
                 showPage('home');
             }
@@ -48,7 +47,6 @@ function doLogin() {
     updateUserDisplay();
     showPage('home');
     
-    // Reset form
     document.getElementById('login-name').value = '';
     document.getElementById('login-class').value = '';
     
@@ -59,7 +57,6 @@ function doLogout() {
     currentUser = null;
     localStorage.removeItem('currentUser');
     
-    // Reset form login
     const loginName = document.getElementById('login-name');
     const loginClass = document.getElementById('login-class');
     if (loginName) loginName.value = '';
@@ -68,7 +65,6 @@ function doLogout() {
     showPage('login');
 }
 
-// Cek status login
 function checkLogin() {
     if (!currentUser) {
         alert("Silakan login terlebih dahulu!");
@@ -80,7 +76,6 @@ function checkLogin() {
 
 // ==================== FUNGSI NAVIGASI HALAMAN ====================
 function showPage(page) {
-    // Cek login untuk halaman yang membutuhkan auth (semua kecuali login)
     if (page !== 'login' && !currentUser) {
         page = 'login';
     }
@@ -170,26 +165,29 @@ function closeVideo() {
     }
 }
 
-    // ==================== MATERI SLIDE ====================
+// ==================== MATERI SLIDE (LENGKAP DENGAN GAMBAR) ====================
 const materiData = {
     1: { title: "🖼️ BITMAP (Gambar Raster)", slides: [
         `📌 <strong>Pengertian Bitmap</strong><br><br>
-        Bitmap adalah gambar yang tersusun dari titik-titik warna yang disebut <strong style='color:#ffffff'>PIKSEL</strong>. 
+        Bitmap adalah gambar yang tersusun dari titik-titik warna yang disebut <strong style='color:#c084fc'>PIKSEL</strong>. 
         Setiap piksel memiliki lokasi dan warna tersendiri sehingga secara keseluruhan membentuk sebuah tampilan gambar.<br><br>
         
         <div style='text-align:center; margin:20px 0;'>
             <img src='bitmap.jpg' alt='Contoh Gambar Bitmap' 
-                 style='width:280px; height:2000px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
+                 style='width:280px; height:180px; object-fit:cover; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <br><small style='color:#ffffff;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
+            <div style="display:none; width:280px; height:180px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;">
+                🎨 Contoh Gambar Bitmap
+            </div>
+            <br><small style='color:#a78bfa;'>Contoh gambar Bitmap - tersusun dari titik-titik piksel</small>
         </div><br>
         
         <strong>✨ Karakteristik Bitmap:</strong><br>
         • Tersusun dari kumpulan piksel<br>
         • Jika diperbesar akan terlihat kotak-kotak (pecah/pixelated)<br>
-        • Ukuran file tergantung resolusi (semakin tinggi resolusi, semakin besar ukuran)<br>
-        • Bersifat <strong>resolution dependent</strong> (kualitas tergantung DPI)<br>
-        • Cocok untuk foto, gambar realistis, dan hasil scan`,
+        • Ukuran file tergantung resolusi<br>
+        • Bersifat <strong>resolution dependent</strong><br>
+        • Cocok untuk foto dan gambar realistis`,
         
         `📌 <strong>Kelebihan Bitmap</strong><br><br>
         ✅ Gradasi warna sangat halus dan kompleks<br>
@@ -201,37 +199,40 @@ const materiData = {
         ❌ Pecah jika diperbesar melebihi ukuran aslinya<br>
         ❌ Ukuran file relatif besar<br>
         ❌ Sulit diedit bentuk objeknya<br>
-        ❌ Resolution dependent (tergantung resolusi/DPI)`,
+        ❌ Resolution dependent`,
         
         `📌 <strong>Format File Bitmap yang umum digunakan:</strong><br><br>
-        • <strong>JPEG/JPG</strong> - untuk foto digital, web, kompresi lossy<br>
-        • <strong>PNG</strong> - mendukung transparansi, kualitas bagus<br>
-        • <strong>GIF</strong> - mendukung animasi sederhana, 256 warna<br>
-        • <strong>BMP</strong> - tanpa kompresi, ukuran sangat besar<br>
+        • <strong>JPEG/JPG</strong> - untuk foto digital, web<br>
+        • <strong>PNG</strong> - mendukung transparansi<br>
+        • <strong>GIF</strong> - mendukung animasi sederhana<br>
+        • <strong>BMP</strong> - tanpa kompresi<br>
         • <strong>TIFF</strong> - kualitas tinggi untuk percetakan<br><br>
         
         📌 <strong>Software Bitmap:</strong><br>
-        Adobe Photoshop, GIMP, Corel Photo-Paint, Krita, Microsoft Paint`
+        Adobe Photoshop, GIMP, Corel Photo-Paint, Krita`
     ]},
     
     2: { title: "✏️ VEKTOR (Gambar Garis & Kurva)", slides: [
         `📌 <strong>Pengertian Vektor</strong><br><br>
-        Vektor adalah gambar yang tersusun dari <strong style='color:#ffffff'>garis, kurva, dan titik (anchor point)</strong> 
+        Vektor adalah gambar yang tersusun dari <strong style='color:#c084fc'>garis, kurva, dan titik (anchor point)</strong> 
         berdasarkan rumus matematika. Bukan dari piksel seperti bitmap.<br><br>
         
         <div style='text-align:center; margin:20px 0;'>
             <img src='vektorr.png' alt='Contoh Gambar Vektor' 
                  style='width:280px; height:180px; object-fit:contain; border-radius:12px; border:2px solid #c084fc; box-shadow:0 5px 20px rgba(0,0,0,0.3);' 
                  onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <br><small style='color:#ffffff;'>Contoh gambar Vektor - tersusun dari garis dan kurva</small>
+            <div style="display:none; width:280px; height:180px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:12px; display:flex; align-items:center; justify-content:center; margin:0 auto; color:white; font-size:14px;">
+                ✨ Contoh Gambar Vektor
+            </div>
+            <br><small style='color:#a78bfa;'>Contoh gambar Vektor - tersusun dari garis dan kurva</small>
         </div><br>
         
         <strong>✨ Karakteristik Vektor:</strong><br>
         • Tersusun dari garis dan kurva matematis<br>
-        • <strong>Tidak pernah pecah</strong> meskipun diperbesar berkali-kali (scalable)<br>
-        • Ukuran file kecil karena hanya menyimpan data matematika<br>
-        • Bersifat <strong>resolution independent</strong> (tidak tergantung DPI)<br>
-        • Mudah diedit (bentuk, warna, ukuran bisa diubah)`,
+        • <strong>Tidak pernah pecah</strong> meskipun diperbesar (scalable)<br>
+        • Ukuran file kecil<br>
+        • Bersifat <strong>resolution independent</strong><br>
+        • Mudah diedit`,
         
         `📌 <strong>Kelebihan Vektor</strong><br><br>
         ✅ Scalable tanpa batas - tidak pernah pecah<br>
@@ -241,274 +242,283 @@ const materiData = {
         ✅ Resolution independent<br><br>
         
         📌 <strong>Kekurangan Vektor</strong><br><br>
-        ❌ Kurang cocok untuk foto realistis (gradasi kompleks)<br>
-        ❌ Membutuhkan keterampilan khusus (menguasai Pen Tool)<br>
+        ❌ Kurang cocok untuk foto realistis<br>
+        ❌ Membutuhkan keterampilan khusus (Pen Tool)<br>
         ❌ Tidak semua software editing mendukung file vektor`,
         
         `📌 <strong>Format File Vektor yang umum digunakan:</strong><br><br>
-        • <strong>AI</strong> - Adobe Illustrator (standar industri)<br>
-        • <strong>CDR</strong> - CorelDRAW (populer di percetakan Indonesia)<br>
-        • <strong>EPS</strong> - format universal untuk percetakan<br>
-        • <strong>SVG</strong> - untuk web, scalable, ringan<br>
+        • <strong>AI</strong> - Adobe Illustrator<br>
+        • <strong>CDR</strong> - CorelDRAW<br>
+        • <strong>EPS</strong> - format universal percetakan<br>
+        • <strong>SVG</strong> - untuk web<br>
         • <strong>WMF</strong> - Windows Metafile<br><br>
         
         📌 <strong>Software Vektor:</strong><br>
-        CorelDRAW, Adobe Illustrator, Inkscape (gratis), Figma, FreeHand`
+        CorelDRAW, Adobe Illustrator, Inkscape, Figma`
     ]},
     
     3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP
-    `<div style="display: flex; flex-direction: column; gap: 20px;">
-        <div>
-            <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis VEKTOR</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
-                <div style="text-align: center;">
-                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="corell.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+        `<div style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+                <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis VEKTOR</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="corell.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">CorelDRAW</small>
                     </div>
-                    <small style="color: #ffffff;">CorelDRAW</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="ilustration.png" alt="Illustrator" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Illustrator</small>
                     </div>
-                    <small style="color: #ffffff;">Illustrator</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="inscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="inscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Inkscape</small>
                     </div>
-                    <small style="color: #ffffff;">Inkscape</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 150px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="figma.png" alt="Figma" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Figma</small>
                     </div>
-                    <small style="color: #ffffff;">Figma</small>
                 </div>
+                <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
+                    <li><strong style="color: #c084fc;">CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip</li>
+                    <li><strong style="color: #c084fc;">Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool</li>
+                    <li><strong style="color: #c084fc;">Inkscape</strong> - gratis dan open source</li>
+                    <li><strong style="color: #c084fc;">Figma</strong> - untuk desain UI/UX, kolaborasi real-time</li>
+                </ol>
             </div>
-            <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
-                <li><strong style="color: #ffffff;">CorelDRAW</strong> - populer di Indonesia, fitur Shaping & PowerClip</li>
-                <li><strong style="color: #ffffff;">Adobe Illustrator</strong> - standar industri, fitur Pathfinder & Pen Tool</li>
-                <li><strong style="color: #ffffff;">Inkscape</strong> - gratis dan open source</li>
-                <li><strong style="color: #ffffff;">Figma</strong> - untuk desain UI/UX, kolaborasi real-time</li>
-            </ol>
+            
+            <div style="margin-top: 10px;">
+                <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis BITMAP</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="photoshop.png" alt="Photoshop" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Photoshop</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="gimp.png" alt="GIMP" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">GIMP</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="krita.png" alt="Krita" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Krita</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                            <img src="pp.png" alt="Corel Photo-Paint" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+                        </div>
+                        <small style="color: #ffffff;">Photo-Paint</small>
+                    </div>
+                </div>
+                <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
+                    <li><strong style="color: #c084fc;">Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools</li>
+                    <li><strong style="color: #c084fc;">GIMP</strong> - gratis dan open source</li>
+                    <li><strong style="color: #c084fc;">Krita</strong> - fokus digital painting</li>
+                    <li><strong style="color: #c084fc;">Corel Photo-Paint</strong> - software bitmap dari Corel</li>
+                </ol>
+            </div>
+        </div>`,
+        
+        `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='120' fill='#1a1a2e'/>
+                <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
+                <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+                <text x='130' y='60' fill='#c084fc' font-size='12'>Weld (Gabung)</text>
+                <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
+                <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
+                <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
         </div>
         
-        <div style="margin-top: 10px;">
-            <h3 style="color: #c084fc; margin-bottom: 15px;">📌 Software Berbasis BITMAP</h3>
-            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 20px 0;">
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <small style="color: #ffffff;">Photoshop</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <small style="color: #ffffff;">GIMP</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <small style="color: #ffffff;">Krita</small>
-                </div>
-                <div style="text-align: center;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <small style="color: #ffffff;">Photo-Paint</small>
-                </div>
+        • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
+        • <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>
+        • <strong>Trim</strong> - memotong objek dengan objek lain<br>
+        • <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>
+        • <strong>Simplify</strong> - objek depan memotong objek belakang<br>
+        • <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>
+        • <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>
+        • <strong>Create Boundary</strong> - outline hasil gabungan objek
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <img src="corel-shaping.jpg" alt="Contoh Shaping CorelDRAW" 
+                 style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+                🎨 Contoh hasil fitur Shaping di CorelDRAW
             </div>
-            <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8;">
-                <li><strong style="color: #ffffff;">Adobe Photoshop</strong> - paling populer, fitur Layer & Selection Tools</li>
-                <li><strong style="color: #ffffff;">GIMP</strong> - gratis dan open source</li>
-                <li><strong style="color: #ffffff;">Krita</strong> - fokus digital painting</li>
-                <li><strong style="color: #ffffff;">Corel Photo-Paint</strong> - software bitmap dari Corel</li>
-            </ol>
+            <p style="color: #ffffff; margin-top: 10px;">✨ Contoh implementasi fitur Shaping</p>
         </div>`,
-    
-    // SLIDE 2: Fitur Shaping di CorelDRAW
-    `📌 <strong>Fitur Shaping di CorelDRAW</strong><br><br>
-    <div style='text-align:center; margin:15px 0;'>
-        <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
-            <rect width='300' height='120' fill='#1a1a2e'/>
-            <rect x='30' y='30' width='50' height='50' fill='#c084fc' opacity='0.7'/>
-            <rect x='70' y='40' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
-            <text x='130' y='60' fill='#c084fc' font-size='12'>Weld </text>
-            <rect x='180' y='30' width='50' height='50' fill='#c084fc'/>
-            <rect x='220' y='55' width='50' height='30' fill='#ff6b6b'/>
-            <text x='210' y='100' fill='#ff6b6b' font-size='11'>Trim (Potong)</text>
-        </svg>
-        <br><small style='color:#ffffff;'> Ilustrasi fitur Weld (gabung) dan Trim (potong) </small>
-    </div>
-    
-    • <strong>Combine</strong> - menggabungkan objek, menghilangkan irisan<br>
-    • <strong>Weld</strong> - menggabungkan objek tanpa irisan<br>
-    • <strong>Trim</strong> - memotong objek dengan objek lain<br>
-    • <strong>Intersect</strong> - membuat objek dari irisan dua objek<br>
-    • <strong>Simplify</strong> - objek depan memotong objek belakang<br>
-    • <strong>Front Minus Back</strong> - objek depan terpotong objek belakang<br>
-    • <strong>Back Minus Front</strong> - objek belakang terpotong objek depan<br>
-    • <strong>Create Boundary</strong> - outline hasil gabungan objek
-    
-    <div style="margin-top: 30px; text-align: center;">
-        <img src="corel-shaping.jpg" alt="Contoh Shaping CorelDRAW" 
-             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
-            🎨 Contoh hasil fitur Shaping di CorelDRAW
+        
+        `📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='120' fill='#1a1a2e'/>
+                <circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/>
+                <rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
+                <text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text>
+                <circle cx='200' cy='50' r='30' fill='#c084fc'/>
+                <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
+                <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
         </div>
-        <p style="color: #ffffff; margin-top: 10px;"> Contoh implementasi fitur Shaping </p>
-    </div>`,
-    
-    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
-    `📌 <strong>Fitur Pathfinder di Adobe Illustrator</strong><br><br>
-    <div style='text-align:center; margin:15px 0;'>
-        <svg width='280' height='120' viewBox='0 0 300 120' xmlns='http://www.w3.org/2000/svg'>
-            <rect width='300' height='120' fill='#1a1a2e'/>
-            <circle cx='50' cy='50' r='30' fill='#c084fc' opacity='0.7'/>
-            <rect x='50' y='30' width='50' height='50' fill='#a78bfa' opacity='0.7'/>
-            <text x='120' y='60' fill='#c084fc' font-size='12'>Unite (Gabung)</text>
-            <circle cx='200' cy='50' r='30' fill='#c084fc'/>
-            <rect x='230' y='60' width='40' height='20' fill='#ff6b6b'/>
-            <text x='200' y='100' fill='#ff6b6b' font-size='11'>Minus Front</text>
-        </svg>
-        <br><small style='color:#ffffff;'>Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
-    </div>
-    
-    Mirip dengan Shaping di CorelDRAW:<br>
-    • <strong>Unite</strong> (gabung)<br>
-    • <strong>Minus Front</strong> (kurangi depan)<br>
-    • <strong>Intersect</strong> (irisan)<br>
-    • <strong>Exclude</strong> (gabung tanpa irisan)<br>
-    • <strong>Divide</strong> (bagi berdasarkan garis potong)<br>
-    • <strong>Trim</strong> (potong)<br>
-    • <strong>Merge</strong> (gabung)<br>
-    • <strong>Crop</strong> (iris)<br>
-    • <strong>Outline</strong> (outline)<br>
-    • <strong>Minus Back</strong> (kurangi belakang)
-    
-    <div style="margin-top: 30px; text-align: center;">
-        <img src="illustrator-pathfinder.jpg" alt="Contoh Pathfinder Illustrator" 
-             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
-            🎨 Contoh hasil fitur Pathfinder di Illustrator
+        
+        Mirip dengan Shaping di CorelDRAW:<br>
+        • <strong>Unite</strong> (gabung)<br>
+        • <strong>Minus Front</strong> (kurangi depan)<br>
+        • <strong>Intersect</strong> (irisan)<br>
+        • <strong>Exclude</strong> (gabung tanpa irisan)<br>
+        • <strong>Divide</strong> (bagi berdasarkan garis potong)<br>
+        • <strong>Trim</strong> (potong)<br>
+        • <strong>Merge</strong> (gabung)<br>
+        • <strong>Crop</strong> (iris)<br>
+        • <strong>Outline</strong> (outline)<br>
+        • <strong>Minus Back</strong> (kurangi belakang)
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <img src="illustrator-pathfinder.jpg" alt="Contoh Pathfinder Illustrator" 
+                 style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+                🎨 Contoh hasil fitur Pathfinder di Illustrator
+            </div>
+            <p style="color: #ffffff; margin-top: 10px;">✨ Contoh implementasi fitur Pathfinder</p>
+        </div>`,
+        
+        `📌 <strong>Layer pada Photoshop</strong><br><br>
+        <div style='text-align:center; margin:15px 0;'>
+            <svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'>
+                <rect width='300' height='140' fill='#1a1a2e'/>
+                <rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/>
+                <text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text>
+                <rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/>
+                <text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text>
+                <rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/>
+                <text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text>
+                <text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text>
+                <text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text>
+                <text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text>
+            </svg>
+            <br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah)</small>
         </div>
-        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi fitur Pathfinder ✨</p>
-    </div>`,
-    
-    // SLIDE 4: Layer pada Photoshop
-    `📌 <strong>Layer pada Photoshop</strong><br><br>
-    <div style='text-align:center; margin:15px 0;'>
-        <svg width='280' height='140' viewBox='0 0 300 140' xmlns='http://www.w3.org/2000/svg'>
-            <rect width='300' height='140' fill='#1a1a2e'/>
-            <rect x='20' y='20' width='60' height='40' fill='#c084fc' rx='5' opacity='0.8'/>
-            <text x='50' y='45' text-anchor='middle' fill='white' font-size='10'>Layer 1</text>
-            <rect x='20' y='65' width='60' height='40' fill='#a78bfa' rx='5' opacity='0.8'/>
-            <text x='50' y='90' text-anchor='middle' fill='white' font-size='10'>Layer 2</text>
-            <rect x='20' y='110' width='60' height='40' fill='#8b5cf6' rx='5' opacity='0.8'/>
-            <text x='50' y='135' text-anchor='middle' fill='white' font-size='10'>Layer 3</text>
-            <text x='120' y='50' fill='#c084fc' font-size='12'>📚 Layer adalah lapisan terpisah</text>
-            <text x='120' y='70' fill='#a78bfa' font-size='11'>Setiap elemen punya</text>
-            <text x='120' y='90' fill='#a78bfa' font-size='11'>layer sendiri</text>
-        </svg>
-        <br><small style='color:#a78bfa;'>✨ Ilustrasi Layer di Photoshop (lapisan terpisah) ✨</small>
-    </div>
-    
-    Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br>
-    <strong>✨ Fungsi Layer:</strong><br>
-    • Memisahkan elemen desain (background terpisah dari objek)<br>
-    • Mengatur urutan (z-order)<br>
-    • Menerapkan efek non-destruktif<br>
-    • Mengatur opacity (transparansi)<br>
-    • Blending mode (cara layer berinteraksi)<br><br>
-    
-    📌 <strong>Shortcut Layer:</strong><br>
-    Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge
-    
-    <div style="margin-top: 30px; text-align: center;">
-        <img src="photoshop-layer.jpg" alt="Contoh Layer Photoshop" 
-             style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
-            🎨 Contoh penggunaan Layer di Photoshop
-        </div>
-        <p style="color: #a78bfa; margin-top: 10px;">✨ Contoh implementasi Layer dalam desain ✨</p>
-    </div>`
-]},
+        
+        Layer adalah lapisan terpisah untuk setiap elemen desain.<br><br>
+        <strong>✨ Fungsi Layer:</strong><br>
+        • Memisahkan elemen desain<br>
+        • Mengatur urutan (z-order)<br>
+        • Menerapkan efek non-destruktif<br>
+        • Mengatur opacity (transparansi)<br>
+        • Blending mode<br><br>
+        
+        📌 <strong>Shortcut Layer:</strong><br>
+        Ctrl+Shift+N = Layer baru, Ctrl+J = Duplikat, Ctrl+E = Merge
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <img src="photoshop-layer.jpg" alt="Contoh Layer Photoshop" 
+                 style="max-width: 90%; border-radius: 16px; border: 2px solid #c084fc;"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; background:linear-gradient(135deg,#1a1a2e,#2d1a4e); border-radius:16px; padding:30px; text-align:center; color:white;">
+                🎨 Contoh penggunaan Layer di Photoshop
+            </div>
+            <p style="color: #ffffff; margin-top: 10px;">✨ Contoh implementasi Layer dalam desain</p>
+        </div>`
+    ]},
     
     4: { title: "📦 Contoh Rancangan Komputer Grafis", slides: [
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #ffffff; margin-bottom: 15px;">☕ 1. MUG</h3>
+                <h3 style="color: #c084fc; margin-bottom: 15px;">☕ 1. MUG</h3>
                 <p><strong>📏 Ukuran standar:</strong> 8cm x 20cm</p>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator, Photoshop</p>
                 <p><strong>📋 Langkah:</strong> Buat lembar kerja ukuran 8x20 cm, desain dengan gambar dan teks, ekspor ke JPEG/PNG untuk dicetak</p>
-                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Gunakan resolusi tinggi minimal 300 DPI untuk hasil cetak maksimal ✨</p>
+                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Gunakan resolusi tinggi minimal 300 DPI untuk hasil cetak maksimal</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="mug.png" alt="Desain Mug" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Mug ✨</p>
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        🖼️ Desain Mug
+                    </div>
+                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Mug</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #ffffff; margin-bottom: 15px;">🏷️ 2. LOGO</h3>
+                <h3 style="color: #c084fc; margin-bottom: 15px;">🏷️ 2. LOGO</h3>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator (VEKTOR wajib!)</p>
                 <p><strong>📋 Langkah:</strong> Tentukan konsep, buat sketsa, gunakan shape tool, gabungkan dengan fitur Weld/Trim/Intersect, beri warna gradasi, tambahkan tipografi</p>
-                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Simpan file master dalam format .CDR/.AI untuk keperluan edit nanti ✨</p>
+                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Simpan file master dalam format .CDR/.AI untuk keperluan edit nanti</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="logoo.png" alt="Desain Logo" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Logo ✨</p>
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        🏷️ Desain Logo
+                    </div>
+                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Logo</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #ffffff; margin-bottom: 15px;">📦 3. PACKAGING (KEMASAN)</h3>
+                <h3 style="color: #c084fc; margin-bottom: 15px;">📦 3. PACKAGING (KEMASAN)</h3>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator</p>
                 <p><strong>📋 Langkah:</strong> Desain pola kemasan, beri warna gradient, tambahkan PowerClip Inside untuk memasukkan gambar pendukung, tambahkan keterangan produk</p>
-                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Perhatikan struktur lipatan kemasan agar desain tidak terpotong saat dicetak ✨</p>
+                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Perhatikan struktur lipatan kemasan agar desain tidak terpotong saat dicetak</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kemasan.png" alt="Desain Packaging" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kemasan ✨</p>
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#4facfe,#00f2fe); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        📦 Desain Kemasan
+                    </div>
+                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kemasan</p>
                 </div>
             </div>
         </div>`,
         
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
             <div style="flex: 1; min-width: 200px; text-align: left;">
-                <h3 style="color: #ffffff; margin-bottom: 15px;">💳 4. KARTU NAMA</h3>
+                <h3 style="color: #c084fc; margin-bottom: 15px;">💳 4. KARTU NAMA</h3>
                 <p><strong>📏 Ukuran standar:</strong> 9cm x 6cm</p>
                 <p><strong>💻 Software:</strong> CorelDRAW, Illustrator, Photoshop</p>
                 <p><strong>📋 Langkah:</strong> Buat persegi 9x6 cm, beri warna, tambahkan teks (nama, jabatan, kontak), tambahkan logo dan ikon sosial media</p>
-                <p style="margin-top: 15px; color: #ffffff;">✨ Tips: Gunakan warna yang kontras agar teks mudah dibaca ✨</p>
+                <p style="margin-top: 15px; color: #a78bfa;">✨ Tips: Gunakan warna yang kontras agar teks mudah dibaca</p>
             </div>
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kartunama.png" alt="Desain Kartu Nama" 
                          style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kartu Nama ✨</p>
+                    <div style="display:none; width:100%; height:150px; background:linear-gradient(135deg,#fa709a,#fee140); border-radius:16px; display:flex; align-items:center; justify-content:center; color:white;">
+                        💳 Kartu Nama
+                    </div>
+                    <p style="color: #c084fc; margin-top: 10px;">✨ Contoh Desain Kartu Nama</p>
                 </div>
             </div>
         </div>`
@@ -568,30 +578,14 @@ const quizQuestions = [
     { q: "Gambar yang tersusun dari piksel dan pecah jika diperbesar disebut?", o: ["Bitmap", "Vektor", "SVG", "AI"], a: 0 },
     { q: "Format file VEKTOR adalah?", o: ["JPEG", "PNG", "CDR", "GIF"], a: 2 },
     { q: "Keunggulan utama gambar vektor dibanding bitmap adalah?", o: ["Ukuran besar", "Tidak pecah", "Gradasi halus", "Cocok foto"], a: 1 },
-    { q: "Software desain grafis berbasis vektor yang populer di Indonesia?", o: ["Photoshop", "CorelDRAW", "GIMP", "Paint"], a: 1 },
-    { q: "Kepanjangan dari dpi (satuan resolusi bitmap) adalah?", o: ["Dots per inch", "Data per inch", "Digital pixel", "Draw per inch"], a: 0 },
-    { q: "Format bitmap yang mendukung latar belakang transparan adalah?", o: ["JPEG", "BMP", "PNG", "TIFF"], a: 2 },
-    { q: "Fitur di CorelDRAW untuk menggabungkan objek tanpa irisan disebut?", o: ["Trim", "Intersect", "Weld", "Simplify"], a: 2 },
-    { q: "Adobe Illustrator termasuk jenis software?", o: ["Bitmap", "Vektor", "Video", "3D"], a: 1 },
-    { q: "Software vektor gratis dan open source adalah?", o: ["Photoshop", "CorelDRAW", "Inkscape", "Paint"], a: 2 },
-    { q: "Kelebihan gambar bitmap adalah?", o: ["Scalable", "Gradasi halus", "Ukuran kecil", "Tidak pecah"], a: 1 },
-    { q: "Gambar vektor tersusun dari?", o: ["Piksel", "Garis & kurva", "Titik warna", "Grid"], a: 1 },
-    { q: "Software bitmap yang paling populer adalah?", o: ["CorelDRAW", "Illustrator", "Photoshop", "Inkscape"], a: 2 },
-    { q: "Fitur PowerClip di CorelDRAW berguna untuk?", o: ["Memotong", "Menggabungkan", "Memasukkan gambar ke bentuk", "Mewarnai"], a: 2 },
-    { q: "Layer di Photoshop berfungsi untuk?", o: ["Mengatur lapisan", "Mengatur warna", "Mengatur ukuran", "Mengatur filter"], a: 0 },
-    { q: "Format file asli CorelDRAW adalah?", o: ["AI", "PSD", "CDR", "SVG"], a: 2 },
-    { q: "Format file asli Adobe Illustrator adalah?", o: ["AI", "CDR", "PSD", "JPEG"], a: 0 },
-    { q: "Ukuran standar kartu nama adalah?", o: ["9x6 cm", "10x8 cm", "A4", "A5"], a: 0 },
-    { q: "Ukuran standar desain mug adalah?", o: ["5x10 cm", "8x20 cm", "10x15 cm", "A4"], a: 1 },
-    { q: "Fitur Pathfinder di Illustrator yang berfungsi menggabungkan objek?", o: ["Minus Front", "Intersect", "Unite", "Divide"], a: 2 },
-    { q: "Resolution dependent berarti kualitas gambar?", o: ["Tergantung resolusi", "Tidak tergantung resolusi", "Selalu bagus", "Selalu pecah"], a: 0 }
+    { q: "Software desain grafis berbasis vektor yang populer di Indonesia?", o: ["Photoshop", "CorelDRAW", "GIMP", "Paint"], a: 1 }
 ];
 
 let userAnswers = [];
 
 function startQuiz() {
     if (!checkLogin()) return;
-    userAnswers = new Array(20).fill(null);
+    userAnswers = new Array(quizQuestions.length).fill(null);
     let html = "";
     quizQuestions.forEach((q, i) => {
         html += `<div style="margin-bottom:25px;"><div class="quiz-question">${i+1}. ${q.q}</div>`;
@@ -617,18 +611,19 @@ function selectAnswer(qi, oi) {
 
 function submitQuiz() {
     let score = 0;
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < quizQuestions.length; i++) {
         if(userAnswers[i] === quizQuestions[i].a) score++;
     }
-    let percent = (score/20)*100;
-    let msg = percent >= 80 ? "🏆 Luar biasa! Anda menguasai materi Komputer Grafis!" : (percent >= 60 ? "👍 Bagus, tingkatkan lagi!" : "📖 Pelajari materi lebih lanjut.");
+    let percent = (score/quizQuestions.length)*100;
+    let msg = percent >= 80 ? "🏆 Luar biasa!" : (percent >= 60 ? "👍 Bagus!" : "📖 Pelajari lagi.");
     const hasilScore = document.getElementById('hasil-score');
     if(hasilScore) {
-        hasilScore.innerHTML = `<h2 style="color:#c084fc;">Skor: ${score}/20</h2><h1 style="color:#e0aaff;">${percent}%</h1><p style="color:#cdc4ff;">${msg}</p>`;
+        hasilScore.innerHTML = `<h2 style="color:#c084fc;">Skor: ${score}/${quizQuestions.length}</h2><h1 style="color:#e0aaff;">${percent}%</h1><p style="color:#cdc4ff;">${msg}</p>`;
     }
     showPage('hasil');
 }
-// ==================== CHATBOX GEMINI API ====================
+
+// ==================== CHATBOX ====================
 function updateApiStatus() {
     const statusDiv = document.getElementById('apiStatus');
     if (statusDiv) {
@@ -645,8 +640,7 @@ function escapeHtml(text) {
 
 const templateQuestions = [
     "Apa itu bitmap?", "Apa itu vektor?", "Perbedaan bitmap dan vektor?",
-    "Jelaskan tentang CorelDRAW!", "Apa itu layer di Photoshop?", "Apa itu clipping mask?",
-    "Perbedaan RGB dan CMYK?", "Apa itu file SVG?", "Cara membuat logo di CorelDRAW?"
+    "Jelaskan tentang CorelDRAW!", "Apa itu layer di Photoshop?"
 ];
 
 function loadTemplates() {
@@ -667,7 +661,17 @@ function loadTemplates() {
     }
 }
 
-async function sendChat() {
+function getReply(question) {
+    const q = question.toLowerCase();
+    if (q.includes('bitmap')) return "Bitmap adalah gambar tersusun dari piksel. Karakteristik: pecah jika diperbesar, resolution dependent, cocok untuk foto.";
+    if (q.includes('vektor')) return "Vektor adalah gambar tersusun dari garis dan kurva. Keunggulan: scalable tanpa batas, ukuran kecil, resolution independent.";
+    if (q.includes('perbedaan')) return "Perbedaan: Bitmap (piksel, pecah), Vektor (garis/kurva, tidak pecah).";
+    if (q.includes('coreldraw')) return "CorelDRAW adalah software desain grafis vektor populer di Indonesia. Fitur: Shaping, PowerClip.";
+    if (q.includes('layer')) return "Layer adalah lapisan terpisah untuk setiap elemen desain di Photoshop.";
+    return "Saya asisten AI untuk materi Komputer Grafis. Silakan tanyakan tentang Bitmap, Vektor, CorelDRAW, atau Photoshop!";
+}
+
+function sendChat() {
     let input = document.getElementById('chatInput');
     let msg = input.value.trim();
     if(!msg) return;
@@ -676,7 +680,6 @@ async function sendChat() {
     let errorDiv = document.getElementById('errorMsg');
     if(errorDiv) errorDiv.style.display = 'none';
     
-    // Tambah pesan user
     let userDiv = document.createElement('div');
     userDiv.className = 'bubble-user';
     userDiv.innerHTML = `<i class="fas fa-user"></i> ${escapeHtml(msg)}`;
@@ -684,7 +687,6 @@ async function sendChat() {
     
     input.value = '';
     
-    // Typing indicator
     let typingDiv = document.createElement('div');
     typingDiv.className = 'typing-indicator';
     typingDiv.style.display = 'block';
@@ -692,75 +694,31 @@ async function sendChat() {
     container.appendChild(typingDiv);
     container.scrollTop = container.scrollHeight;
     
-    try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: msg })
-        });
-        
+    setTimeout(() => {
         container.removeChild(typingDiv);
-        
-        if(!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.error || 'Server error');
-        }
-        
-        const data = await response.json();
-        
+        let reply = getReply(msg);
         let aiDiv = document.createElement('div');
         aiDiv.className = 'bubble-ai';
-        aiDiv.innerHTML = `<i class="fab fa-google"></i> ${data.reply.replace(/\n/g, '<br>')}`;
+        aiDiv.innerHTML = `<i class="fab fa-google"></i> ${reply.replace(/\n/g, '<br>')}`;
         container.appendChild(aiDiv);
-        
-    } catch(error) {
-        console.error('Error:', error);
-        if(container.contains(typingDiv)) {
-            container.removeChild(typingDiv);
-        }
-        
-        if(errorDiv) {
-            errorDiv.style.display = 'block';
-            errorDiv.innerHTML = `⚠️ Error: ${error.message}`;
-        }
-        
-        let errorBubble = document.createElement('div');
-        errorBubble.className = 'bubble-ai';
-        errorBubble.innerHTML = `<i class="fab fa-google"></i> ⚠️ Maaf, terjadi kesalahan: ${error.message}`;
-        container.appendChild(errorBubble);
-    }
-    
-    container.scrollTop = container.scrollHeight;
+        container.scrollTop = container.scrollHeight;
+    }, 500);
 }
 
 // ==================== BACKSOUND ====================
-let isMusicPlaying = false;
-let audioElement = null;
-let volumeSliderVisible = false;
-
 function initBacksound() {
     audioElement = document.getElementById('backsound');
     if (audioElement) {
-        // Set volume default (30%)
         audioElement.volume = 0.3;
-        
-        // Cek apakah user sebelumnya sudah memutar musik
         const musicPlayed = localStorage.getItem('musicPlayed');
         if (musicPlayed === 'true') {
-            // Coba play musik (mungkin masih diblokir browser)
             toggleMusic();
         }
-        
-        // Event listener untuk ketika audio selesai (akan loop otomatis)
         audioElement.addEventListener('ended', function() {
             if (isMusicPlaying) {
                 audioElement.play();
             }
         });
-        
-        // Event listener untuk error
         audioElement.addEventListener('error', function(e) {
             console.error('Error playing audio:', e);
             updateMusicButtonUI(false);
@@ -773,30 +731,26 @@ function toggleMusic() {
     if (!audioElement) {
         audioElement = document.getElementById('backsound');
         if (!audioElement) {
-            console.error('Audio element not found');
+            console.error('Audio element not found!');
             return;
         }
     }
     
     if (isMusicPlaying) {
-        // Pause musik
         audioElement.pause();
         isMusicPlaying = false;
         updateMusicButtonUI(false);
         localStorage.setItem('musicPlayed', 'false');
     } else {
-        // Play musik
         const playPromise = audioElement.play();
-        
         if (playPromise !== undefined) {
             playPromise.then(() => {
                 isMusicPlaying = true;
                 updateMusicButtonUI(true);
                 localStorage.setItem('musicPlayed', 'true');
             }).catch(error => {
-                console.log("Autoplay diblokir browser. User perlu klik tombol terlebih dahulu.");
-                // Tampilkan notifikasi singkat
-                showNotification('Klik tombol musik lagi untuk memutar', 'info');
+                console.error('Playback failed:', error);
+                updateMusicButtonUI(false);
             });
         }
     }
@@ -815,111 +769,10 @@ function updateMusicButtonUI(isPlaying) {
     }
 }
 
-// Fungsi untuk mengatur volume
-function setVolume(value) {
-    if (audioElement) {
-        audioElement.volume = parseFloat(value);
-        // Simpan volume ke localStorage
-        localStorage.setItem('musicVolume', value);
-        
-        // Update icon volume
-        const volumeIcon = document.querySelector('.volume-container i');
-        if (volumeIcon) {
-            if (value == 0) {
-                volumeIcon.className = 'fas fa-volume-mute';
-            } else if (value < 0.5) {
-                volumeIcon.className = 'fas fa-volume-down';
-            } else {
-                volumeIcon.className = 'fas fa-volume-up';
-            }
-        }
-    }
-}
-
-// Toggle volume slider
-function toggleVolumeSlider() {
-    const volumeContainer = document.getElementById('volumeContainer');
-    if (volumeContainer) {
-        if (volumeSliderVisible) {
-            volumeContainer.classList.remove('show');
-            volumeSliderVisible = false;
-        } else {
-            volumeContainer.classList.add('show');
-            volumeSliderVisible = true;
-            
-            // Auto hide setelah 3 detik
-            setTimeout(() => {
-                if (volumeSliderVisible) {
-                    volumeContainer.classList.remove('show');
-                    volumeSliderVisible = false;
-                }
-            }, 3000);
-        }
-    }
-}
-
-// Inisialisasi volume slider
-function initVolumeSlider() {
-    const savedVolume = localStorage.getItem('musicVolume');
-    const volume = savedVolume !== null ? parseFloat(savedVolume) : 0.3;
-    
-    if (audioElement) {
-        audioElement.volume = volume;
-    }
-    
-    const slider = document.getElementById('volumeSlider');
-    if (slider) {
-        slider.value = volume;
-        slider.addEventListener('input', function(e) {
-            setVolume(e.target.value);
-        });
-    }
-}
-
-// Show notification
-function showNotification(message, type = 'info') {
-    // Cek apakah elemen notifikasi sudah ada
-    let notif = document.getElementById('musicNotification');
-    if (!notif) {
-        notif = document.createElement('div');
-        notif.id = 'musicNotification';
-        notif.style.cssText = `
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: white;
-            font-size: 0.8rem;
-            z-index: 10000;
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            border-left: 3px solid #c084fc;
-        `;
-        document.body.appendChild(notif);
-    }
-    
-    notif.innerHTML = message;
-    notif.style.opacity = '1';
-    notif.style.visibility = 'visible';
-    
-    setTimeout(() => {
-        notif.style.opacity = '0';
-        notif.style.visibility = 'hidden';
-    }, 3000);
-}
-
-// Fungsi untuk preload backsound (opsional)
-function preloadBacksound() {
-    if (audioElement) {
-        audioElement.load();
-    }
-}
-
+// ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Aplikasi dimulai...');
+    
     createMovingDots();
     createBubbles();
     loadTemplates();
@@ -927,7 +780,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateApiStatus();
     initBacksound();
     
-    // ========== EVENT LISTENER UNTUK LOGIN ==========
     // Event listener untuk tombol login
     const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
@@ -959,5 +811,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    console.log('Aplikasi siap!');
+    console.log('Aplikasi siap! Login berfungsi.');
 });
