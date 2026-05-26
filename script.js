@@ -1,4 +1,4 @@
-// ==================== FILE: script.js - WORKING VERSION ====================
+// ==================== FILE: script.js - WORKING WITH ONCLICK ====================
 
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
@@ -452,5 +452,27 @@ document.addEventListener('DOMContentLoaded', function() {
     updateApiStatus();
     initBacksound();
     
-    console.log('Aplikasi siap! Login berfungsi.');
+    // Event listener untuk tombol Enter pada form login (tambahan, tidak menggantikan onclick)
+    let loginName = document.getElementById('login-name');
+    let loginClass = document.getElementById('login-class');
+    
+    if (loginName) {
+        loginName.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                doLogin();
+            }
+        });
+    }
+    
+    if (loginClass) {
+        loginClass.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                doLogin();
+            }
+        });
+    }
+    
+    console.log('Aplikasi siap! Login menggunakan onclick="doLogin()"');
 });
