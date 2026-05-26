@@ -254,104 +254,105 @@ const materiData = {
     ]},
     
    
-       3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP
+      3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
+    // SLIDE 1: Software VEKTOR dan BITMAP (TULISAN BESAR & PUTIH)
     `<div style="padding: 8px;">
-        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 18px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis VEKTOR</h3>
+        <h3 style="color: #ffffff; margin-bottom: 25px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis VEKTOR</h3>
         
         <!-- 1 baris horizontal, gambar di tengah -->
-        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; margin: 20px 0;">
+        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
             
             <!-- CorelDRAW -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="corelnew.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">CorelDRAW</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">CorelDRAW</p>
             </div>
             
             <!-- Illustrator -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Illustrator</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Illustrator</p>
             </div>
             
             <!-- Inkscape -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="inkscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="inscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Inkscape</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Inkscape</p>
             </div>
             
             <!-- Figma -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="figma.png" alt="Figma" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Figma</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Figma</p>
             </div>
         </div>
         
-        <!-- Daftar penjelasan -->
-        <ol style="margin: 20px 0; color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.4); padding: 12px 12px 12px 30px; border-radius: 12px; font-size: 12px;">
-            <li><strong style="color: #c084fc;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</li>
-            <li><strong style="color: #c084fc;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</li>
-            <li><strong style="color: #c084fc;">Inkscape</strong> - Gratis dan open source</li>
-            <li><strong style="color: #c084fc;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</li>
-        </ol>
+        <!-- Daftar penjelasan VEKTOR -->
+        <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #c084fc;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #c084fc;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #c084fc;">Inkscape</strong> - Gratis dan open source</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #c084fc;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</p>
+        </div>
         
-        <h3 style="color: #ffffff; margin: 25px 0 20px 0; text-align: center; font-size: 18px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis BITMAP</h3>
+        <h3 style="color: #ffffff; margin: 30px 0 25px 0; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis BITMAP</h3>
         
         <!-- 1 baris horizontal untuk BITMAP -->
-        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 25px; margin: 20px 0;">
+        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
             
             <!-- Photoshop -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="photoshop.png" alt="Photoshop" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Photoshop</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photoshop</p>
             </div>
             
             <!-- GIMP -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="gimp.png" alt="GIMP" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">GIMP</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">GIMP</p>
             </div>
             
             <!-- Krita -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="krita.png" alt="Krita" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Krita</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Krita</p>
             </div>
             
             <!-- Corel Photo-Paint -->
-            <div style="text-align: center; width: 80px;">
-                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+            <div style="text-align: center; width: 100px;">
+                <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
                 </div>
-                <p style="color: #ffffff; font-size: 12px; margin: 8px 0 0 0; font-weight: 500;">Photo-Paint</p>
+                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photo-Paint</p>
             </div>
         </div>
         
-        <ol style="margin: 20px 0; color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.4); padding: 12px 12px 12px 30px; border-radius: 12px; font-size: 12px;">
-            <li><strong style="color: #c084fc;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</li>
-            <li><strong style="color: #c084fc;">GIMP</strong> - Gratis dan open source</li>
-            <li><strong style="color: #c084fc;">Krita</strong> - Fokus digital painting</li>
-            <li><strong style="color: #c084fc;">Corel Photo-Paint</strong> - Software bitmap dari Corel</li>
-        </ol>
+        <!-- Daftar penjelasan BITMAP -->
+        <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #c084fc;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #c084fc;">GIMP</strong> - Gratis dan open source</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #c084fc;">Krita</strong> - Fokus digital painting</p>
+            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #c084fc;">Corel Photo-Paint</strong> - Software bitmap dari Corel</p>
+        </div>
     </div>`,
     
-    // SLIDE 2: Fitur Shaping di CorelDRAW (PUTIH CERAH)
+    // SLIDE 2: Fitur Shaping di CorelDRAW
     `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 15px; text-align: center; font-size: 18px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Shaping di CorelDRAW</h3>
+        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Shaping di CorelDRAW</h3>
         
         <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
             <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
@@ -363,31 +364,31 @@ const materiData = {
                 <rect x="220" y="55" width="50" height="30" fill="#ff6b6b"/>
                 <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim (Potong)</text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 10px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
+            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
         </div>
         
-        <div style="display: flex; flex-direction: column; gap: 10px; margin: 15px 0;">
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Combine</strong> <span style="color: #ffffff;">- Menggabungkan objek, menghilangkan irisan</span>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Combine</strong> - Menggabungkan objek, menghilangkan irisan</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Weld</strong> <span style="color: #ffffff;">- Menggabungkan objek tanpa irisan</span>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Weld</strong> - Menggabungkan objek tanpa irisan</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Trim</strong> <span style="color: #ffffff;">- Memotong objek dengan objek lain</span>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Trim</strong> - Memotong objek dengan objek lain</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Intersect</strong> <span style="color: #ffffff;">- Membuat objek dari irisan dua objek</span>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Intersect</strong> - Membuat objek dari irisan dua objek</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">PowerClip</strong> <span style="color: #ffffff;">- Memasukkan gambar ke dalam bentuk objek</span>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">PowerClip</strong> - Memasukkan gambar ke dalam bentuk objek</span>
             </div>
         </div>
     </div>`,
     
-    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator (PUTIH CERAH)
+    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
     `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 15px; text-align: center; font-size: 18px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Pathfinder di Adobe Illustrator</h3>
+        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Pathfinder di Adobe Illustrator</h3>
         
         <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
             <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
@@ -399,20 +400,20 @@ const materiData = {
                 <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
                 <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 10px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
+            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
         </div>
         
-        <div style="display: flex; flex-direction: column; gap: 10px; margin: 15px 0;">
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 10px;"><strong style="color: #c084fc;">Unite</strong> <span style="color: #ffffff;">- Menggabungkan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 10px;"><strong style="color: #c084fc;">Minus Front</strong> <span style="color: #ffffff;">- Mengurangi objek depan</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 10px;"><strong style="color: #c084fc;">Intersect</strong> <span style="color: #ffffff;">- Irisan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 10px;"><strong style="color: #c084fc;">Trim</strong> <span style="color: #ffffff;">- Memotong objek</span></div>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Unite</strong> - Menggabungkan objek</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Minus Front</strong> - Mengurangi objek depan</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Intersect</strong> - Irisan objek</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Trim</strong> - Memotong objek</span></div>
         </div>
     </div>`,
     
-    // SLIDE 4: Layer pada Photoshop (PUTIH CERAH)
+    // SLIDE 4: Layer pada Photoshop
     `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 15px; text-align: center; font-size: 18px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Layer pada Photoshop</h3>
+        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Layer pada Photoshop</h3>
         
         <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
             <svg width="100%" max-width="280" height="140" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
@@ -427,16 +428,16 @@ const materiData = {
                 <text x="120" y="70" fill="#a78bfa" font-size="11">Setiap elemen punya</text>
                 <text x="120" y="90" fill="#a78bfa" font-size="11">layer sendiri</text>
             </svg>
-            <br><small style="color: #c084fc; font-size: 10px;">✨ Ilustrasi Layer di Photoshop</small>
+            <br><small style="color: #c084fc; font-size: 11px;">✨ Ilustrasi Layer di Photoshop</small>
         </div>
         
-        <p style="color: #ffffff; text-align: center; font-size: 13px; margin: 15px 0;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
+        <p style="color: #ffffff; text-align: center; font-size: 15px; margin: 15px 0; font-weight: 500;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
         
         <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; margin-top: 15px;">
-            <strong style="color: #c084fc; font-size: 13px;">📌 Shortcut Layer:</strong><br>
-            <span style="color: #ffffff; font-size: 12px;">Ctrl+Shift+N = Layer baru</span><br>
-            <span style="color: #ffffff; font-size: 12px;">Ctrl+J = Duplikat layer</span><br>
-            <span style="color: #ffffff; font-size: 12px;">Ctrl+E = Merge layer</span>
+            <strong style="color: #c084fc; font-size: 15px;">📌 Shortcut Layer:</strong><br>
+            <span style="color: #ffffff; font-size: 14px;">Ctrl+Shift+N = Layer baru</span><br>
+            <span style="color: #ffffff; font-size: 14px;">Ctrl+J = Duplikat layer</span><br>
+            <span style="color: #ffffff; font-size: 14px;">Ctrl+E = Merge layer</span>
         </div>
     </div>`
 ]},
