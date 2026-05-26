@@ -254,39 +254,39 @@ const materiData = {
     ]},
     
     3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP (RESPONSIF UNTUK HP)
+    // SLIDE 1: Software VEKTOR dan BITMAP
     `<div style="padding: 10px;">
         <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Software Berbasis VEKTOR</h3>
         
         <!-- Grid responsif: di HP 1 kolom, di tablet 2 kolom, di desktop 4 kolom -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 15px 0;">
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="corell.png" alt="CorelDRAW" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 70px; height: 70px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">CorelDRAW</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Shaping &amp; PowerClip</p>
             </div>
             
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>✨</span>'">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>✨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Illustrator</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Pathfinder &amp; Pen Tool</p>
             </div>
             
             <div style="background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="inscape.png" alt="Inkscape" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🖌️</span>'">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="inscape.png" alt="Inkscape" style="width: 70px; height: 70px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🖌️</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Inkscape</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Gratis &amp; Open Source</p>
             </div>
             
             <div style="background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="figma.png" alt="Figma" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎯</span>'">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="figma.png" alt="Figma" style="width: 70px; height: 70px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎯</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Figma</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">UI/UX &amp; Kolaborasi</p>
