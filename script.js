@@ -468,6 +468,190 @@ async function sendChat() {
     container.scrollTop = container.scrollHeight;
 }
 
+// ==================== BACKSOUND ====================
+let isMusicPlaying = false;
+let audioElement = null;
+let volumeSliderVisible = false;
+
+function initBacksound() {
+    audioElement = document.getElementById('backsound');
+    if (audioElement) {
+        // Set volume default (30%)
+        audioElement.volume = 0.3;
+        
+        // Cek apakah user sebelumnya sudah memutar musik
+        const musicPlayed = localStorage.getItem('musicPlayed');
+        if (musicPlayed === 'true') {
+            // Coba play musik (mungkin masih diblokir browser)
+            toggleMusic();
+        }
+        
+        // Event listener untuk ketika audio selesai (akan loop otomatis)
+        audioElement.addEventListener('ended', function() {
+            if (isMusicPlaying) {
+                audioElement.play();
+            }
+        });
+        
+        // Event listener untuk error
+        audioElement.addEventListener('error', function(e) {
+            console.error('Error playing audio:', e);
+            updateMusicButtonUI(false);
+            localStorage.setItem('musicPlayed', 'false');
+        });
+    }
+}
+
+function toggleMusic() {
+    if (!audioElement) {
+        audioElement = document.getElementById('backsound');
+        if (!audioElement) {
+            console.error('Audio element not found');
+            return;
+        }
+    }
+    
+    if (isMusicPlaying) {
+        // Pause musik
+        audioElement.pause();
+        isMusicPlaying = false;
+        updateMusicButtonUI(false);
+        localStorage.setItem('musicPlayed', 'false');
+    } else {
+        // Play musik
+        const playPromise = audioElement.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                isMusicPlaying = true;
+                updateMusicButtonUI(true);
+                localStorage.setItem('musicPlayed', 'true');
+            }).catch(error => {
+                console.log("Autoplay diblokir browser. User perlu klik tombol terlebih dahulu.");
+                // Tampilkan notifikasi singkat
+                showNotification('Klik tombol musik lagi untuk memutar', 'info');
+            });
+        }
+    }
+}
+
+function updateMusicButtonUI(isPlaying) {
+    const btn = document.getElementById('musicToggleBtn');
+    if (btn) {
+        if (isPlaying) {
+            btn.classList.add('playing');
+            btn.innerHTML = '<i class="fas fa-stop"></i><span class="music-text">Hentikan</span>';
+        } else {
+            btn.classList.remove('playing');
+            btn.innerHTML = '<i class="fas fa-music"></i><span class="music-text">Putar Musik</span>';
+        }
+    }
+}
+
+// Fungsi untuk mengatur volume
+function setVolume(value) {
+    if (audioElement) {
+        audioElement.volume = parseFloat(value);
+        // Simpan volume ke localStorage
+        localStorage.setItem('musicVolume', value);
+        
+        // Update icon volume
+        const volumeIcon = document.querySelector('.volume-container i');
+        if (volumeIcon) {
+            if (value == 0) {
+                volumeIcon.className = 'fas fa-volume-mute';
+            } else if (value < 0.5) {
+                volumeIcon.className = 'fas fa-volume-down';
+            } else {
+                volumeIcon.className = 'fas fa-volume-up';
+            }
+        }
+    }
+}
+
+// Toggle volume slider
+function toggleVolumeSlider() {
+    const volumeContainer = document.getElementById('volumeContainer');
+    if (volumeContainer) {
+        if (volumeSliderVisible) {
+            volumeContainer.classList.remove('show');
+            volumeSliderVisible = false;
+        } else {
+            volumeContainer.classList.add('show');
+            volumeSliderVisible = true;
+            
+            // Auto hide setelah 3 detik
+            setTimeout(() => {
+                if (volumeSliderVisible) {
+                    volumeContainer.classList.remove('show');
+                    volumeSliderVisible = false;
+                }
+            }, 3000);
+        }
+    }
+}
+
+// Inisialisasi volume slider
+function initVolumeSlider() {
+    const savedVolume = localStorage.getItem('musicVolume');
+    const volume = savedVolume !== null ? parseFloat(savedVolume) : 0.3;
+    
+    if (audioElement) {
+        audioElement.volume = volume;
+    }
+    
+    const slider = document.getElementById('volumeSlider');
+    if (slider) {
+        slider.value = volume;
+        slider.addEventListener('input', function(e) {
+            setVolume(e.target.value);
+        });
+    }
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    // Cek apakah elemen notifikasi sudah ada
+    let notif = document.getElementById('musicNotification');
+    if (!notif) {
+        notif = document.createElement('div');
+        notif.id = 'musicNotification';
+        notif.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.8rem;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            border-left: 3px solid #c084fc;
+        `;
+        document.body.appendChild(notif);
+    }
+    
+    notif.innerHTML = message;
+    notif.style.opacity = '1';
+    notif.style.visibility = 'visible';
+    
+    setTimeout(() => {
+        notif.style.opacity = '0';
+        notif.style.visibility = 'hidden';
+    }, 3000);
+}
+
+// Fungsi untuk preload backsound (opsional)
+function preloadBacksound() {
+    if (audioElement) {
+        audioElement.load();
+    }
+}
+
 // ==================== INITIALIZATION ====================
 // Jalankan semua fungsi saat halaman siap
 document.addEventListener('DOMContentLoaded', function() {
@@ -476,4 +660,5 @@ document.addEventListener('DOMContentLoaded', function() {
     loadTemplates();
     loadUserData();
     updateApiStatus();
+    initBacksound();
 });
