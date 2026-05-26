@@ -265,7 +265,7 @@ const materiData = {
             <!-- CorelDRAW -->
             <div style="text-align: center; width: 100px;">
                 <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="corell.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+                    <img src="corelnew.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">CorelDRAW</p>
             </div>
@@ -281,7 +281,7 @@ const materiData = {
             <!-- Inkscape -->
             <div style="text-align: center; width: 100px;">
                 <div style="width: 85px; height: 85px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                    <img src="inscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                    <img src="inkscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
                 </div>
                 <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Inkscape</p>
             </div>
@@ -395,7 +395,7 @@ const materiData = {
                 <rect width="300" height="120" fill="#1a1a2e"/>
                 <circle cx="50" cy="50" r="30" fill="#c084fc" opacity="0.7"/>
                 <rect x="50" y="30" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
-                <text x="120" y="60" fill="#c084fc" font-size="12">Unite (Gabung)</text>
+                <text x="120" y="60" fill="#c084fc" font-size="12">Unite </text>
                 <circle cx="200" cy="50" r="30" fill="#c084fc"/>
                 <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
                 <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
@@ -404,10 +404,10 @@ const materiData = {
         </div>
         
         <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Unite</strong> - Menggabungkan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Minus Front</strong> - Mengurangi objek depan</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Intersect</strong> - Irisan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #c084fc;">Trim</strong> - Memotong objek</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Unite</strong> - Menggabungkan objek</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Minus Front</strong> - Mengurangi objek depan</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Irisan objek</span></div>
+            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek</span></div>
         </div>
     </div>`,
     
@@ -434,7 +434,7 @@ const materiData = {
         <p style="color: #ffffff; text-align: center; font-size: 15px; margin: 15px 0; font-weight: 500;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
         
         <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; margin-top: 15px;">
-            <strong style="color: #c084fc; font-size: 15px;">📌 Shortcut Layer:</strong><br>
+            <strong style="color: #ffffff; font-size: 15px;">📌 Shortcut Layer:</strong><br>
             <span style="color: #ffffff; font-size: 14px;">Ctrl+Shift+N = Layer baru</span><br>
             <span style="color: #ffffff; font-size: 14px;">Ctrl+J = Duplikat layer</span><br>
             <span style="color: #ffffff; font-size: 14px;">Ctrl+E = Merge layer</span>
