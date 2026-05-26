@@ -261,8 +261,8 @@ const materiData = {
         <!-- Grid responsif: di HP 1 kolom, di tablet 2 kolom, di desktop 4 kolom -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 15px 0;">
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="corell.png" alt="CorelDRAW" style="width: 70px; height: 70px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 90px; height: 90px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">CorelDRAW</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Shaping &amp; PowerClip</p>
@@ -270,7 +270,7 @@ const materiData = {
             
             <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
                 <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>✨</span>'">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 90px; height: 90px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>✨</span>'">
                 </div>
                 <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Illustrator</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Pathfinder &amp; Pen Tool</p>
