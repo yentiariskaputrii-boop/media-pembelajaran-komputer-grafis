@@ -254,101 +254,104 @@ const materiData = {
     ]},
     
     3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP
+    // SLIDE 1: Software VEKTOR dan BITMAP (RESPONSIF UNTUK HP)
     `<div style="padding: 10px;">
-        <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center;">📌 Software Berbasis VEKTOR</h3>
+        <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Software Berbasis VEKTOR</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0;">
-            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="corell.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
+        <!-- Grid responsif: di HP 1 kolom, di tablet 2 kolom, di desktop 4 kolom -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 15px 0;">
+            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">CorelDRAW</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Fitur Shaping & PowerClip</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">CorelDRAW</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Shaping &amp; PowerClip</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>✨</span>'">
+            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>✨</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Illustrator</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Fitur Pathfinder & Pen Tool</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Illustrator</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Fitur Pathfinder &amp; Pen Tool</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="inscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🖌️</span>'">
+            <div style="background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="inscape.png" alt="Inkscape" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🖌️</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Inkscape</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Gratis & Open Source</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Inkscape</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Gratis &amp; Open Source</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎯</span>'">
+            <div style="background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="figma.png" alt="Figma" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎯</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Figma</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">UI/UX & Kolaborasi</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Figma</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">UI/UX &amp; Kolaborasi</p>
             </div>
         </div>
         
-        <ol style="margin: 20px 0; color: #e0d4ff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 15px 15px 15px 35px; border-radius: 16px;">
-            <li><strong style="color: #c084fc;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping & PowerClip</li>
-            <li><strong style="color: #c084fc;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder & Pen Tool</li>
+        <!-- Daftar dengan style responsif -->
+        <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 12px 12px 12px 28px; border-radius: 14px; font-size: 12px;">
+            <li><strong style="color: #c084fc;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</li>
+            <li><strong style="color: #c084fc;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</li>
             <li><strong style="color: #c084fc;">Inkscape</strong> - Gratis dan open source</li>
             <li><strong style="color: #c084fc;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</li>
         </ol>
         
-        <h3 style="color: #c084fc; margin: 30px 0 20px 0; text-align: center;">📌 Software Berbasis BITMAP</h3>
+        <h3 style="color: #c084fc; margin: 25px 0 15px 0; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Software Berbasis BITMAP</h3>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0;">
-            <div style="background: linear-gradient(135deg, rgba(49, 168, 255, 0.2), rgba(0, 136, 255, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>📷</span>'">
+        <!-- Grid responsif untuk BITMAP -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 15px 0;">
+            <div style="background: linear-gradient(135deg, rgba(49, 168, 255, 0.2), rgba(0, 136, 255, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="photoshop.png" alt="Photoshop" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>📷</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Photoshop</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Layer & Selection Tools</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Photoshop</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Layer &amp; Selection Tools</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(92, 45, 145, 0.2), rgba(124, 58, 237, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
+            <div style="background: linear-gradient(135deg, rgba(92, 45, 145, 0.2), rgba(124, 58, 237, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="gimp.png" alt="GIMP" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">GIMP</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Gratis & Open Source</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">GIMP</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Gratis &amp; Open Source</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(107, 181, 255, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🖌️</span>'">
+            <div style="background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(107, 181, 255, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="krita.png" alt="Krita" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🖌️</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Krita</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Digital Painting</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Krita</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Digital Painting</p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 136, 136, 0.1)); border-radius: 16px; padding: 15px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
-                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:40px;\'>🎨</span>'">
+            <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 136, 136, 0.1)); border-radius: 14px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
+                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:32px;\'>🎨</span>'">
                 </div>
-                <h4 style="color: #c084fc; margin: 10px 0;">Photo-Paint</h4>
-                <p style="font-size: 12px; color: #cdc4ff;">Software Bitmap Corel</p>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 14px;">Photo-Paint</h4>
+                <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Software Bitmap Corel</p>
             </div>
         </div>
         
-        <ol style="margin: 20px 0; color: #e0d4ff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 15px 15px 15px 35px; border-radius: 16px;">
-            <li><strong style="color: #c084fc;">Adobe Photoshop</strong> - Paling populer, fitur Layer & Selection Tools</li>
+        <ol style="margin: 15px 0; color: #e0d4ff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 12px 12px 12px 28px; border-radius: 14px; font-size: 12px;">
+            <li><strong style="color: #c084fc;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</li>
             <li><strong style="color: #c084fc;">GIMP</strong> - Gratis dan open source</li>
             <li><strong style="color: #c084fc;">Krita</strong> - Fokus digital painting</li>
             <li><strong style="color: #c084fc;">Corel Photo-Paint</strong> - Software bitmap dari Corel</li>
         </ol>
     </div>`,
     
-    // SLIDE 2: Fitur Shaping di CorelDRAW
+    // SLIDE 2: Fitur Shaping di CorelDRAW (RESPONSIF)
     `<div style="padding: 10px;">
-        <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center;">📌 Fitur Shaping di CorelDRAW</h3>
+        <h3 style="color: #c084fc; margin-bottom: 15px; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Fitur Shaping di CorelDRAW</h3>
         
-        <div style="text-align:center; margin:20px 0; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 16px;">
-            <svg width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px; overflow-x: auto;">
+            <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
                 <rect width="300" height="120" fill="#1a1a2e"/>
                 <rect x="30" y="30" width="50" height="50" fill="#c084fc" opacity="0.7"/>
                 <rect x="70" y="40" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
@@ -357,43 +360,44 @@ const materiData = {
                 <rect x="220" y="55" width="50" height="30" fill="#ff6b6b"/>
                 <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim (Potong)</text>
             </svg>
-            <br><small style="color:#a78bfa;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
+            <br><small style="color:#a78bfa; font-size: 10px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Combine</strong><br>
-                <small style="color: #cdc4ff;">Menggabungkan objek, menghilangkan irisan</small>
+        <!-- Grid 2 kolom responsif: di HP jadi 1 kolom -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">Combine</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Menggabungkan objek, menghilangkan irisan</small>
             </div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Weld</strong><br>
-                <small style="color: #cdc4ff;">Menggabungkan objek tanpa irisan</small>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">Weld</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Menggabungkan objek tanpa irisan</small>
             </div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Trim</strong><br>
-                <small style="color: #cdc4ff;">Memotong objek dengan objek lain</small>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">Trim</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Memotong objek dengan objek lain</small>
             </div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Intersect</strong><br>
-                <small style="color: #cdc4ff;">Membuat objek dari irisan dua objek</small>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">Intersect</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Membuat objek dari irisan dua objek</small>
             </div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">Simplify</strong><br>
-                <small style="color: #cdc4ff;">Objek depan memotong objek belakang</small>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">Simplify</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Objek depan memotong objek belakang</small>
             </div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
-                <strong style="color: #c084fc;">PowerClip</strong><br>
-                <small style="color: #cdc4ff;">Memasukkan gambar ke dalam bentuk objek</small>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px 12px; border-radius: 12px; border-left: 3px solid #c084fc;">
+                <strong style="color: #c084fc; font-size: 13px;">PowerClip</strong><br>
+                <small style="color: #cdc4ff; font-size: 11px;">Memasukkan gambar ke dalam bentuk objek</small>
             </div>
         </div>
     </div>`,
     
-    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
+    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator (RESPONSIF)
     `<div style="padding: 10px;">
-        <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center;">📌 Fitur Pathfinder di Adobe Illustrator</h3>
+        <h3 style="color: #c084fc; margin-bottom: 15px; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Fitur Pathfinder di Adobe Illustrator</h3>
         
-        <div style="text-align:center; margin:20px 0; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 16px;">
-            <svg width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px; overflow-x: auto;">
+            <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
                 <rect width="300" height="120" fill="#1a1a2e"/>
                 <circle cx="50" cy="50" r="30" fill="#c084fc" opacity="0.7"/>
                 <rect x="50" y="30" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
@@ -402,27 +406,27 @@ const materiData = {
                 <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
                 <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
             </svg>
-            <br><small style="color:#a78bfa;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
+            <br><small style="color:#a78bfa; font-size: 10px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Unite</strong> - Menggabungkan objek</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Minus Front</strong> - Mengurangi objek depan</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Intersect</strong> - Irisan objek</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Exclude</strong> - Gabung tanpa irisan</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Divide</strong> - Membagi berdasarkan garis potong</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Trim</strong> - Memotong objek</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Merge</strong> - Menggabungkan</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;"><strong style="color: #c084fc;">Crop</strong> - Memotong/iris</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Unite</strong> <span style="font-size: 11px; color:#cdc4ff;">- Menggabungkan objek</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Minus Front</strong> <span style="font-size: 11px; color:#cdc4ff;">- Mengurangi objek depan</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Intersect</strong> <span style="font-size: 11px; color:#cdc4ff;">- Irisan objek</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Exclude</strong> <span style="font-size: 11px; color:#cdc4ff;">- Gabung tanpa irisan</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Divide</strong> <span style="font-size: 11px; color:#cdc4ff;">- Membagi berdasarkan garis potong</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Trim</strong> <span style="font-size: 11px; color:#cdc4ff;">- Memotong objek</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Merge</strong> <span style="font-size: 11px; color:#cdc4ff;">- Menggabungkan</span></div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px;"><strong style="color: #c084fc; font-size: 13px;">Crop</strong> <span style="font-size: 11px; color:#cdc4ff;">- Memotong/iris</span></div>
         </div>
     </div>`,
     
-    // SLIDE 4: Layer pada Photoshop
+    // SLIDE 4: Layer pada Photoshop (RESPONSIF)
     `<div style="padding: 10px;">
-        <h3 style="color: #c084fc; margin-bottom: 20px; text-align: center;">📌 Layer pada Photoshop</h3>
+        <h3 style="color: #c084fc; margin-bottom: 15px; text-align: center; font-size: clamp(16px, 5vw, 22px);">📌 Layer pada Photoshop</h3>
         
-        <div style="text-align:center; margin:20px 0; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 16px;">
-            <svg width="280" height="140" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg">
+        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px; overflow-x: auto;">
+            <svg width="100%" max-width="280" height="140" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
                 <rect width="300" height="140" fill="#1a1a2e"/>
                 <rect x="20" y="20" width="60" height="40" fill="#c084fc" rx="5" opacity="0.8"/>
                 <text x="50" y="45" text-anchor="middle" fill="white" font-size="10">Layer 1</text>
@@ -434,23 +438,23 @@ const materiData = {
                 <text x="120" y="70" fill="#a78bfa" font-size="11">Setiap elemen punya</text>
                 <text x="120" y="90" fill="#a78bfa" font-size="11">layer sendiri</text>
             </svg>
-            <br><small style="color:#a78bfa;">✨ Ilustrasi Layer di Photoshop</small>
+            <br><small style="color:#a78bfa; font-size: 10px;">✨ Ilustrasi Layer di Photoshop</small>
         </div>
         
-        <p style="color: #e0d4ff; text-align: center;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
+        <p style="color: #e0d4ff; text-align: center; font-size: 13px;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
         
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;">✅ Memisahkan elemen desain</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;">✅ Mengatur urutan (z-order)</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;">✅ Menerapkan efek non-destruktif</div>
-            <div style="background: rgba(192, 132, 252, 0.1); padding: 12px; border-radius: 12px;">✅ Mengatur opacity (transparansi)</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px; font-size: 12px;">✅ Memisahkan elemen desain</div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px; font-size: 12px;">✅ Mengatur urutan (z-order)</div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px; font-size: 12px;">✅ Menerapkan efek non-destruktif</div>
+            <div style="background: rgba(192, 132, 252, 0.1); padding: 10px; border-radius: 10px; font-size: 12px;">✅ Mengatur opacity (transparansi)</div>
         </div>
         
-        <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-top: 15px;">
-            <strong style="color: #c084fc;">📌 Shortcut Layer:</strong><br>
-            <span style="color: #cdc4ff;">Ctrl+Shift+N = Layer baru</span><br>
-            <span style="color: #cdc4ff;">Ctrl+J = Duplikat layer</span><br>
-            <span style="color: #cdc4ff;">Ctrl+E = Merge layer</span>
+        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 12px; margin-top: 15px;">
+            <strong style="color: #c084fc; font-size: 13px;">📌 Shortcut Layer:</strong><br>
+            <span style="color: #cdc4ff; font-size: 12px;">Ctrl+Shift+N = Layer baru</span><br>
+            <span style="color: #cdc4ff; font-size: 12px;">Ctrl+J = Duplikat layer</span><br>
+            <span style="color: #cdc4ff; font-size: 12px;">Ctrl+E = Merge layer</span>
         </div>
     </div>`
 ]},
