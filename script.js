@@ -254,45 +254,45 @@ const materiData = {
     ]},
     
    3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP (GRID PROPORSIONAL)
+    // SLIDE 1: Software VEKTOR dan BITMAP (1 BARIS HORIZONTAL, SCROLLABLE DI HP)
     `<div style="padding: 8px;">
         <h3 style="color: #c084fc; margin-bottom: 15px; text-align: center; font-size: 18px;">📌 Software Berbasis VEKTOR</h3>
         
-        <!-- Grid responsif dengan ukuran proporsional -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 15px 0;">
-            <!-- CorelDRAW -->
-            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="corell.png" alt="CorelDRAW" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+        <!-- 1 baris horizontal, scrollable di HP -->
+        <div style="display: flex; flex-direction: row; gap: 15px; overflow-x: auto; padding: 10px 5px 15px 5px; margin: 10px 0; scrollbar-width: thin;">
+                        <!-- CorelDRAW -->
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #7c3aed, #a78bfa); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="corell.png" alt="CorelDRAW" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">CorelDRAW</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">CorelDRAW</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Shaping &amp; PowerClip</p>
             </div>
             
             <!-- Illustrator -->
-            <div style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(167, 139, 250, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f5a623, #f5d142); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="ilustration.png" alt="Illustrator" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Illustrator</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Illustrator</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Pathfinder &amp; Pen Tool</p>
             </div>
             
             <!-- Inkscape -->
-            <div style="background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="inscape.png" alt="Inkscape" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(34, 170, 34, 0.2), rgba(85, 204, 85, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #22aa22, #55cc55); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="inscape.png" alt="Inkscape" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Inkscape</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Inkscape</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Gratis &amp; Open Source</p>
             </div>
             
             <!-- Figma -->
-            <div style="background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="figma.png" alt="Figma" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(242, 78, 30, 0.2), rgba(255, 107, 61, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #f24e1e, #ff6b3d); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="figma.png" alt="Figma" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Figma</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Figma</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">UI/UX &amp; Kolaborasi</p>
             </div>
         </div>
@@ -307,41 +307,42 @@ const materiData = {
         
         <h3 style="color: #c084fc; margin: 20px 0 15px 0; text-align: center; font-size: 18px;">📌 Software Berbasis BITMAP</h3>
         
-        <!-- Grid 2 kolom untuk BITMAP -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 15px 0;">
+        <!-- 1 baris horizontal untuk BITMAP -->
+        <div style="display: flex; flex-direction: row; gap: 15px; overflow-x: auto; padding: 10px 5px 15px 5px; margin: 10px 0; scrollbar-width: thin;">
+            
             <!-- Photoshop -->
-            <div style="background: linear-gradient(135deg, rgba(49, 168, 255, 0.2), rgba(0, 136, 255, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="photoshop.png" alt="Photoshop" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(49, 168, 255, 0.2), rgba(0, 136, 255, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #31A8FF, #0088ff); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="photoshop.png" alt="Photoshop" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Photoshop</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Photoshop</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Layer &amp; Selection Tools</p>
             </div>
             
             <!-- GIMP -->
-            <div style="background: linear-gradient(135deg, rgba(92, 45, 145, 0.2), rgba(124, 58, 237, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="gimp.png" alt="GIMP" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(92, 45, 145, 0.2), rgba(124, 58, 237, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #5C2D91, #7c3aed); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="gimp.png" alt="GIMP" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">GIMP</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">GIMP</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Gratis &amp; Open Source</p>
             </div>
             
             <!-- Krita -->
-            <div style="background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(107, 181, 255, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="krita.png" alt="Krita" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(59, 158, 255, 0.2), rgba(107, 181, 255, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #3b9eff, #6bb5ff); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="krita.png" alt="Krita" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Krita</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Krita</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Digital Painting</p>
             </div>
             
             <!-- Corel Photo-Paint -->
-            <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 136, 136, 0.1)); border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
-                <div style="width: 55px; height: 55px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px auto;">
-                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 40px; height: 40px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 0 0 auto; width: 100px; background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 136, 136, 0.1)); border-radius: 16px; padding: 15px 10px; text-align: center; border: 1px solid rgba(192, 132, 252, 0.3);">
+                <div style="width: 70px; height: 70px; background: linear-gradient(135deg, #ff6b6b, #ff8888); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px auto;">
+                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 50px; height: 50px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
                 </div>
-                <h4 style="color: #c084fc; margin: 6px 0; font-size: 13px;">Photo-Paint</h4>
+                <h4 style="color: #c084fc; margin: 8px 0; font-size: 13px;">Photo-Paint</h4>
                 <p style="font-size: 10px; color: #cdc4ff; margin: 0;">Software Bitmap Corel</p>
             </div>
         </div>
