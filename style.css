@@ -130,9 +130,11 @@ body::before {
     margin: 0 auto;
     transition: all 0.3s ease;
 }
+
 .glass-card-sm {
     max-width: 450px;
 }
+
 .glass-card.full-chat {
     max-width: 1300px;
     height: 85vh;
@@ -144,6 +146,10 @@ body::before {
 #home-page .glass-card {
     max-width: 100%;
     padding: 1.2rem;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* === LOGIN KHUSUS === */
@@ -321,7 +327,7 @@ input:focus, select:focus {
     text-align: center;
 }
 
-/* === MENU GRID - FULL LEBAR === */
+/* === MENU GRID - FULL LEBAR & RAPI === */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -340,6 +346,7 @@ input:focus, select:focus {
     color: #ffffff;
     font-weight: 600;
     font-size: 0.85rem;
+    animation: menuFadeIn 0.4s ease backwards;
 }
 .menu-card.menu-wide {
     grid-column: span 2;
@@ -359,6 +366,24 @@ input:focus, select:focus {
 .menu-card:hover i {
     transform: scale(1.1);
 }
+
+/* Animasi menu */
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-card:nth-child(1) { animation-delay: 0.1s; }
+.menu-card:nth-child(2) { animation-delay: 0.2s; }
+.menu-card:nth-child(3) { animation-delay: 0.3s; }
+.menu-card:nth-child(4) { animation-delay: 0.4s; }
+.menu-card:nth-child(5) { animation-delay: 0.5s; }
 
 /* === BACK BUTTON === */
 .back-btn {
@@ -446,6 +471,11 @@ input:focus, select:focus {
 }
 
 /* === QUIZ === */
+.quiz-desc {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
 .quiz-question {
     color: #ffffff;
     font-weight: 700;
@@ -630,6 +660,8 @@ input:focus, select:focus {
     color: #ffaaaa;
     font-size: 0.7rem;
 }
+
+/* === PROFIL === */
 .profile-avatar {
     width: 100px;
     height: 100px;
@@ -658,6 +690,8 @@ input:focus, select:focus {
     line-height: 1.4;
     font-size: 0.8rem;
 }
+
+/* === TYPING INDICATOR === */
 .typing-indicator {
     display: none;
     align-self: flex-start;
@@ -779,6 +813,11 @@ h2 i, .glass-card h2 i {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+.video-item:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(192, 132, 252, 0.15));
+    transform: translateX(5px);
+    border-color: #c084fc;
+}
 .video-thumbnail {
     width: 45px;
     height: 45px;
@@ -842,6 +881,7 @@ h2 i, .glass-card h2 i {
 .music-control-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+    background: linear-gradient(135deg, #8b5cf6, #c084fc);
 }
 .music-control-btn i { font-size: 0.9rem; }
 .music-control-btn .music-text { font-size: 0.7rem; }
@@ -877,10 +917,16 @@ h2 i, .glass-card h2 i {
     .login-header p { font-size: 0.6rem; }
     .form-label { font-size: 0.7rem; }
     input, select, .btn-primary { padding: 8px 12px; font-size: 0.75rem; }
+    .chat-messages { padding: 10px; }
+    .bubble-user, .bubble-ai { padding: 6px 12px; font-size: 0.7rem; }
 }
+
 @media (max-width: 480px) {
     .logo-container { gap: 15px; }
     .logo-img { width: 40px; height: 40px; }
     .music-control-btn { bottom: 12px; right: 12px; padding: 6px 12px; }
     .music-control-btn .music-text { font-size: 0.6rem; }
+    .menu-grid { gap: 8px; }
+    .menu-card i { font-size: 1rem; }
+    .menu-card span { font-size: 0.6rem; }
 }
