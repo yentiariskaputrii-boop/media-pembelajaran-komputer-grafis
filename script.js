@@ -114,24 +114,75 @@ function createMovingDots() {
     }
 }
 
-function createBubbles() {
-    let bubblesContainer = document.getElementById('bubbles');
-    if(bubblesContainer && bubblesContainer.children.length === 0) {
-        for(let i = 0; i < 40; i++) {
-            let bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            let size = Math.random() * 80 + 25;
-            bubble.style.width = size + 'px';
-            bubble.style.height = size + 'px';
-            bubble.style.left = Math.random() * 100 + '%';
-            bubble.style.animationDuration = Math.random() * 14 + 8 + 's';
-            bubble.style.animationDelay = Math.random() * 12 + 's';
-            bubble.style.background = 'radial-gradient(circle at 30% 30%, rgba(' + (150 + Math.random() * 105) + ', ' + (100 + Math.random() * 155) + ', 255, 0.5), rgba(124, 58, 237, 0.2))';
-            bubblesContainer.appendChild(bubble);
-        }
+// ==================== ANIMASI LOGO BERGERAK (PENGGANTI BUBBLES) ====================
+function createFloatingLogos() {
+    const container = document.getElementById('floatingLogos');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // Daftar logo yang akan ditampilkan
+    const logos = [
+        { src: 'corelnew.png', name: 'CorelDRAW', color: '#7c3aed' },
+        { src: 'ilustration.png', name: 'Illustrator', color: '#f5a623' },
+        { src: 'inkscape.png', name: 'Inkscape', color: '#22aa22' },
+        { src: 'figma.png', name: 'Figma', color: '#f24e1e' },
+        { src: 'photoshop.png', name: 'Photoshop', color: '#31A8FF' },
+        { src: 'gimp.png', name: 'GIMP', color: '#5C2D91' },
+        { src: 'krita.png', name: 'Krita', color: '#3b9eff' },
+        { src: 'pp.png', name: 'Photo-Paint', color: '#ff6b6b' }
+    ];
+    
+    // Buat 40 logo yang bergerak
+    for (let i = 0; i < 40; i++) {
+        const logo = logos[i % logos.length];
+        const div = document.createElement('div');
+        div.className = 'logo-float';
+        
+        // Posisi acak
+        const leftPos = Math.random() * 100;
+        const size = 35 + Math.random() * 45; // ukuran 35-80px
+        const duration = 12 + Math.random() * 20; // durasi 12-32 detik
+        const delay = Math.random() * 15; // delay 0-15 detik
+        
+        div.style.left = leftPos + '%';
+        div.style.width = size + 'px';
+        div.style.height = size + 'px';
+        div.style.animationDuration = duration + 's';
+        div.style.animationDelay = delay + 's';
+        
+        // Buat elemen gambar
+        const img = document.createElement('img');
+        img.src = logo.src;
+        img.alt = logo.name;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'contain';
+        img.style.borderRadius = '12px';
+        img.style.filter = 'drop-shadow(0 0 5px rgba(255,255,255,0.3))';
+        
+        // Fallback jika gambar tidak ditemukan
+        img.onerror = function() {
+            this.style.display = 'none';
+            const placeholder = document.createElement('div');
+            placeholder.style.width = '100%';
+            placeholder.style.height = '100%';
+            placeholder.style.background = logo.color;
+            placeholder.style.borderRadius = '12px';
+            placeholder.style.display = 'flex';
+            placeholder.style.alignItems = 'center';
+            placeholder.style.justifyContent = 'center';
+            placeholder.style.fontSize = '20px';
+            placeholder.style.fontWeight = 'bold';
+            placeholder.style.color = 'white';
+            placeholder.innerHTML = logo.name.substring(0, 2);
+            div.appendChild(placeholder);
+        };
+        
+        div.appendChild(img);
+        container.appendChild(div);
     }
 }
-
 // ==================== VIDEO ====================
 let videoUrls = {
     1: "https://www.youtube.com/embed/KHyJHUxFrlI",
