@@ -142,7 +142,6 @@ body::before {
     flex-direction: column;
 }
 
-/* === HOME PAGE - TIDAK TERLALU LEBAR === */
 #home-page .glass-card {
     max-width: 900px;
     padding: 1.2rem;
