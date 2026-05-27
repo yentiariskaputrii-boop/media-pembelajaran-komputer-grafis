@@ -855,7 +855,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Aplikasi dimulai...');
     
     createMovingDots();
-    createBubbles();
+    createFloatingLogos();
     loadTemplates();
     loadUserData();
     updateApiStatus();
