@@ -773,23 +773,32 @@ h2 i, .glass-card h2 i {
     font-size: 0.8rem;
 }
 
-/* === PETUNJUK PAGE - TAMPILAN SUPER RAPI === */
+/* === PETUNJUK PAGE - PERBAIKAN POSISI === */
 #petunjuk-page {
-    padding: 12px;
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #petunjuk-page .glass-card {
     max-width: 900px;
     width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem;
+    margin: 20px auto;
+    padding: 1.8rem;
     background: linear-gradient(135deg, rgba(20, 18, 42, 0.95), rgba(15, 12, 35, 0.98));
+    border-radius: 1.5rem;
+}
+
+/* Header petunjuk - beri jarak dari atas */
+#petunjuk-page .back-btn {
+    margin-bottom: 20px;
 }
 
 #petunjuk-page h2 {
     color: #c084fc !important;
     font-size: 1.2rem;
-    margin: 20px 0 15px 0;
+    margin: 25px 0 15px 0;
     padding-bottom: 8px;
     border-bottom: 2px solid rgba(192, 132, 252, 0.3);
     display: flex;
@@ -799,13 +808,6 @@ h2 i, .glass-card h2 i {
 
 #petunjuk-page h2:first-of-type {
     margin-top: 0;
-}
-
-#petunjuk-page hr {
-    margin: 20px 0;
-    border: none;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.5), transparent);
 }
 
 /* List Petunjuk */
@@ -881,7 +883,7 @@ h2 i, .glass-card h2 i {
     line-height: 1.4;
 }
 
-/* Tabel Persyaratan Sistem */
+/* Tabel */
 .spec-table {
     width: 100%;
     border-collapse: collapse;
@@ -929,8 +931,17 @@ h2 i, .glass-card h2 i {
     margin-right: 6px;
 }
 
-/* === RESPONSIF PETUNJUK === */
+/* === RESPONSIF === */
 @media (max-width: 768px) {
+    #petunjuk-page {
+        padding: 16px;
+    }
+    
+    #petunjuk-page .glass-card {
+        padding: 1.2rem;
+        margin: 10px auto;
+    }
+    
     .spec-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
@@ -970,12 +981,18 @@ h2 i, .glass-card h2 i {
 }
 
 @media (max-width: 480px) {
+    #petunjuk-page {
+        padding: 12px;
+    }
+    
     #petunjuk-page .glass-card {
         padding: 1rem;
+        margin: 5px auto;
     }
     
     #petunjuk-page h2 {
         font-size: 1rem;
+        margin: 15px 0 10px 0;
     }
     
     .spec-table th,
