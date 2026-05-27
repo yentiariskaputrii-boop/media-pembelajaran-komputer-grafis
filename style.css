@@ -773,9 +773,9 @@ h2 i, .glass-card h2 i {
     font-size: 0.8rem;
 }
 
-/* === PETUNJUK PAGE - PERBAIKAN POSISI === */
+/* === PETUNJUK PAGE - VERSI SUPER RAPI === */
 #petunjuk-page {
-    padding: 20px 16px;
+    padding: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -784,17 +784,19 @@ h2 i, .glass-card h2 i {
 #petunjuk-page .glass-card {
     max-width: 900px;
     width: 100%;
-    margin: 20px auto;
-    padding: 1.8rem;
+    margin: 0 auto;
+    padding: 1.5rem;
     background: linear-gradient(135deg, rgba(20, 18, 42, 0.95), rgba(15, 12, 35, 0.98));
     border-radius: 1.5rem;
 }
 
-/* Header petunjuk - beri jarak dari atas */
+/* Tombol kembali */
 #petunjuk-page .back-btn {
     margin-bottom: 20px;
+    display: inline-flex;
 }
 
+/* Judul section */
 #petunjuk-page h2 {
     color: #c084fc !important;
     font-size: 1.2rem;
@@ -810,7 +812,7 @@ h2 i, .glass-card h2 i {
     margin-top: 0;
 }
 
-/* List Petunjuk */
+/* List petunjuk - RAPI */
 .petunjuk-list {
     list-style: none;
     padding: 0;
@@ -818,7 +820,7 @@ h2 i, .glass-card h2 i {
 }
 
 .petunjuk-list li {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
     padding: 12px 16px;
     margin: 8px 0;
     border-radius: 12px;
@@ -826,25 +828,22 @@ h2 i, .glass-card h2 i {
     font-size: 0.85rem;
     border-left: 3px solid #c084fc;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .petunjuk-list li:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     transform: translateX(5px);
 }
 
 .petunjuk-list li strong {
     color: #c084fc;
-    min-width: 100px;
+    margin-right: 8px;
 }
 
 /* Grid Spesifikasi */
 .spec-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
     margin: 20px 0;
 }
@@ -852,7 +851,7 @@ h2 i, .glass-card h2 i {
 .spec-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 16px;
+    padding: 18px;
     border-left: 3px solid #c084fc;
     transition: all 0.3s ease;
 }
@@ -863,7 +862,7 @@ h2 i, .glass-card h2 i {
 }
 
 .spec-card i {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #c084fc;
     margin-bottom: 12px;
     display: inline-block;
@@ -873,14 +872,14 @@ h2 i, .glass-card h2 i {
     color: #ffffff;
     display: block;
     margin: 8px 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .spec-card p {
     color: #cdc4ff;
     font-size: 0.8rem;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* Tabel */
@@ -931,63 +930,46 @@ h2 i, .glass-card h2 i {
     margin-right: 6px;
 }
 
-/* === RESPONSIF === */
+/* Garis pemisah */
+#petunjuk-page hr {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.3), transparent);
+}
+
+/* === RESPONSIF PETUNJUK === */
 @media (max-width: 768px) {
     #petunjuk-page {
-        padding: 16px;
+        padding: 12px;
     }
     
     #petunjuk-page .glass-card {
         padding: 1.2rem;
-        margin: 10px auto;
     }
     
     .spec-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 12px;
     }
     
     .spec-card {
-        padding: 12px;
-    }
-    
-    .spec-card i {
-        font-size: 1.5rem;
-    }
-    
-    .spec-card strong {
-        font-size: 0.8rem;
-    }
-    
-    .spec-card p {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .spec-grid {
-        grid-template-columns: 1fr;
+        padding: 14px;
     }
     
     .petunjuk-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-    
-    .petunjuk-list li strong {
-        min-width: auto;
+        padding: 10px 14px;
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     #petunjuk-page {
-        padding: 12px;
+        padding: 8px;
     }
     
     #petunjuk-page .glass-card {
         padding: 1rem;
-        margin: 5px auto;
     }
     
     #petunjuk-page h2 {
@@ -1002,10 +984,23 @@ h2 i, .glass-card h2 i {
     }
     
     .petunjuk-list li {
-        padding: 10px 12px;
+        padding: 8px 12px;
         font-size: 0.75rem;
     }
+    
+    .spec-card i {
+        font-size: 1.5rem;
+    }
+    
+    .spec-card strong {
+        font-size: 0.85rem;
+    }
+    
+    .spec-card p {
+        font-size: 0.7rem;
+    }
 }
+
 /* === MATERI CARD === */
 .materi-card {
     text-align: left;
