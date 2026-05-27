@@ -791,10 +791,6 @@ function initBacksound() {
     audioElement = document.getElementById('backsound');
     if (audioElement) {
         audioElement.volume = 0.3;
-        let musicPlayed = localStorage.getItem('musicPlayed');
-        if (musicPlayed === 'true') {
-            toggleMusic();
-        }
         audioElement.addEventListener('ended', function() {
             if (isMusicPlaying) {
                 audioElement.play();
@@ -807,31 +803,28 @@ function initBacksound() {
         });
     }
 }
-
 function toggleMusic() {
     if (!audioElement) {
         audioElement = document.getElementById('backsound');
-        if (!audioElement) {
-            console.error('Audio element not found!');
-            return;
-        }
+        if (!audioElement) return;
     }
-    
     if (isMusicPlaying) {
         audioElement.pause();
         isMusicPlaying = false;
         updateMusicButtonUI(false);
         localStorage.setItem('musicPlayed', 'false');
     } else {
+        // Play hanya jika user sudah berinteraksi (klik tombol)
         let playPromise = audioElement.play();
         if (playPromise !== undefined) {
-            playPromise.then(function() {
+            playPromise.then(() => {
                 isMusicPlaying = true;
                 updateMusicButtonUI(true);
                 localStorage.setItem('musicPlayed', 'true');
-            }).catch(function(error) {
-                console.error('Playback failed:', error);
+            }).catch(error => {
+                console.warn("Autoplay diblokir. Klik tombol musik lagi untuk memutar.");
                 updateMusicButtonUI(false);
+                // Jangan set localStorage ke false, biarkan tetap false
             });
         }
     }
