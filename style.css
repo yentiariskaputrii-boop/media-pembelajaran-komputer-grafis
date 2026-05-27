@@ -773,41 +773,60 @@ h2 i, .glass-card h2 i {
     font-size: 0.8rem;
 }
 
-/* === PETUNJUK PAGE - TAMPILAN RAPI === */
+/* === PETUNJUK PAGE - TAMPILAN SUPER RAPI === */
+#petunjuk-page {
+    padding: 12px;
+}
+
 #petunjuk-page .glass-card {
     max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
     padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(20, 18, 42, 0.95), rgba(15, 12, 35, 0.98));
 }
 
 #petunjuk-page h2 {
-    color: #c084fc;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid rgba(192, 132, 252, 0.3);
+    color: #c084fc !important;
+    font-size: 1.2rem;
+    margin: 20px 0 15px 0;
     padding-bottom: 8px;
+    border-bottom: 2px solid rgba(192, 132, 252, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#petunjuk-page h2:first-of-type {
+    margin-top: 0;
 }
 
 #petunjuk-page hr {
     margin: 20px 0;
-    border-color: rgba(192, 132, 252, 0.2);
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.5), transparent);
 }
 
-/* List petunjuk */
+/* List Petunjuk */
 .petunjuk-list {
     list-style: none;
     padding: 0;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .petunjuk-list li {
     background: rgba(255, 255, 255, 0.05);
-    padding: 12px 15px;
+    padding: 12px 16px;
     margin: 8px 0;
     border-radius: 12px;
-    color: #ffffff;
+    color: #e0d4ff;
     font-size: 0.85rem;
     border-left: 3px solid #c084fc;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .petunjuk-list li:hover {
@@ -817,12 +836,13 @@ h2 i, .glass-card h2 i {
 
 .petunjuk-list li strong {
     color: #c084fc;
+    min-width: 100px;
 }
 
-/* Grid spesifikasi */
+/* Grid Spesifikasi */
 .spec-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin: 20px 0;
 }
@@ -830,7 +850,7 @@ h2 i, .glass-card h2 i {
 .spec-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 15px;
+    padding: 16px;
     border-left: 3px solid #c084fc;
     transition: all 0.3s ease;
 }
@@ -841,9 +861,9 @@ h2 i, .glass-card h2 i {
 }
 
 .spec-card i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #c084fc;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: inline-block;
 }
 
@@ -856,24 +876,24 @@ h2 i, .glass-card h2 i {
 
 .spec-card p {
     color: #cdc4ff;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     margin: 0;
     line-height: 1.4;
 }
 
-/* Tabel persyaratan sistem */
+/* Tabel Persyaratan Sistem */
 .spec-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .spec-table th {
     background: linear-gradient(135deg, #7c3aed, #a78bfa);
-    padding: 12px;
+    padding: 12px 15px;
     text-align: left;
     color: white;
     font-weight: 600;
@@ -881,10 +901,10 @@ h2 i, .glass-card h2 i {
 }
 
 .spec-table td {
-    padding: 10px 12px;
+    padding: 10px 15px;
     color: #cdc4ff;
     font-size: 0.8rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .spec-table tr:last-child td {
@@ -895,16 +915,80 @@ h2 i, .glass-card h2 i {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Footer catatan */
+/* Footer */
 .petunjuk-footer {
     font-size: 0.7rem;
     color: #a78bfa;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 25px;
     padding-top: 15px;
+    text-align: center;
     border-top: 1px solid rgba(192, 132, 252, 0.2);
 }
 
+.petunjuk-footer i {
+    margin-right: 6px;
+}
+
+/* === RESPONSIF PETUNJUK === */
+@media (max-width: 768px) {
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .spec-card {
+        padding: 12px;
+    }
+    
+    .spec-card i {
+        font-size: 1.5rem;
+    }
+    
+    .spec-card strong {
+        font-size: 0.8rem;
+    }
+    
+    .spec-card p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .petunjuk-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .petunjuk-list li strong {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #petunjuk-page .glass-card {
+        padding: 1rem;
+    }
+    
+    #petunjuk-page h2 {
+        font-size: 1rem;
+    }
+    
+    .spec-table th,
+    .spec-table td {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .petunjuk-list li {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+    }
+}
 /* === MATERI CARD === */
 .materi-card {
     text-align: left;
