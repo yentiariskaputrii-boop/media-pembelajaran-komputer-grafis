@@ -4,8 +4,6 @@
     box-sizing: border-box;
     font-family: 'Inter', 'Poppins', system-ui, sans-serif;
 }
-
-/* === BACKGROUND GRADASI WARNA-WARNI === */
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, 
@@ -182,11 +180,11 @@ body::before {
     background: linear-gradient(135deg, rgba(20, 18, 42, 0.9), rgba(15, 12, 35, 0.95));
     backdrop-filter: blur(20px);
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(192, 132, 252, 0.15);
     width: 100%;
-    max-width: 1200px;
+    max-width: 500px;
     margin: 0 auto;
     transition: all 0.3s ease;
 }
