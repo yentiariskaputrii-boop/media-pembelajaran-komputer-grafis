@@ -114,7 +114,7 @@ function createMovingDots() {
     }
 }
 
-// ==================== ANIMASI LOGO BERGERAK (PENGGANTI BUBBLES) ====================
+// ==================== ANIMASI LOGO BERGERAK  ====================
 function createFloatingLogos() {
     const container = document.getElementById('floatingLogos');
     if (!container) return;
@@ -134,15 +134,15 @@ function createFloatingLogos() {
     ];
     
     // Buat 40 logo yang bergerak
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 60; i++) {
         const logo = logos[i % logos.length];
         const div = document.createElement('div');
         div.className = 'logo-float';
         
         // Posisi acak
         const leftPos = Math.random() * 100;
-        const size = 35 + Math.random() * 45; // ukuran 35-80px
-        const duration = 12 + Math.random() * 20; // durasi 12-32 detik
+        const size = 50 + Math.random() * 50; 
+        const duration = 10 + Math.random() * 15; // durasi 12-32 detik
         const delay = Math.random() * 15; // delay 0-15 detik
         
         div.style.left = leftPos + '%';
