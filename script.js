@@ -554,14 +554,14 @@ const quizQuestions = [
     { q: "Software vektor gratis dan open source adalah?", o: ["Photoshop", "CorelDRAW", "Inkscape", "Paint"], a: 2 },
     { q: "Kelebihan gambar bitmap adalah?", o: ["Scalable", "Gradasi halus", "Ukuran kecil", "Tidak pecah"], a: 1 },
     { q: "Layer di Photoshop berfungsi untuk?", o: ["Mengatur lapisan", "Mengatur warna", "Mengatur ukuran", "Mengatur filter"], a: 0 },
-    { q: "Fitur Pathfinder di Illustrator yang berfungsi menggabungkan objek?", o: ["Minus Front", "Intersect", "Unite", "Divide"], a: 2 },
+    { q: "Fitur Pathfinder di Illustrator yang berfungsi menggabungkan objek?", o: ["Minus Front", "Intersect", "Unite", "Divide"], a: 2 }
 ];
 
 let userAnswers = [];
 
 function startQuiz() {
     if (!checkLogin()) return;
-    userAnswers = new Array(10).fill(null);
+    userAnswers = new Array(quizQuestions.length).fill(null);
     let html = "";
     quizQuestions.forEach((q, i) => {
         html += `<div style="margin-bottom:25px;"><div class="quiz-question">${i+1}. ${q.q}</div>`;
@@ -587,18 +587,17 @@ function selectAnswer(qi, oi) {
 
 function submitQuiz() {
     let score = 0;
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < quizQuestions.length; i++) {
         if(userAnswers[i] === quizQuestions[i].a) score++;
     }
-    let percent = (score/10)*100;
+    let percent = (score / quizQuestions.length) * 100;
     let msg = percent >= 80 ? "🏆 Luar biasa! Anda menguasai materi Komputer Grafis!" : (percent >= 60 ? "👍 Bagus, tingkatkan lagi!" : "📖 Pelajari materi lebih lanjut.");
     const hasilScore = document.getElementById('hasil-score');
     if(hasilScore) {
-        hasilScore.innerHTML = `<h2 style="color:#c084fc;">Skor: ${score}/20</h2><h1 style="color:#e0aaff;">${percent}%</h1><p style="color:#cdc4ff;">${msg}</p>`;
+        hasilScore.innerHTML = `<h2 style="color:#c084fc;">Skor: ${score}/${quizQuestions.length}</h2><h1 style="color:#e0aaff;">${percent}%</h1><p style="color:#cdc4ff;">${msg}</p>`;
     }
     showPage('hasil');
 }
-
 // ==================== CHATBOX GEMINI API ====================
 function updateApiStatus() {
     const statusDiv = document.getElementById('apiStatus');
