@@ -1,39 +1,53 @@
-// ==================== FILE: script.js - WORKING WITH ONCLICK ====================
-
 // ==================== VARIABEL GLOBAL ====================
 let currentUser = null;
-let isMusicPlaying = false;
-let audioElement = null;
 
 // ==================== FUNGSI LOGIN & USER ====================
+function checkLogin() {
+    if (!currentUser) {
+        showPage('login');
+        return false;
+    }
+    return true;
+}
+
 function loadUserData() {
     const savedUser = localStorage.getItem('currentUser');
     if (savedUser) {
         try {
             currentUser = JSON.parse(savedUser);
             updateUserDisplay();
-            if (currentUser && document.getElementById('home-page')) {
-                showPage('home');
-            }
         } catch(e) {
             console.error("Gagal load user:", e);
-            localStorage.removeItem('currentUser');
         }
     }
 }
 
 function updateUserDisplay() {
+    // Elemen lama
     const userNameSpan = document.getElementById('user-name-display');
-    if (userNameSpan && currentUser) {
-        userNameSpan.innerHTML = currentUser.name + ' (' + currentUser.class + ') - ' + currentUser.major;
-    } else if (userNameSpan) {
-        userNameSpan.innerHTML = '-';
+    // Elemen baru untuk home layout
+    const userNameSpan2 = document.getElementById('user-name-display2');
+    const userClassSpan = document.getElementById('user-class-display');
+    const userMajorSpan = document.getElementById('user-major-display');
+    
+    if (currentUser) {
+        const displayName = currentUser.name;
+        const displayClass = currentUser.class;
+        const displayMajor = currentUser.major;
+        
+        if (userNameSpan) userNameSpan.innerHTML = `${displayName} (${displayClass}) - ${displayMajor}`;
+        if (userNameSpan2) userNameSpan2.innerHTML = displayName;
+        if (userClassSpan) userClassSpan.innerHTML = displayClass;
+        if (userMajorSpan) userMajorSpan.innerHTML = displayMajor;
+    } else {
+        if (userNameSpan) userNameSpan.innerHTML = '-';
+        if (userNameSpan2) userNameSpan2.innerHTML = '-';
+        if (userClassSpan) userClassSpan.innerHTML = '-';
+        if (userMajorSpan) userMajorSpan.innerHTML = '-';
     }
 }
 
 function doLogin() {
-    console.log("doLogin dipanggil!");
-    
     let name = document.getElementById('login-name').value.trim();
     let cls = document.getElementById('login-class').value.trim();
     let majorSelect = document.getElementById('login-major');
@@ -41,53 +55,36 @@ function doLogin() {
     
     if (!name || !cls) {
         alert("Mohon isi nama lengkap dan kelas!");
-        return false;
+        return;
     }
     
     currentUser = { name: name, class: cls, major: major };
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
     updateUserDisplay();
     showPage('home');
-    
-    document.getElementById('login-name').value = '';
-    document.getElementById('login-class').value = '';
-    
-    return true;
 }
 
 function doLogout() {
     currentUser = null;
     localStorage.removeItem('currentUser');
     
-    let loginName = document.getElementById('login-name');
-    let loginClass = document.getElementById('login-class');
+    // Reset form login
+    const loginName = document.getElementById('login-name');
+    const loginClass = document.getElementById('login-class');
     if (loginName) loginName.value = '';
     if (loginClass) loginClass.value = '';
     
     showPage('login');
 }
 
-function checkLogin() {
-    if (!currentUser) {
-        alert("Silakan login terlebih dahulu!");
-        showPage('login');
-        return false;
-    }
-    return true;
-}
-
 // ==================== FUNGSI NAVIGASI HALAMAN ====================
 function showPage(page) {
-    if (page !== 'login' && !currentUser) {
-        page = 'login';
-    }
-    
     let pages = ['login', 'home', 'profil', 'petunjuk', 'cp-atp', 'materi-list', 'slide-materi', 'video', 'kuis', 'hasil', 'chatbox'];
-    for (let i = 0; i < pages.length; i++) {
-        let el = document.getElementById(pages[i] + '-page');
+    pages.forEach(p => {
+        let el = document.getElementById(`${p}-page`);
         if (el) el.classList.remove('active');
-    }
-    let activePage = document.getElementById(page + '-page');
+    });
+    let activePage = document.getElementById(`${page}-page`);
     if (activePage) activePage.classList.add('active');
     
     if (page === 'chatbox') {
@@ -96,9 +93,12 @@ function showPage(page) {
     }
 }
 
-// ==================== CREATE ANIMATIONS ====================
+// ==================== CREATE ANIMATIONS (DINONAKTIFKAN UNTUK BACKGROUND BARU) ====================
 function createMovingDots() {
-    let dotsContainer = document.getElementById('movingDots');
+    // Fungsi ini dikosongkan karena background baru sudah memiliki animasi awan, heksagon, dll.
+    // Jika ingin mengaktifkan kembali moving dots, hapus komentar kode di bawah.
+    /*
+    const dotsContainer = document.getElementById('movingDots');
     if(dotsContainer && dotsContainer.children.length === 0) {
         for(let i = 0; i < 150; i++) {
             let dot = document.createElement('div');
@@ -108,98 +108,52 @@ function createMovingDots() {
             dot.style.height = dot.style.width;
             dot.style.animationDuration = Math.random() * 18 + 6 + 's';
             dot.style.animationDelay = Math.random() * 12 + 's';
-            dot.style.background = 'rgba(' + (150 + Math.random() * 105) + ', ' + (100 + Math.random() * 155) + ', 255, ' + (0.4 + Math.random() * 0.5) + ')';
+            dot.style.background = `rgba(${150 + Math.random() * 105}, ${100 + Math.random() * 155}, 255, ${0.4 + Math.random() * 0.5})`;
             dotsContainer.appendChild(dot);
         }
     }
+    */
 }
 
-// ==================== ANIMASI LOGO BERGERAK  ====================
-function createFloatingLogos() {
-    const container = document.getElementById('floatingLogos');
-    if (!container) return;
-    
-    container.innerHTML = '';
-    
-    // Daftar logo yang akan ditampilkan
-    const logos = [
-        { src: 'corelnew.png', name: 'CorelDRAW', color: '#7c3aed' },
-        { src: 'ilustration.png', name: 'Illustrator', color: '#f5a623' },
-        { src: 'inkscape.png', name: 'Inkscape', color: '#22aa22' },
-        { src: 'figma.png', name: 'Figma', color: '#f24e1e' },
-        { src: 'photoshop.png', name: 'Photoshop', color: '#31A8FF' },
-        { src: 'gimp.png', name: 'GIMP', color: '#5C2D91' },
-        { src: 'krita.png', name: 'Krita', color: '#3b9eff' },
-        { src: 'pp.png', name: 'Photo-Paint', color: '#ff6b6b' }
-    ];
-    
-    // Buat 40 logo yang bergerak
-    for (let i = 0; i < 60; i++) {
-        const logo = logos[i % logos.length];
-        const div = document.createElement('div');
-        div.className = 'logo-float';
-        
-        // Posisi acak
-        const leftPos = Math.random() * 100;
-        const size = 50 + Math.random() * 50; 
-        const duration = 10 + Math.random() * 15; // durasi 12-32 detik
-        const delay = Math.random() * 15; // delay 0-15 detik
-        
-        div.style.left = leftPos + '%';
-        div.style.width = size + 'px';
-        div.style.height = size + 'px';
-        div.style.animationDuration = duration + 's';
-        div.style.animationDelay = delay + 's';
-        
-        // Buat elemen gambar
-        const img = document.createElement('img');
-        img.src = logo.src;
-        img.alt = logo.name;
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'contain';
-        img.style.borderRadius = '12px';
-        img.style.filter = 'drop-shadow(0 0 5px rgba(255,255,255,0.3))';
-        
-        // Fallback jika gambar tidak ditemukan
-        img.onerror = function() {
-            this.style.display = 'none';
-            const placeholder = document.createElement('div');
-            placeholder.style.width = '100%';
-            placeholder.style.height = '100%';
-            placeholder.style.background = logo.color;
-            placeholder.style.borderRadius = '12px';
-            placeholder.style.display = 'flex';
-            placeholder.style.alignItems = 'center';
-            placeholder.style.justifyContent = 'center';
-            placeholder.style.fontSize = '20px';
-            placeholder.style.fontWeight = 'bold';
-            placeholder.style.color = 'white';
-            placeholder.innerHTML = logo.name.substring(0, 2);
-            div.appendChild(placeholder);
-        };
-        
-        div.appendChild(img);
-        container.appendChild(div);
+function createBubbles() {
+    // Fungsi ini dikosongkan karena background baru sudah memiliki animasi awan, heksagon, dll.
+    // Jika ingin mengaktifkan kembali bubbles, hapus komentar kode di bawah.
+    /*
+    const bubblesContainer = document.getElementById('bubbles');
+    if(bubblesContainer && bubblesContainer.children.length === 0) {
+        for(let i = 0; i < 40; i++) {
+            let bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            let size = Math.random() * 80 + 25;
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.animationDuration = Math.random() * 14 + 8 + 's';
+            bubble.style.animationDelay = Math.random() * 12 + 's';
+            bubble.style.background = `radial-gradient(circle at 30% 30%, rgba(${150 + Math.random() * 105}, ${100 + Math.random() * 155}, 255, 0.5), rgba(124, 58, 237, 0.2))`;
+            bubblesContainer.appendChild(bubble);
+        }
     }
+    */
 }
+
 // ==================== VIDEO ====================
-let videoUrls = {
+const videoUrls = {
     1: "https://www.youtube.com/embed/KHyJHUxFrlI",
     2: "https://www.youtube.com/embed/0G-DSZAwn5Y",
     3: "https://www.youtube.com/embed/QiGwpr8OfWE"
 };
 
-let videoTitles = {
-    1: "Video 1: Pengertian Bitmap & Vektor",
-    2: "Video 2: Pengertian CorelDraw",
-    3: "Video 3: Pengertian Photoshop"
+const videoTitles = {
+    1: "🎬 Video 1: Pengertian Bitmap & Vektor",
+    2: "🎬 Video 2: Pengertian CorelDraw",
+    3: "🎬 Video 3: Pengertian Photoshop",
 };
 
 function playVideo(num) {
-    let videoFrame = document.getElementById('videoFrame');
-    let videoContainer = document.getElementById('videoContainer');
-    let videoTitle = document.getElementById('videoTitle');
+    const videoFrame = document.getElementById('videoFrame');
+    const videoContainer = document.getElementById('videoContainer');
+    const videoTitle = document.getElementById('videoTitle');
     
     if(videoFrame && videoContainer && videoTitle) {
         videoFrame.src = videoUrls[num];
@@ -210,15 +164,15 @@ function playVideo(num) {
 }
 
 function closeVideo() {
-    let videoFrame = document.getElementById('videoFrame');
-    let videoContainer = document.getElementById('videoContainer');
+    const videoFrame = document.getElementById('videoFrame');
+    const videoContainer = document.getElementById('videoContainer');
     if(videoFrame && videoContainer) {
         videoFrame.src = '';
         videoContainer.style.display = 'none';
     }
 }
 
-// ==================== MATERI SLIDE ====================
+// ==================== MATERI SLIDE (DATA LENGKAP) ====================
 const materiData = {
     1: { title: "🖼️ BITMAP (Gambar Raster)", slides: [
         `📌 <strong>Pengertian Bitmap</strong><br><br>
@@ -304,194 +258,169 @@ const materiData = {
         CorelDRAW, Adobe Illustrator, Inkscape (gratis), Figma, FreeHand`
     ]},
     
-   
-      3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
-    // SLIDE 1: Software VEKTOR dan BITMAP (TULISAN BESAR & PUTIH)
-    `<div style="padding: 8px;">
-        <h3 style="color: #ffffff; margin-bottom: 25px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis VEKTOR</h3>
-        
-        <!-- 1 baris horizontal, gambar di tengah -->
-        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
+    3: { title: "💻 Perangkat Lunak Desain Grafis", slides: [
+        `<div style="padding: 8px;">
+            <h3 style="color: #ffffff; margin-bottom: 25px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis VEKTOR</h3>
             
-            <!-- CorelDRAW -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
-                    <img src="corelnew.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+            <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+                        <img src="corelnew.png" alt="CorelDRAW" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%237c3aed%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EC%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">CorelDRAW</p>
                 </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">CorelDRAW</p>
-            </div>
-            
-            <!-- Illustrator -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
-                    <img src="ilustration.png" alt="Illustrator" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
+                        <img src="ilustration.png" alt="Illustrator" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f5a623%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EAi%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Illustrator</p>
                 </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Illustrator</p>
-            </div>
-            
-            <!-- Inkscape -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
-                    <img src="inkscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
+                        <img src="inkscape.png" alt="Inkscape" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2322aa22%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EINK%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Inkscape</p>
                 </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Inkscape</p>
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
+                        <img src="figma.png" alt="Figma" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Figma</p>
+                </div>
             </div>
             
-            <!-- Figma -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
-                    <img src="figma.png" alt="Figma" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23f24e1e%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EF%3C/text%3E%3C/svg%3E'">
-                </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Figma</p>
-            </div>
-        </div>
-        
-        <!-- Daftar penjelasan VEKTOR -->
-        <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Inkscape</strong> - Gratis dan open source</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</p>
-        </div>
-        
-        <h3 style="color: #ffffff; margin: 30px 0 25px 0; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis BITMAP</h3>
-        
-        <!-- 1 baris horizontal untuk BITMAP -->
-        <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
-            
-            <!-- Photoshop -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
-                    <img src="photoshop.png" alt="Photoshop" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
-                </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photoshop</p>
+            <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">CorelDRAW</strong> - Populer di Indonesia, fitur Shaping &amp; PowerClip</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">Adobe Illustrator</strong> - Standar industri, fitur Pathfinder &amp; Pen Tool</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Inkscape</strong> - Gratis dan open source</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Figma</strong> - Untuk desain UI/UX, kolaborasi real-time</p>
             </div>
             
-            <!-- GIMP -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
-                    <img src="gimp.png" alt="GIMP" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+            <h3 style="color: #ffffff; margin: 30px 0 25px 0; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Software Berbasis BITMAP</h3>
+            
+            <div style="display: flex; flex-direction: row; justify-content: center; flex-wrap: wrap; gap: 30px; margin: 25px 0;">
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+                        <img src="photoshop.png" alt="Photoshop" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%2331A8FF%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EPs%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photoshop</p>
                 </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">GIMP</p>
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
+                        <img src="gimp.png" alt="GIMP" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%235C2D91%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EG%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">GIMP</p>
+                </div>
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
+                        <img src="krita.png" alt="Krita" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Krita</p>
+                </div>
+                <div style="text-align: center; width: 100px;">
+                    <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
+                        <img src="pp.png" alt="Corel Photo-Paint" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photo-Paint</p>
+                </div>
             </div>
             
-            <!-- Krita -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
-                    <img src="krita.png" alt="Krita" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%233b9eff%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3EK%3C/text%3E%3C/svg%3E'">
-                </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Krita</p>
+            <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">GIMP</strong> - Gratis dan open source</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Krita</strong> - Fokus digital painting</p>
+                <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Corel Photo-Paint</strong> - Software bitmap dari Corel</p>
+            </div>
+        </div>`,
+        
+        `<div style="padding: 10px;">
+            <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Shaping di CorelDRAW</h3>
+            
+            <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
+                <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
+                    <rect width="300" height="120" fill="#1a1a2e"/>
+                    <rect x="30" y="30" width="50" height="50" fill="#c084fc" opacity="0.7"/>
+                    <rect x="70" y="40" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
+                    <text x="130" y="60" fill="#c084fc" font-size="12">Weld </text>
+                    <rect x="180" y="30" width="50" height="50" fill="#c084fc"/>
+                    <rect x="220" y="55" width="50" height="30" fill="#ff6b6b"/>
+                    <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim </text>
+                </svg>
+                <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
             </div>
             
-            <!-- Corel Photo-Paint -->
-            <div style="text-align: center; width: 100px;">
-                <div style="width: 85px; height: 85px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto; ">
-                    <img src="pp.png" alt="Corel Photo-Paint" style="width: 60px; height: 60px; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle fill=%27%23ff6b6b%27 cx=%2750%27 cy=%2750%27 r=%2745%27/%3E%3Ctext x=%2750%27 y=%2765%27 text-anchor=%27middle%27 fill=%27white%27 font-size=%2730%27%3ECPP%3C/text%3E%3C/svg%3E'">
+            <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                    <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Combine</strong> - Menggabungkan objek, menghilangkan irisan</span>
                 </div>
-                <p style="color: #ffffff; font-size: 15px; margin: 10px 0 0 0; font-weight: 600;">Photo-Paint</p>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                    <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Weld</strong> - Menggabungkan objek tanpa irisan</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                    <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek dengan objek lain</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                    <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Membuat objek dari irisan dua objek</span>
+                </div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
+                    <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">PowerClip</strong> - Memasukkan gambar ke dalam bentuk objek</span>
+                </div>
             </div>
-        </div>
+        </div>`,
         
-        <!-- Daftar penjelasan BITMAP -->
-        <div style="margin: 25px 0; background: rgba(0,0,0,0.4); padding: 15px 15px 15px 20px; border-radius: 12px;">
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">1. <strong style="color: #ffffff;">Adobe Photoshop</strong> - Paling populer, fitur Layer &amp; Selection Tools</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">2. <strong style="color: #ffffff;">GIMP</strong> - Gratis dan open source</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">3. <strong style="color: #ffffff;">Krita</strong> - Fokus digital painting</p>
-            <p style="color: #ffffff; margin: 8px 0; font-size: 14px; line-height: 1.6;">4. <strong style="color: #ffffff;">Corel Photo-Paint</strong> - Software bitmap dari Corel</p>
-        </div>
-    </div>`,
-    
-    // SLIDE 2: Fitur Shaping di CorelDRAW
-    `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Shaping di CorelDRAW</h3>
-        
-        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
-            <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
-                <rect width="300" height="120" fill="#1a1a2e"/>
-                <rect x="30" y="30" width="50" height="50" fill="#c084fc" opacity="0.7"/>
-                <rect x="70" y="40" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
-                <text x="130" y="60" fill="#c084fc" font-size="12">Weld </text>
-                <rect x="180" y="30" width="50" height="50" fill="#c084fc"/>
-                <rect x="220" y="55" width="50" height="30" fill="#ff6b6b"/>
-                <text x="210" y="100" fill="#ff6b6b" font-size="11">Trim </text>
-            </svg>
-            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Weld (gabung) dan Trim (potong)</small>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Combine</strong> - Menggabungkan objek, menghilangkan irisan</span>
+        `<div style="padding: 10px;">
+            <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Pathfinder di Adobe Illustrator</h3>
+            
+            <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
+                <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
+                    <rect width="300" height="120" fill="#1a1a2e"/>
+                    <circle cx="50" cy="50" r="30" fill="#c084fc" opacity="0.7"/>
+                    <rect x="50" y="30" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
+                    <text x="120" y="60" fill="#c084fc" font-size="12">Unite </text>
+                    <circle cx="200" cy="50" r="30" fill="#c084fc"/>
+                    <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
+                    <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
+                </svg>
+                <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Weld</strong> - Menggabungkan objek tanpa irisan</span>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Unite</strong> - Menggabungkan objek</span></div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Minus Front</strong> - Mengurangi objek depan</span></div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Irisan objek</span></div>
+                <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek</span></div>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek dengan objek lain</span>
+        </div>`,
+        
+        `<div style="padding: 10px;">
+            <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Layer pada Photoshop</h3>
+            
+            <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
+                <svg width="100%" max-width="280" height="140" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
+                    <rect width="300" height="140" fill="#1a1a2e"/>
+                    <rect x="20" y="20" width="60" height="40" fill="#c084fc" rx="5" opacity="0.8"/>
+                    <text x="50" y="45" text-anchor="middle" fill="white" font-size="10">Layer 1</text>
+                    <rect x="20" y="65" width="60" height="40" fill="#a78bfa" rx="5" opacity="0.8"/>
+                    <text x="50" y="90" text-anchor="middle" fill="white" font-size="10">Layer 2</text>
+                    <rect x="20" y="110" width="60" height="40" fill="#8b5cf6" rx="5" opacity="0.8"/>
+                    <text x="50" y="135" text-anchor="middle" fill="white" font-size="10">Layer 3</text>
+                    <text x="120" y="50" fill="#c084fc" font-size="12">📚 Layer adalah lapisan terpisah</text>
+                    <text x="120" y="70" fill="#a78bfa" font-size="11">Setiap elemen punya</text>
+                    <text x="120" y="90" fill="#a78bfa" font-size="11">layer sendiri</text>
+                </svg>
+                <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi Layer di Photoshop</small>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Membuat objek dari irisan dua objek</span>
+            
+            <p style="color: #ffffff; text-align: center; font-size: 15px; margin: 15px 0; font-weight: 500;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
+            
+            <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; margin-top: 15px;">
+                <strong style="color: #ffffff; font-size: 15px;">📌 Shortcut Layer:</strong><br>
+                <span style="color: #ffffff; font-size: 14px;">Ctrl+Shift+N = Layer baru</span><br>
+                <span style="color: #ffffff; font-size: 14px;">Ctrl+J = Duplikat layer</span><br>
+                <span style="color: #ffffff; font-size: 14px;">Ctrl+E = Merge layer</span>
             </div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 12px; border-left: 4px solid #c084fc;">
-                <span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">PowerClip</strong> - Memasukkan gambar ke dalam bentuk objek</span>
-            </div>
-        </div>
-    </div>`,
-    
-    // SLIDE 3: Fitur Pathfinder di Adobe Illustrator
-    `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Fitur Pathfinder di Adobe Illustrator</h3>
-        
-        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
-            <svg width="100%" max-width="280" height="120" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
-                <rect width="300" height="120" fill="#1a1a2e"/>
-                <circle cx="50" cy="50" r="30" fill="#c084fc" opacity="0.7"/>
-                <rect x="50" y="30" width="50" height="50" fill="#a78bfa" opacity="0.7"/>
-                <text x="120" y="60" fill="#c084fc" font-size="12">Unite </text>
-                <circle cx="200" cy="50" r="30" fill="#c084fc"/>
-                <rect x="230" y="60" width="40" height="20" fill="#ff6b6b"/>
-                <text x="200" y="100" fill="#ff6b6b" font-size="11">Minus Front</text>
-            </svg>
-            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi fitur Unite (gabung) dan Minus Front (kurangi)</small>
-        </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 12px; margin: 20px 0;">
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Unite</strong> - Menggabungkan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Minus Front</strong> - Mengurangi objek depan</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Intersect</strong> - Irisan objek</span></div>
-            <div style="background: rgba(255,255,255,0.08); padding: 14px; border-radius: 10px;"><span style="color: #ffffff; font-size: 14px;"><strong style="color: #ffffff;">Trim</strong> - Memotong objek</span></div>
-        </div>
-    </div>`,
-    
-    // SLIDE 4: Layer pada Photoshop
-    `<div style="padding: 10px;">
-        <h3 style="color: #ffffff; margin-bottom: 20px; text-align: center; font-size: 22px; text-shadow: 0 0 5px rgba(255,255,255,0.3);">📌 Layer pada Photoshop</h3>
-        
-        <div style="text-align:center; margin:15px 0; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 14px;">
-            <svg width="100%" max-width="280" height="140" viewBox="0 0 300 140" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto;">
-                <rect width="300" height="140" fill="#1a1a2e"/>
-                <rect x="20" y="20" width="60" height="40" fill="#c084fc" rx="5" opacity="0.8"/>
-                <text x="50" y="45" text-anchor="middle" fill="white" font-size="10">Layer 1</text>
-                <rect x="20" y="65" width="60" height="40" fill="#a78bfa" rx="5" opacity="0.8"/>
-                <text x="50" y="90" text-anchor="middle" fill="white" font-size="10">Layer 2</text>
-                <rect x="20" y="110" width="60" height="40" fill="#8b5cf6" rx="5" opacity="0.8"/>
-                <text x="50" y="135" text-anchor="middle" fill="white" font-size="10">Layer 3</text>
-                <text x="120" y="50" fill="#c084fc" font-size="12">📚 Layer adalah lapisan terpisah</text>
-                <text x="120" y="70" fill="#a78bfa" font-size="11">Setiap elemen punya</text>
-                <text x="120" y="90" fill="#a78bfa" font-size="11">layer sendiri</text>
-            </svg>
-            <br><small style="color: #ffffff; font-size: 11px;">✨ Ilustrasi Layer di Photoshop</small>
-        </div>
-        
-        <p style="color: #ffffff; text-align: center; font-size: 15px; margin: 15px 0; font-weight: 500;">Layer adalah lapisan terpisah untuk setiap elemen desain.</p>
-        
-        <div style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 12px; margin-top: 15px;">
-            <strong style="color: #ffffff; font-size: 15px;">📌 Shortcut Layer:</strong><br>
-            <span style="color: #ffffff; font-size: 14px;">Ctrl+Shift+N = Layer baru</span><br>
-            <span style="color: #ffffff; font-size: 14px;">Ctrl+J = Duplikat layer</span><br>
-            <span style="color: #ffffff; font-size: 14px;">Ctrl+E = Merge layer</span>
-        </div>
-    </div>`
-]},
+        </div>`
+    ]},
     
     4: { title: "📦 Contoh Rancangan Komputer Grafis", slides: [
         `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
@@ -505,7 +434,7 @@ const materiData = {
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="mug.png" alt="Desain Mug" 
-                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         style="max-width: 200px; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Mug ✨</p>
                 </div>
@@ -522,7 +451,7 @@ const materiData = {
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="logoo.png" alt="Desain Logo" 
-                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         style="max-width: 200px; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Logo ✨</p>
                 </div>
@@ -539,7 +468,7 @@ const materiData = {
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kemasan.png" alt="Desain Packaging" 
-                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         style="max-width: 200px; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kemasan ✨</p>
                 </div>
@@ -557,7 +486,7 @@ const materiData = {
             <div style="flex: 1; text-align: center;">
                 <div class="slide-img">
                     <img src="kartunama.png" alt="Desain Kartu Nama" 
-                         style="max-width: 100%; border-radius: 16px; border:2px solid #c084fc;"
+                         style="max-width: 200px; border-radius: 16px; border:2px solid #c084fc;"
                          onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <p style="color: #ffffff; margin-top: 10px;">✨ Contoh Desain Kartu Nama ✨</p>
                 </div>
@@ -786,95 +715,79 @@ async function sendChat() {
     
     container.scrollTop = container.scrollHeight;
 }
+
 // ==================== BACKSOUND ====================
+let bgAudio = null;
+let isAudioPlaying = false;
+
 function initBacksound() {
-    audioElement = document.getElementById('backsound');
-    if (audioElement) {
-        audioElement.volume = 0.3;
-        audioElement.addEventListener('ended', function() {
-            if (isMusicPlaying) {
-                audioElement.play();
-            }
-        });
-        audioElement.addEventListener('error', function(e) {
-            console.error('Error playing audio:', e);
-            updateMusicButtonUI(false);
-            localStorage.setItem('musicPlayed', 'false');
-        });
-    }
-}
-function toggleMusic() {
-    if (!audioElement) {
-        audioElement = document.getElementById('backsound');
-        if (!audioElement) return;
-    }
-    if (isMusicPlaying) {
-        audioElement.pause();
-        isMusicPlaying = false;
-        updateMusicButtonUI(false);
-        localStorage.setItem('musicPlayed', 'false');
-    } else {
-        // Play hanya jika user sudah berinteraksi (klik tombol)
-        let playPromise = audioElement.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                isMusicPlaying = true;
-                updateMusicButtonUI(true);
-                localStorage.setItem('musicPlayed', 'true');
-            }).catch(error => {
-                console.warn("Autoplay diblokir. Klik tombol musik lagi untuk memutar.");
-                updateMusicButtonUI(false);
-                // Jangan set localStorage ke false, biarkan tetap false
+    bgAudio = document.getElementById('bgAudio');
+    if (!bgAudio) return;
+    
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const audioStatus = document.getElementById('audioStatus');
+    
+    if (!playPauseBtn || !volumeSlider || !audioStatus) return;
+    
+    // Set volume awal
+    bgAudio.volume = 0.3;
+    if (volumeSlider) volumeSlider.value = 0.3;
+    
+    // Tombol play/pause
+    playPauseBtn.addEventListener('click', () => {
+        if (isAudioPlaying) {
+            bgAudio.pause();
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            audioStatus.innerHTML = '🔇 Backsound Mati';
+            isAudioPlaying = false;
+        } else {
+            bgAudio.play().then(() => {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                audioStatus.innerHTML = '🎵 Backsound Hidup';
+                isAudioPlaying = true;
+            }).catch(err => {
+                console.warn('Autoplay diblokir browser:', err);
+                audioStatus.innerHTML = '⚠️ Klik tombol untuk mulai musik';
             });
         }
-    }
-}
-
-function updateMusicButtonUI(isPlaying) {
-    let btn = document.getElementById('musicToggleBtn');
-    if (btn) {
-        if (isPlaying) {
-            btn.classList.add('playing');
-            btn.innerHTML = '<i class="fas fa-stop"></i><span class="music-text">Hentikan</span>';
-        } else {
-            btn.classList.remove('playing');
-            btn.innerHTML = '<i class="fas fa-music"></i><span class="music-text">Putar Musik</span>';
+    });
+    
+    // Slider volume
+    volumeSlider.addEventListener('input', (e) => {
+        if (bgAudio) {
+            bgAudio.volume = parseFloat(e.target.value);
         }
+    });
+    
+    // Mulai audio otomatis setelah interaksi pertama user
+    const startAudioOnFirstClick = () => {
+        if (!isAudioPlaying && bgAudio && bgAudio.paused) {
+            bgAudio.play().then(() => {
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                audioStatus.innerHTML = '🎵 Backsound Hidup';
+                isAudioPlaying = true;
+            }).catch(e => console.log('Gagal autoplay:', e));
+        }
+        document.removeEventListener('click', startAudioOnFirstClick);
+        document.removeEventListener('touchstart', startAudioOnFirstClick);
+    };
+    
+    if (!localStorage.getItem('audioStarted')) {
+        document.addEventListener('click', startAudioOnFirstClick);
+        document.addEventListener('touchstart', startAudioOnFirstClick);
+        localStorage.setItem('audioStarted', 'true');
     }
 }
 
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Aplikasi dimulai...');
+    // Animasi lama dinonaktifkan karena background baru sudah mencakup animasi awan, heksagon, dll.
+    // createMovingDots();   // dikomentari
+    // createBubbles();      // dikomentari
     
-    createMovingDots();
-    createFloatingLogos();
     loadTemplates();
     loadUserData();
     updateApiStatus();
     initBacksound();
-    
-    // Event listener untuk tombol Enter pada form login (tambahan, tidak menggantikan onclick)
-    let loginName = document.getElementById('login-name');
-    let loginClass = document.getElementById('login-class');
-    
-    if (loginName) {
-        loginName.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
-    
-    if (loginClass) {
-        loginClass.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                doLogin();
-            }
-        });
-    }
-    
-    console.log('Aplikasi siap! Login menggunakan onclick="doLogin()"');
 });
