@@ -590,7 +590,7 @@ function submitQuiz() {
     for(let i = 0; i < 10; i++) {
         if(userAnswers[i] === quizQuestions[i].a) score++;
     }
-    let percent = (score/20)*100;
+    let percent = (score/10)*100;
     let msg = percent >= 80 ? "🏆 Luar biasa! Anda menguasai materi Komputer Grafis!" : (percent >= 60 ? "👍 Bagus, tingkatkan lagi!" : "📖 Pelajari materi lebih lanjut.");
     const hasilScore = document.getElementById('hasil-score');
     if(hasilScore) {
