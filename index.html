@@ -8,29 +8,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Elements -->
-    <div class="gradient-bg"></div>
-    <div class="pattern-bg"></div>
-    <div class="moving-dots" id="movingDots"></div>
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    <div class="floating-orb orb-3"></div>
-    <div class="floating-orb orb-4"></div>
-    <div class="floating-logos" id="floatingLogos"></div>
+    <div class="custom-bg">
+        <div class="clouds-container">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <div class="cloud cloud4"></div>
+            <div class="cloud cloud5"></div>
+            <div class="cloud cloud6"></div>
+            <div class="cloud cloud7"></div>
+            <div class="cloud cloud8"></div>
+            <div class="cloud-static cloud-static-1"></div>
+            <div class="cloud-static cloud-static-2"></div>
+        </div>
+        
+        <!-- Heksagon Kanan Atas – tumpukan kristal unik -->
+        <div class="hex-corner hex-top-right">
+            <!-- Lapisan luar (besar) -->
+            <div class="hex hex-size-4" style="top: 5%; right: 3%;"></div>
+            <div class="hex hex-size-3" style="top: 12%; right: 12%;"></div>
+            <div class="hex hex-size-5 sparkle" style="top: 2%; right: 18%;"></div>
+            <div class="hex hex-size-2" style="top: 20%; right: 8%;"></div>
+            <!-- Lapisan tengah -->
+            <div class="hex hex-size-3" style="top: 15%; right: 25%;"></div>
+            <div class="hex hex-size-1" style="top: 28%; right: 18%;"></div>
+            <div class="hex hex-size-4" style="top: 32%; right: 30%;"></div>
+            <div class="hex hex-size-2 sparkle" style="top: 8%; right: 35%;"></div>
+            <!-- Lapisan dalam (kecil) -->
+            <div class="hex hex-size-1" style="top: 22%; right: 40%;"></div>
+            <div class="hex hex-size-0" style="top: 35%; right: 22%;"></div>
+            <div class="hex hex-size-0 sparkle" style="top: 18%; right: 48%;"></div>
+            <div class="hex hex-size-1" style="top: 40%; right: 38%;"></div>
+            <div class="hex hex-size-2" style="top: 45%; right: 45%;"></div>
+    </div>
+</div>
 
-    <!-- Audio Backsound -->
-    <audio id="backsound" loop preload="auto">
-        <source src="backsound.mp3" type="audio/mpeg">
-        <source src="backsound.ogg" type="audio/ogg">
-    </audio>
+    <!-- Heksagon Kiri Bawah – tumpukan kristal unik -->
+    <div class="hex-corner hex-bottom-left">
+        <!-- Lapisan luar (besar) -->
+        <div class="hex hex-size-4" style="bottom: 5%; left: 3%;"></div>
+        <div class="hex hex-size-3" style="bottom: 12%; left: 12%;"></div>
+        <div class="hex hex-size-5 sparkle" style="bottom: 2%; left: 18%;"></div>
+        <div class="hex hex-size-2" style="bottom: 20%; left: 8%;"></div>
+        <!-- Lapisan tengah -->
+        <div class="hex hex-size-3" style="bottom: 15%; left: 25%;"></div>
+        <div class="hex hex-size-1" style="bottom: 28%; left: 18%;"></div>
+        <div class="hex hex-size-4" style="bottom: 32%; left: 30%;"></div>
+        <div class="hex hex-size-2 sparkle" style="bottom: 8%; left: 35%;"></div>
+        <!-- Lapisan dalam (kecil) -->
+        <div class="hex hex-size-1" style="bottom: 22%; left: 40%;"></div>
+        <div class="hex hex-size-0" style="bottom: 35%; left: 22%;"></div>
+        <div class="hex hex-size-0 sparkle" style="bottom: 18%; left: 48%;"></div>
+        <div class="hex hex-size-1" style="bottom: 40%; left: 38%;"></div>
+        <div class="hex hex-size-2" style="bottom: 45%; left: 45%;"></div>
+    </div>
 
-    <!-- Tombol Kontrol Backsound -->
-    <button id="musicToggleBtn" class="music-control-btn" onclick="toggleMusic()">
-        <i class="fas fa-music"></i>
-        <span class="music-text">Putar Musik</span>
-    </button>
-    
-    <!-- ==================== HALAMAN LOGIN ==================== -->
+    <!-- HALAMAN LOGIN -->
     <div id="login-page" class="page-container active">
         <div class="glass-card glass-card-sm">
             <div class="login-header">
@@ -57,51 +90,54 @@
         </div>
     </div>
 
-    <!-- ==================== HALAMAN HOME ==================== -->
+    <!-- HALAMAN HOME -->
     <div id="home-page" class="page-container">
         <div class="glass-card">
-            <div class="header-buttons">
-                <div class="nav-pill nav-pill-left" onclick="showPage('profil')">
-                    <i class="fas fa-user"></i> Profil Pengembang
+            <div class="home-header">
+                <div class="profile-dev" onclick="showPage('profil')">
+                    <i class="fas fa-user-circle"></i> Profil Pengembang
                 </div>
-                <div class="nav-right-group">
-                    <div class="nav-pill nav-pill-right" onclick="showPage('petunjuk')">
+                <div class="header-actions">
+                    <div class="nav-pill" onclick="showPage('petunjuk')">
                         <i class="fas fa-lightbulb"></i> Petunjuk
                     </div>
-                    <div class="nav-pill nav-pill-icon" onclick="doLogout()">
+                    <div class="nav-pill icon-only" onclick="doLogout()" title="Keluar">
                         <i class="fas fa-sign-out-alt"></i>
                     </div>
                 </div>
             </div>
-
-            <div class="user-badge">
-                <i class="fas fa-user-circle"></i> <span id="user-name-display">-</span>
+            <div class="user-info-bar">
+                <span><i class="fas fa-user-graduate"></i> <span id="user-name-display2">-</span></span>
+                <span class="separator">|</span>
+                <span><i class="fas fa-users"></i> Kelas: <span id="user-class-display">-</span></span>
+                <span class="separator">|</span>
+                <span><i class="fas fa-book-open"></i> Jurusan: <span id="user-major-display">DKV</span></span>
             </div>
-
             <div class="hero-title">KOMPUTER GRAFIS</div>
             <div class="hero-sub">Bitmap • Vektor • Perangkat Lunak Desain</div>
-
-            <div class="menu-grid">
+            <div class="menu-grid home-menu">
                 <div class="menu-card" onclick="showPage('cp-atp')">
                     <i class="fas fa-scroll"></i><span> CP & ATP</span>
                 </div>
                 <div class="menu-card" onclick="showPage('materi-list')">
                     <i class="fas fa-layer-group"></i><span> Materi</span>
                 </div>
+            </div>
+            <div class="menu-grid home-menu">
                 <div class="menu-card" onclick="showPage('video')">
                     <i class="fas fa-play-circle"></i><span> Video</span>
                 </div>
                 <div class="menu-card" onclick="startQuiz()">
                     <i class="fas fa-edit"></i><span> Kuis</span>
                 </div>
-                <div class="menu-card menu-wide" onclick="showPage('chatbox')">
-                    <i class="fas fa-comments"></i><span> ChatBox</span>
-                </div>
+            </div>
+            <div class="menu-card home-chat" onclick="showPage('chatbox')">
+                <i class="fas fa-comments"></i><span> ChatBox</span>
             </div>
         </div>
     </div>
 
-    <!-- ==================== PROFIL PENGEMBANG ==================== -->
+    <!-- PROFIL PENGEMBANG -->
     <div id="profil-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
@@ -123,86 +159,43 @@
         </div>
     </div>
 
-    <!-- ==================== PETUNJUK PENGGUNAAN ==================== -->
+    <!-- PETUNJUK PENGGUNAAN -->
     <div id="petunjuk-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
-
-            <h2><i class="fas fa-book-open"></i> Petunjuk Penggunaan</h2>
+            <h2> Petunjuk Penggunaan</h2>
+            <hr>
             <ul class="petunjuk-list">
-                <li><strong>📋 Profil Pengembang</strong> : Informasi profil pengembang aplikasi</li>
-                <li><strong>📘 Petunjuk</strong> : Panduan penggunaan aplikasi</li>
-                <li><strong>🎯 CP & ATP</strong> : Capaian Pembelajaran dan Alur Tujuan Pembelajaran</li>
-                <li><strong>📚 Materi</strong> : 4 topik materi Komputer Grafis lengkap dengan ilustrasi</li>
-                <li><strong>🎥 Video</strong> : Video pembelajaran tentang Komputer Grafis</li>
-                <li><strong>📝 Kuis</strong> : 20 soal pilihan ganda untuk menguji pemahaman</li>
-                <li><strong>💬 ChatBox</strong> : Tanya jawab apapun dengan kecerdasan AI</li>
+                <li><strong> Profil Pengembang</strong> : Informasi profil pengembang aplikasi</li>
+                <li><strong> Petunjuk</strong> : Panduan penggunaan aplikasi</li>
+                <li><strong> CP & ATP</strong> : Capaian Pembelajaran dan Alur Tujuan Pembelajaran</li>
+                <li><strong> Materi</strong> : 4 topik materi Komputer Grafis lengkap dengan ilustrasi</li>
+                <li><strong> Video</strong> : Video pembelajaran tentang Komputer Grafis</li>
+                <li><strong> Kuis</strong> : 20 soal pilihan ganda untuk menguji pemahaman</li>
+                <li><strong> ChatBox</strong> : Tanya jawab apapun dengan kecerdasan AI</li>
             </ul>
-
             <h2><i class="fas fa-clipboard-list"></i> Spesifikasi & Kualitas Aplikasi</h2>
             <div class="spec-grid">
-                <div class="spec-card">
-                    <i class="fas fa-check-circle"></i>
-                    <strong>Program Bebas Error</strong>
-                    <p>Aplikasi telah diuji dan berjalan tanpa hambatan teknis. Seluruh fitur berfungsi dengan baik.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-desktop"></i>
-                    <strong>Dukungan Sistem Operasi</strong>
-                    <p>Kompatibel dengan Windows, macOS, Linux, Android, iOS. Dapat diakses melalui berbagai perangkat.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-microchip"></i>
-                    <strong>Dukungan Hardware</strong>
-                    <p>Koneksi internet stabil, resolusi layar minimal 360px. Ramah untuk perangkat mobile.</p>
-                </div>
-                <div class="spec-card">
-                    <i class="fas fa-palette"></i>
-                    <strong>Sistematika, Estetika & Tata Letak</strong>
-                    <p>Desain responsif, tampilan menarik, navigasi mudah dipahami, dan user-friendly.</p>
-                </div>
+                <div class="spec-card"><i class="fas fa-check-circle"></i><strong>Program Bebas Error</strong><p>Aplikasi telah diuji dan berjalan tanpa hambatan teknis. Seluruh fitur berfungsi dengan baik.</p></div>
+                <div class="spec-card"><i class="fas fa-desktop"></i><strong>Dukungan Sistem Operasi</strong><p>Kompatibel dengan Windows, macOS, Linux, Android, iOS. Dapat diakses melalui berbagai perangkat.</p></div>
+                <div class="spec-card"><i class="fas fa-microchip"></i><strong>Dukungan Hardware</strong><p>Koneksi internet stabil, resolusi layar minimal 360px. Ramah untuk perangkat mobile.</p></div>
+                <div class="spec-card"><i class="fas fa-palette"></i><strong>Sistematika, Estetika & Tata Letak</strong><p>Desain responsif, tampilan menarik, navigasi mudah dipahami, dan user-friendly.</p></div>
             </div>
-
             <h2><i class="fas fa-table"></i> Detail Persyaratan Sistem</h2>
             <table class="spec-table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Aspek</th>
-                        <th>Keterangan</th>
-                    </tr>
-                </thead>
+                <thead><tr><th>No</th><th>Aspek</th><th>Keterangan</th></tr></thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Program Bebas Error</td>
-                        <td>Aplikasi telah melalui proses debugging dan testing menyeluruh.</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Dukungan Sistem Operasi</td>
-                        <td>Berbasis web (cross-platform), dapat diakses via browser modern.</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Dukungan Hardware</td>
-                        <td>Minimum 2GB RAM, koneksi internet stabil untuk ChatBox dan Video.</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Sistematika, Estetika & Tata Letak</td>
-                        <td>Menggunakan desain Glassmorphism, responsif, dan interaktif.</td>
-                    </tr>
+                    <tr><td>1</td><td>Program Bebas Error</td><td>Aplikasi telah melalui proses debugging dan testing menyeluruh.</td></tr>
+                    <tr><td>2</td><td>Dukungan Sistem Operasi</td><td>Berbasis web (cross-platform), dapat diakses via browser modern.</td></tr>
+                    <tr><td>3</td><td>Dukungan Hardware</td><td>Minimum 2GB RAM, koneksi internet stabil untuk ChatBox dan Video.</td></tr>
+                    <tr><td>4</td><td>Sistematika, Estetika & Tata Letak</td><td>Menggunakan desain Glassmorphism, responsif, dan interaktif.</td></tr>
                 </tbody>
             </table>
-
-            <div class="petunjuk-footer">
-                <i class="fas fa-info-circle"></i> Untuk pengalaman terbaik, gunakan browser versi terbaru (Chrome, Firefox, Edge, Safari) dengan koneksi internet stabil.
-            </div>
+            <div class="petunjuk-footer"><i class="fas fa-info-circle"></i> Untuk pengalaman terbaik, gunakan browser versi terbaru (Chrome, Firefox, Edge, Safari) dengan koneksi internet stabil.</div>
         </div>
     </div>
 
-    <!-- ==================== CP DAN ATP ==================== -->
+    <!-- CP DAN ATP -->
     <div id="cp-atp-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
@@ -233,81 +226,50 @@
         </div>
     </div>
 
-    <!-- ==================== DAFTAR MATERI ==================== -->
+    <!-- DAFTAR MATERI -->
     <div id="materi-list-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
             <h2>📚 Materi Komputer Grafis</h2>
             <hr>
-            <div class="materi-card menu-card" onclick="openMateri(1)">
-                <i class="fas fa-image"></i>
-                <div>1. Bitmap (Gambar Raster)</div>
-            </div>
-            <div class="materi-card menu-card" onclick="openMateri(2)">
-                <i class="fas fa-draw-polygon"></i>
-                <div>2. Vektor (Gambar Garis & Kurva)</div>
-            </div>
-            <div class="materi-card menu-card" onclick="openMateri(3)">
-                <i class="fas fa-laptop-code"></i>
-                <div>3. Perangkat Lunak Desain Grafis</div>
-            </div>
-            <div class="materi-card menu-card" onclick="openMateri(4)">
-                <i class="fas fa-palette"></i>
-                <div>4. Contoh Rancangan Komputer Grafis</div>
-            </div>
+            <div class="materi-card menu-card" onclick="openMateri(1)"><i class="fas fa-image"></i><div>1. Bitmap (Gambar Raster)</div></div>
+            <div class="materi-card menu-card" onclick="openMateri(2)"><i class="fas fa-draw-polygon"></i><div>2. Vektor (Gambar Garis & Kurva)</div></div>
+            <div class="materi-card menu-card" onclick="openMateri(3)"><i class="fas fa-laptop-code"></i><div>3. Perangkat Lunak Desain Grafis</div></div>
+            <div class="materi-card menu-card" onclick="openMateri(4)"><i class="fas fa-palette"></i><div>4. Contoh Rancangan Komputer Grafis</div></div>
         </div>
     </div>
 
-    <!-- ==================== SLIDE MATERI ==================== -->
+    <!-- SLIDE MATERI -->
     <div id="slide-materi-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="backToMateriList()"><i class="fas fa-arrow-left"></i> Daftar Materi</div>
             <h2 id="slide-title" style="color:white;"></h2>
             <div id="slide-content" class="slide-wrapper"></div>
-            <div class="nav-slide-buttons">
-                <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Sebelumnya</button>
-                <button onclick="nextSlide()">Selanjutnya <i class="fas fa-chevron-right"></i></button>
-            </div>
+            <div class="nav-slide-buttons"><button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Sebelumnya</button><button onclick="nextSlide()">Selanjutnya <i class="fas fa-chevron-right"></i></button></div>
             <div class="slide-counter" id="slide-counter"></div>
         </div>
     </div>
 
-    <!-- ==================== VIDEO PEMBELAJARAN ==================== -->
+    <!-- VIDEO -->
     <div id="video-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
             <h2>🎥 Video Pembelajaran</h2>
             <p style="color: #cdc4ff; margin-bottom: 20px;">Pilih video yang ingin Anda tonton:</p>
             <hr>
-
             <div class="video-list">
-                <div class="video-item" onclick="playVideo(1)">
-                    <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                    <div class="video-info"><h3>Video 1: Pengertian Bitmap & Vektor</h3></div>
-                </div>
-                <div class="video-item" onclick="playVideo(2)">
-                    <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                    <div class="video-info"><h3>Video 2: Pengertian CorelDraw</h3></div>
-                </div>
-                <div class="video-item" onclick="playVideo(3)">
-                    <div class="video-thumbnail"><i class="fas fa-play-circle"></i></div>
-                    <div class="video-info"><h3>Video 3: Pengertian Photoshop</h3></div>
-                </div>
+                <div class="video-item" onclick="playVideo(1)"><div class="video-thumbnail"><i class="fas fa-play-circle"></i></div><div class="video-info"><h3>Video 1: Pengertian Bitmap & Vektor</h3></div></div>
+                <div class="video-item" onclick="playVideo(2)"><div class="video-thumbnail"><i class="fas fa-play-circle"></i></div><div class="video-info"><h3>Video 2: Pengertian CorelDrawr</h3></div></div>
+                <div class="video-item" onclick="playVideo(3)"><div class="video-thumbnail"><i class="fas fa-play-circle"></i></div><div class="video-info"><h3>Video 3: Pengertian Photoshop</h3></div></div>
             </div>
-
             <div id="videoContainer" style="display:none; margin-top:20px;">
-                <div class="video-header">
-                    <span id="videoTitle" style="color: #c084fc; font-weight: bold;"></span>
-                    <button class="close-video-btn" onclick="closeVideo()"><i class="fas fa-times"></i> Tutup</button>
-                </div>
-                <div style="position:relative; padding-bottom:56.25%; height:0; margin-top: 10px;">
-                    <iframe id="videoFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <div class="video-header"><span id="videoTitle" style="color: #c084fc; font-weight: bold;"></span><button class="close-video-btn" onclick="closeVideo()"><i class="fas fa-times"></i> Tutup</button></div>
+                <div style="position:relative; padding-bottom:56.25%; height:0; margin-top: 10px;"><iframe id="videoFrame" style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:20px;" frameborder="0" allowfullscreen></iframe></div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== KUIS ==================== -->
+    <!-- KUIS -->
     <div id="kuis-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
@@ -318,7 +280,7 @@
         </div>
     </div>
 
-    <!-- ==================== HASIL KUIS ==================== -->
+    <!-- HASIL KUIS -->
     <div id="hasil-page" class="page-container">
         <div class="glass-card">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-home"></i> Kembali ke Beranda</div>
@@ -327,35 +289,39 @@
         </div>
     </div>
 
-    <!-- ==================== CHATBOX ==================== -->
+    <!-- CHATBOX -->
     <div id="chatbox-page" class="page-container">
         <div class="glass-card full-chat">
             <div class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i> Kembali</div>
             <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
                 <i class="fab fa-google" style="color:#d4aeff; font-size:1.8rem;"></i>
-                <h3 style="color:white;">ChatBox Gemini AI</h3>
+                <h3 style="color:white;">ChatBox AI</h3>
                 <span class="ai-badge"><i class="fas fa-brain"></i> Bisa Tanya Apapun!</span>
                 <span id="apiStatus" class="api-status status-checking">🔑 Cek API Key...</span>
             </div>
-
             <div id="chat-messages" class="chat-messages">
-                <div class="bubble-ai">
-                    <i class="fab fa-google"></i> <strong>Halo! Saya Asisten AI</strong><br><br>
-                    Saya bisa menjawab pertanyaan dengan cerdas. Silakan tanyakan apapun!<br>
-                </div>
+                <div class="bubble-ai"><i class="fab fa-google"></i> <strong>Halo! Saya Asisten AI </strong><br><br>Saya bisa menjawab pertanyaan dengan cerdas. Silakan tanyakan apapun!<br></div>
             </div>
-
             <div class="question-templates" id="templateContainer"></div>
-
             <div class="chat-input-group">
                 <input type="text" id="chatInput" placeholder="Tanyakan apapun tentang Komputer Grafis atau topik lainnya..." onkeypress="if(event.key==='Enter') sendChat()">
                 <button onclick="sendChat()"><i class="fas fa-paper-plane"></i></button>
             </div>
-
             <div id="errorMsg" class="error-message" style="display:none;"></div>
         </div>
     </div>
 
+    <!-- Pemutar musik latar -->
+    <div class="audio-player" id="audioPlayer">
+        <audio id="bgAudio" loop preload="auto">
+            <source src="backsound.mp3" type="audio/mpeg">
+        </audio>
+        <button id="playPauseBtn" class="audio-btn"><i class="fas fa-play"></i></button>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3">
+        <span id="audioStatus">🎵 Backsound Mati</span>
+    </div>
+
     <script src="script.js"></script>
+
 </body>
 </html>
