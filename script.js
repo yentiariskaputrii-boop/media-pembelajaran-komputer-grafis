@@ -546,32 +546,22 @@ function backToMateriList() {
 // ==================== KUIS ====================
 const quizQuestions = [
     { q: "Gambar yang tersusun dari piksel dan pecah jika diperbesar disebut?", o: ["Bitmap", "Vektor", "SVG", "AI"], a: 0 },
-    { q: "Format file VEKTOR adalah?", o: ["JPEG", "PNG", "CDR", "GIF"], a: 2 },
     { q: "Keunggulan utama gambar vektor dibanding bitmap adalah?", o: ["Ukuran besar", "Tidak pecah", "Gradasi halus", "Cocok foto"], a: 1 },
     { q: "Software desain grafis berbasis vektor yang populer di Indonesia?", o: ["Photoshop", "CorelDRAW", "GIMP", "Paint"], a: 1 },
     { q: "Kepanjangan dari dpi (satuan resolusi bitmap) adalah?", o: ["Dots per inch", "Data per inch", "Digital pixel", "Draw per inch"], a: 0 },
-    { q: "Format bitmap yang mendukung latar belakang transparan adalah?", o: ["JPEG", "BMP", "PNG", "TIFF"], a: 2 },
     { q: "Fitur di CorelDRAW untuk menggabungkan objek tanpa irisan disebut?", o: ["Trim", "Intersect", "Weld", "Simplify"], a: 2 },
     { q: "Adobe Illustrator termasuk jenis software?", o: ["Bitmap", "Vektor", "Video", "3D"], a: 1 },
     { q: "Software vektor gratis dan open source adalah?", o: ["Photoshop", "CorelDRAW", "Inkscape", "Paint"], a: 2 },
     { q: "Kelebihan gambar bitmap adalah?", o: ["Scalable", "Gradasi halus", "Ukuran kecil", "Tidak pecah"], a: 1 },
-    { q: "Gambar vektor tersusun dari?", o: ["Piksel", "Garis & kurva", "Titik warna", "Grid"], a: 1 },
-    { q: "Software bitmap yang paling populer adalah?", o: ["CorelDRAW", "Illustrator", "Photoshop", "Inkscape"], a: 2 },
-    { q: "Fitur PowerClip di CorelDRAW berguna untuk?", o: ["Memotong", "Menggabungkan", "Memasukkan gambar ke bentuk", "Mewarnai"], a: 2 },
     { q: "Layer di Photoshop berfungsi untuk?", o: ["Mengatur lapisan", "Mengatur warna", "Mengatur ukuran", "Mengatur filter"], a: 0 },
-    { q: "Format file asli CorelDRAW adalah?", o: ["AI", "PSD", "CDR", "SVG"], a: 2 },
-    { q: "Format file asli Adobe Illustrator adalah?", o: ["AI", "CDR", "PSD", "JPEG"], a: 0 },
-    { q: "Ukuran standar kartu nama adalah?", o: ["9x6 cm", "10x8 cm", "A4", "A5"], a: 0 },
-    { q: "Ukuran standar desain mug adalah?", o: ["5x10 cm", "8x20 cm", "10x15 cm", "A4"], a: 1 },
     { q: "Fitur Pathfinder di Illustrator yang berfungsi menggabungkan objek?", o: ["Minus Front", "Intersect", "Unite", "Divide"], a: 2 },
-    { q: "Resolution dependent berarti kualitas gambar?", o: ["Tergantung resolusi", "Tidak tergantung resolusi", "Selalu bagus", "Selalu pecah"], a: 0 }
 ];
 
 let userAnswers = [];
 
 function startQuiz() {
     if (!checkLogin()) return;
-    userAnswers = new Array(20).fill(null);
+    userAnswers = new Array(10).fill(null);
     let html = "";
     quizQuestions.forEach((q, i) => {
         html += `<div style="margin-bottom:25px;"><div class="quiz-question">${i+1}. ${q.q}</div>`;
@@ -597,7 +587,7 @@ function selectAnswer(qi, oi) {
 
 function submitQuiz() {
     let score = 0;
-    for(let i = 0; i < 20; i++) {
+    for(let i = 0; i < 10; i++) {
         if(userAnswers[i] === quizQuestions[i].a) score++;
     }
     let percent = (score/20)*100;
