@@ -2,11 +2,10 @@
 // Ini adalah BACKEND (serverless function) yang berjalan di Vercel
 // API Key AMAN disimpan di sini, tidak terekspos ke publik
 
-const SYSTEM_PROMPT = `Anda adalah asisten AI yang ramah, cerdas, dan membantu.
-Anda bisa menjawab pertanyaan tentang APAPUN dengan bahasa Indonesia yang baik, sopan, dan mudah dipahami.
-Berikan jawaban yang panjang, detail, edukatif, dan informatif.
-Jika ditanya tentang komputer grafis, bitmap, vektor, CorelDRAW, Photoshop, Illustrator, Inkscape, Figma, atau software desain lainnya, berikan penjelasan yang sangat mendalam.
-Gunakan bahasa santai namun profesional. Gunakan bullet points atau penomoran untuk memudahkan pembacaan.`;
+const SYSTEM_PROMPT = `Anda adalah asisten AI yang khusus menjawab pertanyaan tentang komputer grafis, bitmap, vektor, CorelDRAW, Photoshop, Illustrator, Inkscape, Figma, dan software desain lainnya. 
+Jika pertanyaan pengguna tidak berkaitan dengan topik tersebut, Anda harus menjawab dengan teks: "Maaf, saya hanya dapat menjawab pertanyaan seputar komputer grafis, bitmap, vektor, CorelDRAW, Photoshop, Illustrator, Inkscape, Figma, atau software desain lainnya. Silakan tanyakan tentang materi tersebut." 
+Jangan memberikan jawaban di luar topik yang diminta. 
+Untuk pertanyaan yang sesuai topik, berikan jawaban yang panjang, detail, edukatif, dan informatif dalam bahasa Indonesia yang baik, sopan, dan mudah dipahami. Gunakan bullet points atau penomoran untuk memudahkan pembacaan.`;
 
 export default async function handler(req, res) {
     // 1. Hanya izinkan metode POST
